@@ -1,0 +1,11 @@
+.menu-category-box{
+    border: 5px solid black;
+}
+
+.menu-category-title{
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    width: 90%;
+    margin: auto;
+}
