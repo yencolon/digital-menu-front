@@ -5,7 +5,7 @@ import Section from 'react-bulma-components/lib/components/section';
 import Heading from 'react-bulma-components/lib/components/heading';
 import ItemCard from './MenuItemCardsComponent';
 
-import '../../styles/menu-category-container.css';
+import 'styles/menu-category-container.css';
 
 function RenderAs({ items, renderAs = 'text' }) {
     switch (renderAs) {
