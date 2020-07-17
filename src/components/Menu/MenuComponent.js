@@ -4,6 +4,7 @@ import Section from 'react-bulma-components/lib/components/section';
 
 import MenuButtons from './MenuButtonsComponent';
 import MenuContainer from './MenuContainerComponent';
+import MenuBottomBrand from './MenuBottomBrandComponent';
 
 const categories = [
     {
@@ -190,6 +191,7 @@ class Menu extends Component {
                 <Section>
                     <MenuButtons buttons={menus} selected={menuSelectedId} onButtonClicked={(menuId) => { this.menuSelectedId(menuId) }} />
                     <MenuContainer categories={categories} menuSelected={menuSelectedId} />
+                    <MenuBottomBrand />
                 </Section>
             </div>
         );

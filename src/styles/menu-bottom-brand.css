@@ -1,0 +1,8 @@
+.brand-container{
+    height: 200px;
+    width: 200px;
+    border: black solid 3px;
+    border-radius: 100px;
+    background-color: black;
+    margin: auto;
+}

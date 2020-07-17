@@ -38,24 +38,50 @@ function ItemCard({ title, description, price, image }) {
                     }}
                 >
                     <Media>
-                        <Media.Item renderAs="figure" position="left">
-                            <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
-                        </Media.Item>
-                        <Media.Item>
-                            <ItemText title={title} description={description} price={price} />
-                        </Media.Item>
-                        {/* <Columns>
-                            <Columns.Column size={6}>
+                        <Columns breakpoint="mobile">
+                            <Columns.Column
+                                mobile={{
+                                    size: '12'
+                                }}
+                                tablet={{
+                                    size: '2',
+                                }}
+                                desktop={{
+                                    size: '2',
+                                }}
+                                widescreen={{
+                                    size: '2',
+                                }}
+                                fullhd={{
+                                    size: '2',
+                                }}
+                            >
                                 <Media.Item renderAs="figure" position="left">
                                     <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
                                 </Media.Item>
                             </Columns.Column>
-                            <Columns.Column >
+                            <Columns.Column
+                                mobile={{
+                                    size: '12'
+                                }}
+                                tablet={{
+                                    size: '10',
+                                }}
+                                desktop={{
+                                    size: '10',
+                                }}
+                                widescreen={{
+                                    size: '10',
+                                }}
+                                fullhd={{
+                                    size: '10',
+                                }}
+                            >
                                 <Media.Item>
                                     <ItemText title={title} description={description} price={price} />
                                 </Media.Item>
                             </Columns.Column>
-                        </Columns> */}
+                        </Columns>
                     </Media>
                 </Box>
             </Section>
