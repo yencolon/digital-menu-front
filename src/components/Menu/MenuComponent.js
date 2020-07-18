@@ -189,8 +189,18 @@ class Menu extends Component {
         return (
             <div>
                 <Section>
-                    <MenuButtons buttons={menus} selected={menuSelectedId} onButtonClicked={(menuId) => { this.menuSelectedId(menuId) }} />
-                    <MenuContainer categories={categories} menuSelected={menuSelectedId} />
+                    <MenuButtons 
+                        buttons={menus}
+                        selected={menuSelectedId} 
+                        onButtonClicked={(menuId) => { this.menuSelectedId(menuId) }} 
+                        renderAs='card'/>
+                    
+                    <MenuContainer 
+                        categories={categories} 
+                        menuSelected={menuSelectedId} 
+                        renderAs='card'
+                        />
+                        
                     <MenuBottomBrand />
                 </Section>
             </div>

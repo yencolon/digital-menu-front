@@ -11,7 +11,7 @@ import ItemText from './MenuItemsTextComponent';
 function ItemCard({ title, description, price, image }) {
     return (
         <Fragment>
-            <Section>
+            
                 <Box paddingless={false}
                     responsive={{
                         mobile: {
@@ -44,16 +44,16 @@ function ItemCard({ title, description, price, image }) {
                                     size: '12'
                                 }}
                                 tablet={{
-                                    size: '2',
+                                    size: 'is-one-third',
                                 }}
                                 desktop={{
-                                    size: '2',
+                                    size: 'is-one-third',
                                 }}
                                 widescreen={{
-                                    size: '2',
+                                    size: 'is-one-third',
                                 }}
                                 fullhd={{
-                                    size: '2',
+                                    size: 'is-one-third',
                                 }}
                             >
                                 <Media.Item renderAs="figure" position="left">
@@ -65,16 +65,16 @@ function ItemCard({ title, description, price, image }) {
                                     size: '12'
                                 }}
                                 tablet={{
-                                    size: '10',
+                                    size: 'is-two-third',
                                 }}
                                 desktop={{
-                                    size: '10',
+                                    size: 'is-two-third',
                                 }}
                                 widescreen={{
-                                    size: '10',
+                                    size: 'is-two-third',
                                 }}
                                 fullhd={{
-                                    size: '10',
+                                    size: 'is-two-third',
                                 }}
                             >
                                 <Media.Item>
@@ -84,7 +84,7 @@ function ItemCard({ title, description, price, image }) {
                         </Columns>
                     </Media>
                 </Box>
-            </Section>
+            
         </Fragment>
     );
 }

@@ -4,6 +4,7 @@ import ItemText from './MenuItemsTextComponent';
 import Section from 'react-bulma-components/lib/components/section';
 import Heading from 'react-bulma-components/lib/components/heading';
 import ItemCard from './MenuItemCardsComponent';
+import Container from 'react-bulma-components/lib/components/container/container';
 
 import 'styles/menu-category-container.css';
 
@@ -12,9 +13,9 @@ function RenderAs({ items, renderAs = 'text' }) {
         case 'text':
             return items.map(item => {
                 return (
-                <Section>
-                    <ItemText key={item.id} title={item.name} description={item.description} price={item.price} />
-                </Section>)
+                    <Section>
+                        <ItemText key={item.id} title={item.name} description={item.description} price={item.price} />
+                    </Section>)
             })
         case 'card':
             return items.map(item => {
@@ -25,10 +26,12 @@ function RenderAs({ items, renderAs = 'text' }) {
     }
 }
 
-function MenuCategoryContainer({ title, description, items, renderAs = 'text' }) {
+function MenuCategoryContainer({ title, description, items, renderAs = 'text', containerStyle, headingStyle }) {
     return (
-        <div className='menu-category-box'>
-            <Heading size={5} renderAs="p" className='menu-category-title'>{title}</Heading>
+        <div className='menu-category-box' style={containerStyle}>
+            <Container>
+                <Heading size={6} className='menu-category-title' style={headingStyle}>{title}</Heading>
+            </Container>
             {/* <Heading subtitle renderAs="p">{description}</Heading> */}
             <RenderAs items={items} renderAs={renderAs} />
         </div>
