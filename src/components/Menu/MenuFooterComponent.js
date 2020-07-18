@@ -19,7 +19,7 @@ function MenuFooter() {
                     <Footer color='primary'>
                         <Container color='primary'>
                             <Content color='primary'>
-                                Y  E N     C O L O N
+                                {/* Y  E N     C O L O N */}
                             </Content>
                         </Container>
                     </Footer>

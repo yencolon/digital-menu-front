@@ -18,11 +18,17 @@ function MenuHeader() {
                 </Navbar.Brand>
                 <Navbar.Menu>
                     <Navbar.Container position="end">
-                         <Navbar.Item href="#">
-                            Opcion 1
+                        <Navbar.Item href="#">
+                            <Heading size={5} className='menu-header-title'>Menú</Heading>
                         </Navbar.Item>
                         <Navbar.Item href="#">
-                            Opcion 1
+                            <Heading size={5} className='menu-header-title'>Métodos de Pago</Heading>
+                        </Navbar.Item>
+                        <Navbar.Item href="#">
+                            <Heading size={5} className='menu-header-title'>Delivery</Heading>
+                        </Navbar.Item>
+                        <Navbar.Item href="#">
+                            <Heading size={5} className='menu-header-title'>Contacto</Heading>
                         </Navbar.Item>
                     </Navbar.Container>
                 </Navbar.Menu>
