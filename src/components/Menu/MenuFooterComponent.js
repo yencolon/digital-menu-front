@@ -7,7 +7,7 @@ import Heading from 'react-bulma-components/lib/components/heading/heading';
 import { Footer } from 'react-bulma-components';
 function MenuFooter() {
     return (
-        <Fragment>
+        <div>
             <Hero color='primary' className='is-hidden-mobile'>
                 <Hero.Head renderAs="header" />
                 <Hero.Body>
@@ -25,7 +25,7 @@ function MenuFooter() {
                     </Footer>
                 </Hero.Footer>
             </Hero>
-        </Fragment>
+        </div>
     )
 };
 

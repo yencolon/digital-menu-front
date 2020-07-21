@@ -14,24 +14,24 @@ function MenuHeader() {
                     <Navbar.Item>
                         <Heading className='menu-header-title'>NOMBRE.</Heading>
                     </Navbar.Item>
-                    <Navbar.Burger onClick={() => setisActive(!isActive)} />
+                    {/* <Navbar.Burger onClick={() => setisActive(!isActive)} /> */}
                 </Navbar.Brand>
-                <Navbar.Menu>
-                    <Navbar.Container position="end">
-                        <Navbar.Item href="#">
-                            <Heading size={5} className='menu-header-title'>Menú</Heading>
-                        </Navbar.Item>
-                        <Navbar.Item href="#">
-                            <Heading size={5} className='menu-header-title'>Métodos de Pago</Heading>
-                        </Navbar.Item>
-                        <Navbar.Item href="#">
-                            <Heading size={5} className='menu-header-title'>Delivery</Heading>
-                        </Navbar.Item>
-                        <Navbar.Item href="#">
-                            <Heading size={5} className='menu-header-title'>Contacto</Heading>
-                        </Navbar.Item>
-                    </Navbar.Container>
-                </Navbar.Menu>
+                {/* <Navbar.Menu className='is-hidden-desktop'> */}
+                <Navbar.Container position="end" className='is-hidden-touch'>
+                    <Navbar.Item href="#">
+                        <Heading size={5} className='menu-header-title'>Menú</Heading>
+                    </Navbar.Item>
+                    <Navbar.Item href="#">
+                        <Heading size={5} className='menu-header-title'>Métodos de Pago</Heading>
+                    </Navbar.Item>
+                    <Navbar.Item href="#">
+                        <Heading size={5} className='menu-header-title'>Delivery</Heading>
+                    </Navbar.Item>
+                    <Navbar.Item href="#">
+                        <Heading size={5} className='menu-header-title'>Contacto</Heading>
+                    </Navbar.Item>
+                </Navbar.Container>
+                {/* </Navbar.Menu> */}
             </Navbar>
         </div>
     )
