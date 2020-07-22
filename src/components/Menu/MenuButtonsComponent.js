@@ -1,15 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+
 import Button from 'react-bulma-components/lib/components/button';
 import Columns from 'react-bulma-components/lib/components/columns';
 import Container from 'react-bulma-components/lib/components/container';
 import Section from 'react-bulma-components/lib/components/section';
 import Tabs from 'react-bulma-components/lib/components/tabs';
+import Navbar from 'react-bulma-components/lib/components/navbar';
 
+import 'styles/menu-button-group.css';
 
 function CardRender({ buttons, selected, onButtonClicked }) {
     return (
         <Columns centered={true}>
-            <Tabs fullwidth={true} align='centered'>
+            <Tabs fullwidth={true} align='centered' >
                 {
                     buttons.map(button => {
                         return (
@@ -38,9 +41,25 @@ function TextRender({ buttons, onButtonClicked, selected }) {
 }
 
 function MenuButtons({ buttons, renderAs = 'text', selected, onButtonClicked }) {
+
+    useEffect(() => {
+        const header = document.getElementById("buttomGroup");
+        const sticky = header.offsetTop;
+        const scrollCallBack = window.addEventListener("scroll", () => {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        });
+        return () => {
+            window.removeEventListener("scroll", scrollCallBack);
+        };
+    }, []);
+
     return (
-        <Fragment>
-            <Section>
+        <div id='buttomGroup' className='button-group-container'>
+            <Section className='button-group-section'>
                 <Container>
                     {
                         renderAs === 'text' ?
@@ -49,7 +68,7 @@ function MenuButtons({ buttons, renderAs = 'text', selected, onButtonClicked }) 
                     }
                 </Container>
             </Section>
-        </Fragment>
+        </div>
     );
 }
 

@@ -165,6 +165,30 @@ const menus = [
                 "name": "Cakes"
             }
         ]
+    },
+    {
+        "id": 4,
+        "name": "Jugos",
+        "description": "Postres de la casa",
+        "categories": [
+            {
+                "id": 6,
+                "menuId": 3,
+                "name": "Cakes"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Para llevar",
+        "description": "Postres de la casa",
+        "categories": [
+            {
+                "id": 6,
+                "menuId": 3,
+                "name": "Cakes"
+            }
+        ]
     }
 ]
 
@@ -188,21 +212,19 @@ class Menu extends Component {
         const { menuSelectedId } = this.state;
         return (
             <div>
-                <Section>
-                    <MenuButtons 
+                    <MenuButtons
                         buttons={menus}
-                        selected={menuSelectedId} 
-                        onButtonClicked={(menuId) => { this.menuSelectedId(menuId) }} 
-                        renderAs='card'/>
-                    
-                    <MenuContainer 
-                        categories={categories} 
-                        menuSelected={menuSelectedId} 
+                        selected={menuSelectedId}
+                        onButtonClicked={(menuId) => { this.menuSelectedId(menuId) }}
+                        renderAs='tabs' />
+
+                    <MenuContainer
+                        categories={categories}
+                        menuSelected={menuSelectedId}
                         renderAs='card'
-                        />
-                        
+                    />
+
                     <MenuBottomBrand />
-                </Section>
             </div>
         );
     }

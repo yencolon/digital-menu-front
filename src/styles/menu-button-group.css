@@ -1,0 +1,15 @@
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-top: 5px;
+    background-color: #080708;
+}
+
+.button-group-container{
+    padding-top: 10px;
+}
+
+.button-group-section{
+    padding-bottom: 0;
+}

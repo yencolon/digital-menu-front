@@ -29,9 +29,7 @@ function RenderAs({ items, renderAs = 'text' }) {
 function MenuCategoryContainer({ title, description, items, renderAs = 'text', containerStyle, headingStyle }) {
     return (
         <div className='menu-category-box' style={containerStyle}>
-            <Container>
-                <Heading size={6} className='menu-category-title' style={headingStyle}>{title}</Heading>
-            </Container>
+            <Heading size={4} className='menu-category-title' style={headingStyle}>{title}</Heading>
             {/* <Heading subtitle renderAs="p">{description}</Heading> */}
             <RenderAs items={items} renderAs={renderAs} />
         </div>
