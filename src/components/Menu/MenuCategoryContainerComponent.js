@@ -19,7 +19,7 @@ function RenderAs({ items, renderAs = 'text' }) {
             })
         case 'card':
             return items.map(item => {
-                return <ItemCard key={item.id} title={item.name} description={item.description} price={item.price} />
+                return <ItemCard key={item.id} title={item.name} description={item.description} price={item.price} image={item.image}/>
             })
         default:
             break;

@@ -10,7 +10,7 @@ function ItemText({ title, description, price }) {
                 <Heading size={6}>{title}</Heading>
             </Container>
             <p>{description}</p>
-            <p>{price}</p>
+            <p><b>{price}</b></p>
         </Fragment>
     );
 }

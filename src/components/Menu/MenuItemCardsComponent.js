@@ -56,7 +56,7 @@ function ItemCard({ title, description, price, image }) {
                                 }}
                             >
                                 <Media.Item renderAs="figure" position="left">
-                                    <Image src="http://bulma.io/images/placeholders/128x128.png" />
+                                    <Image src={image} />
                                 </Media.Item>
                             </Columns.Column>
                             <Columns.Column
