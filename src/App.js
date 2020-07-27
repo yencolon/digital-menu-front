@@ -1,9 +1,9 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.scss';
 import Menu from 'components/Menu/MenuComponent';
-import MenuHeader from 'components/Menu/MenuHeaderComponent';
-import MenuNavigation from 'components/Menu/MenuNavigationComponent';
-import { BrowserRouter, Route } from 'react-router-dom';
+import MenuHeader from 'components/MenuHeaderComponent';
+import MenuNavigation from 'components/MenuNavigationComponent';
 import ContactUs from 'components/ContactUsComponent';
 import PaymentMethods from 'components/PaymentMethods';
 import Delivery from 'components/DeliveryComponent';
