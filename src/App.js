@@ -3,12 +3,21 @@ import './App.scss';
 import Menu from 'components/Menu/MenuComponent';
 import MenuHeader from 'components/Menu/MenuHeaderComponent';
 import MenuNavigation from 'components/Menu/MenuNavigationComponent';
+import { BrowserRouter, Route } from 'react-router-dom';
+import ContactUs from 'components/ContactUsComponent';
+import PaymentMethods from 'components/PaymentMethods';
+import Delivery from 'components/DeliveryComponent';
 
 function App() {
   return (
     <div className="App">
       <MenuHeader />
-      <Menu />
+      <BrowserRouter>
+        <Route path='/menu' component={Menu} />
+        <Route path='/contact' component={ContactUs} />
+        <Route path='/payments' component={PaymentMethods} />
+        <Route path='/delivery' component={Delivery} />
+      </BrowserRouter>
       <MenuNavigation />
     </div>
   );

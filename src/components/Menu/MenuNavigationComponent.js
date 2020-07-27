@@ -10,19 +10,19 @@ function MenuNavigation() {
         <div className='is-hidden-desktop'>
             <Navbar color='primary' fixed='bottom'>
                 <Navbar.Container className='navigation-container'>
-                    <Navbar.Item href="#" className='navigation-item '>
+                    <Navbar.Item href="/menu" className='navigation-item '>
                         <HomeOutlined style={{ fontSize: '20px' }} />
                         Menú
                     </Navbar.Item>
-                    <Navbar.Item href="#" className='navigation-item'>
+                    <Navbar.Item href="/payments" className='navigation-item'>
                         <DollarOutlined style={{ fontSize: '20px'}} />
                         Métodos
                     </Navbar.Item>
-                    <Navbar.Item href="#" className='navigation-item'>
+                    <Navbar.Item href="/delivery" className='navigation-item'>
                         <ShoppingCartOutlined style={{ fontSize: '20px'}}/> 
                         Delivery
                     </Navbar.Item>
-                    <Navbar.Item href="#" className='navigation-item'>
+                    <Navbar.Item href="/contact" className='navigation-item'>
                         <ContactsOutlined style={{ fontSize: '20px' }}/>
                         Contacto
                     </Navbar.Item>
