@@ -5,11 +5,9 @@ import Heading from 'react-bulma-components/lib/components/heading/heading';
 import 'styles/menu-header.css';
 
 function MenuHeader() {
-    const [isActive, setisActive] = React.useState(false);
-
     return (
         <div>
-            <Navbar color='primary' fixed='top' active={isActive}>
+            <Navbar color='primary' fixed='top'>
                 <Navbar.Brand>
                     <Navbar.Item>
                         <Heading className='menu-header-title'>NOMBRE.</Heading>
