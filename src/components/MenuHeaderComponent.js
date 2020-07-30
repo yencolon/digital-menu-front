@@ -16,16 +16,16 @@ function MenuHeader() {
                 </Navbar.Brand>
                 {/* <Navbar.Menu className='is-hidden-desktop'> */}
                 <Navbar.Container position="end" className='is-hidden-touch'>
-                    <Navbar.Item href="#">
+                    <Navbar.Item href="/menu">
                         <Heading size={5} className='menu-header-title'>Menú</Heading>
                     </Navbar.Item>
-                    <Navbar.Item href="#">
+                    <Navbar.Item href="/payments">
                         <Heading size={5} className='menu-header-title'>Métodos de Pago</Heading>
                     </Navbar.Item>
-                    <Navbar.Item href="#">
+                    <Navbar.Item href="/delivery">
                         <Heading size={5} className='menu-header-title'>Delivery</Heading>
                     </Navbar.Item>
-                    <Navbar.Item href="#">
+                    <Navbar.Item href="/contact">
                         <Heading size={5} className='menu-header-title'>Contacto</Heading>
                     </Navbar.Item>
                 </Navbar.Container>
