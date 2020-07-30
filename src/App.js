@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import './App.scss';
 import Menu from 'components/Menu/MenuComponent';
 import MenuHeader from 'components/MenuHeaderComponent';
@@ -17,6 +17,7 @@ function App() {
         <Route path='/contact' component={ContactUs} />
         <Route path='/payments' component={PaymentMethods} />
         <Route path='/delivery' component={Delivery} />
+        <Redirect to="/menu" />
       </BrowserRouter>
       <MenuNavigation />
     </div>
