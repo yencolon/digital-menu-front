@@ -1,14 +1,13 @@
 import React, { Fragment } from 'react';
 
-import Heading from 'react-bulma-components/lib/components/heading';
 
 function ItemText({ title, description, price }) {
     return (
-        <Fragment>
-            <Heading size={6}>{title}</Heading>
+        <div class="px-6 py-4">
+            <h1 className="font-semibold text-md mb-2">{title}</h1>
             <p>{description}</p>
             <p><b>{price}</b></p>
-        </Fragment>
+        </div>
     );
 }
 

@@ -1,34 +1,28 @@
 import React from 'react';
 
 import { HomeOutlined, DollarOutlined, ShoppingCartOutlined, ContactsOutlined } from '@ant-design/icons';
-import Navbar from 'react-bulma-components/lib/components/navbar';
 
-import 'styles/menu-navigation.css';
-
-function MenuNavigation() {
+function MenuNavigation({ containerStyle, itemStyle }) {
     return (
-        <div className='is-hidden-desktop'>
-            <Navbar color='primary' fixed='bottom'>
-                <Navbar.Container className='navigation-container'>
-                    <Navbar.Item href="/menu" className='navigation-item '>
-                        <HomeOutlined style={{ fontSize: '20px' }} />
-                        Menú
-                    </Navbar.Item>
-                    <Navbar.Item href="/payments" className='navigation-item'>
-                        <DollarOutlined style={{ fontSize: '20px'}} />
-                        Métodos
-                    </Navbar.Item>
-                    <Navbar.Item href="/delivery" className='navigation-item'>
-                        <ShoppingCartOutlined style={{ fontSize: '20px'}}/> 
-                        Delivery
-                    </Navbar.Item>
-                    <Navbar.Item href="/contact" className='navigation-item'>
-                        <ContactsOutlined style={{ fontSize: '20px' }}/>
-                        Contacto
-                    </Navbar.Item>
-                </Navbar.Container>
-            </Navbar>
-        </div>
+        <nav className="bottom-0 fixed w-full lg:hidden flex items-center justify-around flex-wrap p-1 text-white" style={containerStyle}>
+            {/* className='navigation-container' className='navigation-item'*/}
+            <div className='flex flex-col'>
+                <HomeOutlined style={{ fontSize: '20px' }} />
+                <a href="/menu">Menú</a>
+            </div>
+            <div className='flex flex-col'>
+                <DollarOutlined style={{ fontSize: '20px' }} />
+                <a href="/payments" >Métodos</a>
+            </div>
+            <div className='flex flex-col'>
+                <ShoppingCartOutlined style={{ fontSize: '20px' }} />
+                <a href="/delivery">Delivery</a>
+            </div>
+            <div className='flex flex-col'>
+                <ContactsOutlined style={{ fontSize: '20px' }} />
+                <a href="/contact">Contacto</a>
+            </div>
+        </nav>
     )
 }
 

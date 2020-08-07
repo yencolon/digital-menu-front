@@ -1,22 +1,17 @@
 import React from 'react';
+
 import ItemText from './MenuItemsTextComponent';
-
-import Section from 'react-bulma-components/lib/components/section';
-import Heading from 'react-bulma-components/lib/components/heading';
 import ItemCard from './MenuItemCardsComponent';
-import Container from 'react-bulma-components/lib/components/container/container';
 
-import 'styles/menu-category-container.css';
+import 'assets/styles/menu-category-container.css';
 
 function RenderAs({ items, renderAs = 'text' }) {
     switch (renderAs) {
         case 'text':
             return items.map(item => {
                 return (
-                    <Section>
-                        <ItemText key={item.id} title={item.name} description={item.description} price={item.price} />
-                    </Section>)
-            })
+                    <ItemText key={item.id} title={item.name} description={item.description} price={item.price} />
+            )})
         case 'card':
             return items.map(item => {
                 return <ItemCard key={item.id} title={item.name} description={item.description} price={item.price} image={item.image}/>
@@ -28,9 +23,8 @@ function RenderAs({ items, renderAs = 'text' }) {
 
 function MenuCategoryContainer({ title, description, items, renderAs = 'text', containerStyle, headingStyle }) {
     return (
-        <div className='menu-category-box' style={containerStyle}>
-            <Heading size={4} className='menu-category-title' style={headingStyle}>{title}</Heading>
-            {/* <Heading subtitle renderAs="p">{description}</Heading> */}
+        <div className='m-5 flex flex-col content-center justify-center border-2 border-gray-600' style={containerStyle}>
+            <h1 className='font-bold text-xl menu-category-title' style={headingStyle}>{title}</h1>
             <RenderAs items={items} renderAs={renderAs} />
         </div>
     );

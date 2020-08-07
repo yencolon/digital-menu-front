@@ -1,89 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import Box from 'react-bulma-components/lib/components/box';
-import Media from 'react-bulma-components/lib/components/media';
-import Image from 'react-bulma-components/lib/components/image';
-import Columns from 'react-bulma-components/lib/components/columns/columns';
 import ItemText from './MenuItemsTextComponent';
-import 'styles/box-menu.css';
 
 function ItemCard({ title, description, price, image }) {
     return (
-        <Fragment>
-                <Box paddingless={false}
-                    className='box-menu'
-                    responsive={{
-                        mobile: {
-                            display: {
-                                value: 'block'
-                            },
-                        },
-                        tablet: {
-                            display: {
-                                value: 'flex'
-                            },
-                        },
-                        desktop: {
-                            display: {
-                                value: 'inline-flex',
-                                only: true,
-                            },
-                        },
-                        widescreen: {
-                            display: {
-                                value: 'inline-block',
-                            },
-                        },
-                    }}
-                >
-                    <Media>
-                        <Columns breakpoint="mobile">
-                            <Columns.Column
-                                mobile={{
-                                    size: '12'
-                                }}
-                                tablet={{
-                                    size: 'is-one-third',
-                                }}
-                                desktop={{
-                                    size: 'is-one-third',
-                                }}
-                                widescreen={{
-                                    size: 'is-one-third',
-                                }}
-                                fullhd={{
-                                    size: 'is-one-third',
-                                }}
-                            >
-                                <Media.Item renderAs="figure" position="left">
-                                    <Image src={image} />
-                                </Media.Item>
-                            </Columns.Column>
-                            <Columns.Column
-                                mobile={{
-                                    size: '12'
-                                }}
-                                tablet={{
-                                    size: 'is-two-third',
-                                }}
-                                desktop={{
-                                    size: 'is-two-third',
-                                }}
-                                widescreen={{
-                                    size: 'is-two-third',
-                                }}
-                                fullhd={{
-                                    size: 'is-two-third',
-                                }}
-                            >
-                                <Media.Item>
-                                    <ItemText title={title} description={description} price={price} />
-                                </Media.Item>
-                            </Columns.Column>
-                        </Columns>
-                    </Media>
-                </Box>
-        </Fragment>
+        <div className="flex flex-col md:flex-row rounded overflow-hidden shadow-lg my-5 mx-5">
+            <img className="w-full object-contain md:w-1/4" src={image} alt={description} />
+            <ItemText title={title} description={description} price={price} />
+        </div>
     );
 }
 

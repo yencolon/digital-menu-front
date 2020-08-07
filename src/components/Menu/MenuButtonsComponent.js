@@ -1,55 +1,51 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import Button from 'react-bulma-components/lib/components/button';
-import Columns from 'react-bulma-components/lib/components/columns';
-import Container from 'react-bulma-components/lib/components/container';
-import Section from 'react-bulma-components/lib/components/section';
-import Tabs from 'react-bulma-components/lib/components/tabs';
-import Navbar from 'react-bulma-components/lib/components/navbar';
+import 'assets/styles/menu-button-group.css';
 
-import 'styles/menu-button-group.css';
-
-function CardRender({ buttons, selected, onButtonClicked }) {
+function Tabs({ buttons, selected, onButtonClicked }) {
     return (
-        <Columns centered={true}>
-            <Tabs fullwidth={true} align='centered' >
-                {
-                    buttons.map(button => {
-                        return (
-                            <Tabs.Tab active={button.id === selected} key={button.id} onClick={() => onButtonClicked(button.id)}>
-                                {button.name}
-                            </Tabs.Tab>)
-                    })
-                }
-            </Tabs>
-        </Columns>
+        <ul className='flex justify-around'>
+            {
+                buttons.map(button => {
+                    return (
+                        <li className='border-b border-solid border-black' active={button.id === selected} key={button.id}>
+                            <a onClick={() => onButtonClicked(button.id)}>{button.name}</a>
+                        </li>)
+                })
+            }
+        </ul>
+
     );
 }
 
-function TextRender({ buttons, onButtonClicked, selected }) {
+function Buttons({ buttons, onButtonClicked, selected }) {
     return (
-        <Columns centered={true}>
-            <Button.Group position='centered'>
-                {
-                    buttons.map(button => {
-                        return <Button outlined={button.id !== selected} isSelected={button.id === selected} color='primary' key={button.id} onClick={() => onButtonClicked(button.id)}>{button.name}</Button>
-                    })
-                }
-            </Button.Group>
-        </Columns>
+        // <Columns centered={true}>
+        //     <Button.Group position='centered'>
+        //         {
+        //             buttons.map(button => {
+        //                 return <Button outlined={button.id !== selected} isSelected={button.id === selected} color='primary' key={button.id} onClick={() => onButtonClicked(button.id)}>{button.name}</Button>
+        //             })
+        //         }
+        //     </Button.Group>
+        // </Columns>
+
+        null
     );
 }
 
-function MenuButtons({ buttons, renderAs = 'text', selected, onButtonClicked }) {
+function MenuButtons({ buttons, renderAs = 'buttons', selected, onButtonClicked, containerStyle, buttonStyle }) {
 
     useEffect(() => {
         const header = document.getElementById("buttomGroup");
         const sticky = header.offsetTop;
         const scrollCallBack = window.addEventListener("scroll", () => {
             if (window.pageYOffset > sticky) {
-                header.classList.add("sticky");
+                header.classList.add("bg-black");
+                header.classList.add("text-white");
             } else {
-                header.classList.remove("sticky");
+                header.classList.remove("bg-black");
+                header.classList.remove("text-white");
             }
         });
         return () => {
@@ -58,16 +54,14 @@ function MenuButtons({ buttons, renderAs = 'text', selected, onButtonClicked }) 
     }, []);
 
     return (
-        <div id='buttomGroup' className='button-group-container'>
-            <Section className='button-group-section'>
-                <Container>
-                    {
-                        renderAs === 'text' ?
-                            <TextRender buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} />
-                            : <CardRender buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} />
-                    }
-                </Container>
-            </Section>
+        <div id='buttomGroup' className='fixed w-full mt-20'>
+            <div>
+                {
+                    renderAs === 'buttons' ?
+                        <Buttons buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} />
+                        : <Tabs buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} />
+                }
+            </div>
         </div>
     );
 }

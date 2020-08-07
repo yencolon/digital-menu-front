@@ -253,7 +253,7 @@ const categories = [
                 "image": "https://dydza6t6xitx6.cloudfront.net/ci-angry-orchard-rose-53151c0e6c1d7798.jpeg"
             },
             {
-                "id": 26,
+                "id": 27,
                 "categoryId": 7,
                 "name": "Kronenbourg 1664, Francia",
                 "description": "Una cerveza lager que cuenta con una historia noble y que se caracteriza por su delicado sabor, color dorado y suave amargor característico del Strisselspalt, una variedad de lúpulo de Alsacia, Francia",
@@ -261,7 +261,7 @@ const categories = [
                 "image": "https://products2.imgix.drizly.com/ci-kronenbourg-1664-d61e93e44e612ee2.png?auto=format%2Ccompress&fm=jpg&q=20"
             },
             {
-                "id": 26,
+                "id": 28,
                 "categoryId": 7,
                 "name": "Saison Dupont, Bélgica",
                 "description": "Refrescante cerveza artesanal de sabor suave con tonos de cáscara de naranja, clavo de olor, pimienta inglesa y cítricos, con lúpulo fresco.",
@@ -269,7 +269,7 @@ const categories = [
                 "image": "https://cdn.webshopapp.com/shops/19852/files/303759315/brasserie-dupont-saison-dupont.jpg"
             },
             {
-                "id": 26,
+                "id": 29,
                 "categoryId": 7,
                 "name": "Chimay Blue, Bélgica",
                 "description": "Esta cerveza negra, de fuerte sabor y origen belga es elaborada por monjes trapenses. Con aroma a especias y frutas secas y un leve matiz acaramelado. De cuerpo suave, tiene un exquisito y notable sabor a lúpulo. Su fresca levadura brinda un toque floral de rosas.",
@@ -277,7 +277,7 @@ const categories = [
                 "image": "https://kava247.com/wp-content/uploads/2020/04/chimay_blue-1200x1200-1.jpg"
             },
             {
-                "id": 26,
+                "id": 30,
                 "categoryId": 7,
                 "name": "Stella Artois, Bélgica",
                 "description": "Cerveza belga lager rubia bien equilibrada con un aroma de lúpulo floral y un toque final suave y seco",
@@ -285,7 +285,7 @@ const categories = [
                 "image": "https://clubcatadores.co/wp-content/uploads/2016/04/Stella-1.jpg"
             },
             {
-                "id": 26,
+                "id": 31,
                 "categoryId": 7,
                 "name": "Hoegaarden Wit, Bélgica",
                 "description": "Con aroma de cáscara de naranja, cilantro y especias, es suave y ligera, con un sutil sabor cítrico especiado",
@@ -293,7 +293,7 @@ const categories = [
                 "image": "https://www.guiadelacerveza.com/wp-content/uploads/2017/09/Hoegaarden-Wit.jpg"
             },
             {
-                "id": 26,
+                "id": 32,
                 "categoryId": 7,
                 "name": "Cigar City Jai Alai IPA, Tampa, Florida",
                 "description": "Un audaz sabor a cáscara de naranja y lúpulos, con un toque de caramelo y un rico sabor a malta",
@@ -368,21 +368,22 @@ class Menu extends Component {
         super(props);
 
         this.state = {
-            menuSelectedId: 1
+            menuSelectedId: 1,
+            categoriesToShow: []
         }
 
         this.menuSelectedId = this.onMenuSelected.bind(this);
     }
 
     onMenuSelected = (menuId) => {
-        this.setState({ menuSelectedId: menuId })
+        this.setState({ menuSelectedId: menuId, categoriesToShow: categories.filter(category => category.menuId === menuId) })
     }
 
 
     render() {
-        const { menuSelectedId } = this.state;
+        const { menuSelectedId, categoriesToShow } = this.state;
         return (
-            <div>
+            <div className='flex flex-col'>
                 <MenuButtons
                     buttons={menus}
                     selected={menuSelectedId}
@@ -390,11 +391,10 @@ class Menu extends Component {
                     renderAs='tabs' />
 
                 <MenuContainer
-                    categories={categories}
+                    categories={categoriesToShow}
                     menuSelected={menuSelectedId}
                     renderAs='card'
                 />
-
                 <MenuBottomBrand />
             </div>
         );

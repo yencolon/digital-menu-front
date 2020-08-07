@@ -1,37 +1,20 @@
 import React from 'react';
-import Navbar from 'react-bulma-components/lib/components/navbar';
-import Heading from 'react-bulma-components/lib/components/heading/heading';
 
-import 'styles/menu-header.css';
+import 'assets/styles/menu-header.css';
 
-function MenuHeader() {
+function MenuHeader({ containerStyle, titleStyle }) {
     return (
-        <div>
-            <Navbar color='primary' fixed='top'>
-                <Navbar.Brand>
-                    <Navbar.Item>
-                        <Heading className='menu-header-title'>NOMBRE.</Heading>
-                    </Navbar.Item>
-                    {/* <Navbar.Burger onClick={() => setisActive(!isActive)} /> */}
-                </Navbar.Brand>
-                {/* <Navbar.Menu className='is-hidden-desktop'> */}
-                <Navbar.Container position="end" className='is-hidden-touch'>
-                    <Navbar.Item href="/menu">
-                        <Heading size={5} className='menu-header-title'>Menú</Heading>
-                    </Navbar.Item>
-                    <Navbar.Item href="/payments">
-                        <Heading size={5} className='menu-header-title'>Métodos de Pago</Heading>
-                    </Navbar.Item>
-                    <Navbar.Item href="/delivery">
-                        <Heading size={5} className='menu-header-title'>Delivery</Heading>
-                    </Navbar.Item>
-                    <Navbar.Item href="/contact">
-                        <Heading size={5} className='menu-header-title'>Contacto</Heading>
-                    </Navbar.Item>
-                </Navbar.Container>
-                {/* </Navbar.Menu> */}
-            </Navbar>
-        </div>
+        <nav className="flex items-center justify-between flex-wrap p-6 fixed w-full" style={containerStyle}>
+            <div className="flex-grow lg:items-center lg:flex">
+                <h1 className='text-center text-2xl font-bold' style={titleStyle}>NOMBRE.</h1>
+            </div>
+            <div className="hidden lg:block lg:justify-end">
+                <a href="/menu" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">Menu</a>
+                <a href="/payments" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">Métodos de Pago</a>
+                <a href="/delivery" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">Delivery</a>
+                <a href="/contact" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">Contactos</a>
+            </div>
+        </nav>
     )
 };
 
