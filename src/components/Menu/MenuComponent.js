@@ -372,7 +372,7 @@ class Menu extends Component {
             categoriesToShow: []
         }
 
-        this.menuSelectedId = this.onMenuSelected.bind(this);
+        this.onMenuSelectedId = this.onMenuSelected.bind(this);
     }
 
     onMenuSelected = (menuId) => {
@@ -387,15 +387,21 @@ class Menu extends Component {
                 <MenuButtons
                     buttons={menus}
                     selected={menuSelectedId}
-                    onButtonClicked={(menuId) => { this.menuSelectedId(menuId) }}
-                    renderAs='tabs' />
+                    onButtonClicked={(menuId) => { this.onMenuSelected(menuId) }}
+                    renderAs={this.props.showCategoriesAs} 
+                    backgroundColor = {this.props.categoryButtonBackground}
+                    textColor = {this.props.categoryButtonTextColor}
+                    buttonStyle = {this.props.categoryButtonStyle}
+                />
 
                 <MenuContainer
                     categories={categoriesToShow}
                     menuSelected={menuSelectedId}
-                    renderAs='card'
+                    renderAs={this.props.showDishAs}
+                    containerStyle={{}}
+                    headingStyle={{}}
                 />
-                <MenuBottomBrand />
+                <MenuBottomBrand image={this.props.image} title={this.props.title}/>
             </div>
         );
     }

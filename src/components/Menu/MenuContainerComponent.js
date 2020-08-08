@@ -5,13 +5,14 @@ function MenuTiles({ columns = 2, categories }) {
 
 }
 
-function MenuContainer({ categories, renderAs = 'text', style }) {
+function MenuContainer({ categories, renderAs = 'text', containerStyle, headingStyle }) {
     const categoriesSize = categories.length / 2;
     const categoriesColTwo = categories.splice(0, categoriesSize);
     const categoriesColOne = categories;
+
     const colSize = categoriesColTwo.length === 0 ? 1 : 2
     return (
-        <div className={'mx-2 my-40 md:my-40 md:grid md:grid-cols-' + colSize}>
+        <div className={'mx-2 my-2 md:my-5 md:grid md:grid-cols-' + colSize}>
             <div>
                 {
                     categoriesColOne.map(category => {
@@ -22,7 +23,8 @@ function MenuContainer({ categories, renderAs = 'text', style }) {
                                     description={category.description}
                                     items={category.items}
                                     renderAs={renderAs}
-                                    style={style}
+                                    containerStyle={containerStyle}
+                                    headingStyle={headingStyle}
                                 />
                             </div>)
                     })
@@ -38,7 +40,8 @@ function MenuContainer({ categories, renderAs = 'text', style }) {
                                     description={category.description}
                                     items={category.items}
                                     renderAs={renderAs}
-                                    style={style}
+                                    containerStyle={{}}
+                                    headingStyle={{}}
                                 />
                             </div>)
                     })

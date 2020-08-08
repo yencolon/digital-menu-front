@@ -17,14 +17,14 @@ function RenderAs({ items, renderAs = 'text' }) {
                 return <ItemCard key={item.id} title={item.name} description={item.description} price={item.price} image={item.image}/>
             })
         default:
-            break;
+            return <div>{renderAs}</div>
     }
 }
 
 function MenuCategoryContainer({ title, description, items, renderAs = 'text', containerStyle, headingStyle }) {
     return (
-        <div className='m-5 flex flex-col content-center justify-center border-2 border-gray-600' style={containerStyle}>
-            <h1 className='font-bold text-xl menu-category-title' style={headingStyle}>{title}</h1>
+        <div className='m-5 flex flex-col content-center justify-center' style={containerStyle}>
+            <h1 className='font-bold text-xl underline menu-category-title' style={headingStyle}>{title}</h1>
             <RenderAs items={items} renderAs={renderAs} />
         </div>
     );
