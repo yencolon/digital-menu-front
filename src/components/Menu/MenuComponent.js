@@ -369,7 +369,7 @@ class Menu extends Component {
 
         this.state = {
             menuSelectedId: 1,
-            categoriesToShow: []
+            categoriesToShow: categories.filter(category => category.menuId === 1)
         }
 
         this.onMenuSelectedId = this.onMenuSelected.bind(this);
@@ -398,7 +398,7 @@ class Menu extends Component {
                     categories={categoriesToShow}
                     menuSelected={menuSelectedId}
                     renderAs={this.props.showDishAs}
-                    containerStyle={{}}
+                    containerStyle={this.props.categoryContainerStyle}
                     headingStyle={{}}
                 />
                 <MenuBottomBrand image={this.props.image} title={this.props.title}/>

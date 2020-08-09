@@ -1,16 +1,9 @@
 import React from 'react';
 
-function Delivery(){
-    return(
-        <div>
-            {/* <Section>
-                <Heading>
-                    Delivery
-                </Heading>
-                <p>
-                    En esta seccion va informacion de delivery
-                </p>
-            </Section> */}
+function Delivery() {
+    return (
+        <div className='flex flex-1 justify-center items-center'>
+            <h1 className='font-bolf text-3xl'>COMING SOOM</h1>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ItemText from './MenuItemsTextComponent';
-import ItemCard from './MenuItemCardsComponent';
+import ItemCard from './MenuItemCardComponent';
 
 import 'assets/styles/menu-category-container.css';
 
@@ -23,8 +23,8 @@ function RenderAs({ items, renderAs = 'text' }) {
 
 function MenuCategoryContainer({ title, description, items, renderAs = 'text', containerStyle, headingStyle }) {
     return (
-        <div className='m-5 flex flex-col content-center justify-center' style={containerStyle}>
-            <h1 className='font-bold text-xl underline menu-category-title' style={headingStyle}>{title}</h1>
+        <div className='m-5 flex flex-col content-center justify-center overflow-hidden shadow-lg' style={containerStyle}>
+            <h1 className='font-medium subpixel-antialiased text-2xl text-center' style={headingStyle}>{title}</h1>
             <RenderAs items={items} renderAs={renderAs} />
         </div>
     );

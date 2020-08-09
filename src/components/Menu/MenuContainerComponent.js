@@ -10,9 +10,10 @@ function MenuContainer({ categories, renderAs = 'text', containerStyle, headingS
     const categoriesColTwo = categories.splice(0, categoriesSize);
     const categoriesColOne = categories;
 
-    const colSize = categoriesColTwo.length === 0 ? 1 : 2
+    //const colSize = categoriesColTwo.length === 0 ? 1 : 2
+
     return (
-        <div className={'mx-2 my-2 md:my-5 md:grid md:grid-cols-' + colSize}>
+        <div className={'mx-2 my-2 md:my-5 md:grid md:grid-cols-2'}>
             <div>
                 {
                     categoriesColOne.map(category => {
@@ -40,8 +41,8 @@ function MenuContainer({ categories, renderAs = 'text', containerStyle, headingS
                                     description={category.description}
                                     items={category.items}
                                     renderAs={renderAs}
-                                    containerStyle={{}}
-                                    headingStyle={{}}
+                                    containerStyle={containerStyle}
+                                    headingStyle={headingStyle}
                                 />
                             </div>)
                     })

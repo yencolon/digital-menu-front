@@ -18,13 +18,13 @@ function Tabs({ buttons, selected, onButtonClicked, style }) {
     );
 }
 
-function Buttons({ buttons, onButtonClicked, selected, style }) {
+function Buttons({ buttons, onButtonClicked, selected, containerStyle, buttonStyle }) {
     return (
-        <div className='flex justify-around bg-white'>
+        <div className='flex justify-around' style={containerStyle}>
             {
                 buttons.map(button => {
                     return (
-                        <button id='button' className='bg-blue-500  text-white font-300 py-2 px-4 rounded my-2' onClick={() => onButtonClicked(button.id)} style={style}>{button.name}</button>
+                        <button id='button' className='bg-blue-500  text-white font-300 py-1 px-4 my-2' onClick={() => onButtonClicked(button.id)} style={buttonStyle}>{button.name}</button>
                     )
                 })
             }
@@ -54,7 +54,7 @@ function MenuButtons({ buttons, renderAs = 'buttons', selected, onButtonClicked,
         <div id='buttomGroup' className='w-full' style={{ backgroundColor: backgroundColor, color: textColor }}>
             {
                 renderAs === 'buttons' ?
-                    <Buttons buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} style={{ backgroundColor: backgroundColor, color: textColor , ...buttonStyle}}/>
+                    <Buttons buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} containerStyle={{backgroundColor: backgroundColor}} buttonStyle={{ backgroundColor: backgroundColor, color: textColor , ...buttonStyle}}/>
                     :
                     <Tabs buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} />
             }

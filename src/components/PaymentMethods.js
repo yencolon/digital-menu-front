@@ -1,17 +1,10 @@
 import React from 'react';
 
-function PaymentMethods(){
-    return(
-        <div>
-        {/* <Section>
-            <Heading>
-                Metodos de pago
-            </Heading>
-            <p>
-                En esta seccion va informacion de Metodos de pago que acepta el local
-            </p>
-        </Section> */}
-    </div>
+function PaymentMethods() {
+    return (
+        <div className='flex flex-1 justify-center items-center'>
+            <h1 className='font-bolf text-3xl'>COMING SOOM</h1>
+        </div>
     )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { HomeOutlined, DollarOutlined, ShoppingCartOutlined, ContactsOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 function MenuNavigation({ containerStyle, itemStyle }) {
     return (
@@ -8,7 +9,7 @@ function MenuNavigation({ containerStyle, itemStyle }) {
             {/* className='navigation-container' className='navigation-item'*/}
             <div className='flex flex-col'>
                 <HomeOutlined style={{ fontSize: '20px' }} />
-                <a href="/menu">Menú</a>
+                <Link to="/menu">Menú</Link>
             </div>
             <div className='flex flex-col'>
                 <DollarOutlined style={{ fontSize: '20px' }} />
@@ -16,11 +17,11 @@ function MenuNavigation({ containerStyle, itemStyle }) {
             </div>
             <div className='flex flex-col'>
                 <ShoppingCartOutlined style={{ fontSize: '20px' }} />
-                <a href="/delivery">Delivery</a>
+                <Link to="/delivery">Delivery</Link>
             </div>
             <div className='flex flex-col'>
                 <ContactsOutlined style={{ fontSize: '20px' }} />
-                <a href="/contact">Contacto</a>
+                <Link to="/contact">Contacto</Link>
             </div>
         </nav>
     )
