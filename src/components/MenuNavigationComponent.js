@@ -13,7 +13,7 @@ function MenuNavigation({ containerStyle, itemStyle }) {
             </div>
             <div className='flex flex-col'>
                 <DollarOutlined style={{ fontSize: '20px' }} />
-                <a href="/payments" >Métodos</a>
+                <a href="/payments" >Pagos</a>
             </div>
             <div className='flex flex-col'>
                 <CarOutlined  style={{ fontSize: '20px' }} />
