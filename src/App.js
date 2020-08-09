@@ -14,13 +14,11 @@ const categoryButtonStyle = { 'background-color': '#F2AF29', color: 'white' }
 const imageLogo = 'https://images-platform.99static.com/nxHkdscdUjRrDASmZ017Vf88lqc=/90x85:903x898/600x600/99designs-contests-attachments/106/106029/attachment_106029108';
 const categoryContainerStyle = { 'border': '1px solid #AD343E' }
 
-
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
-       <BrowserRouter>
-      <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={null} title="el taco." />
-     
+      <BrowserRouter>
+        <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={null} title="el taco." />
         <Route exact path='/' component={() =>
           <Menu
             categoryButtonBackground='white'
@@ -36,9 +34,8 @@ function App() {
         <Route path='/contact' component={ContactUs} />
         <Route path='/payments' component={PaymentMethods} />
         <Route path='/delivery' component={Delivery} />
-        {/* <Redirect  />
-       */}
-      <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={itemStyle} />
+      
+        <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={itemStyle} />
       </BrowserRouter>
     </div>
   );
