@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HomeOutlined, DollarOutlined, ShoppingCartOutlined, ContactsOutlined } from '@ant-design/icons';
+import { HomeOutlined, DollarOutlined, ShoppingCartOutlined, ContactsOutlined, CarOutlined, PhoneOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 function MenuNavigation({ containerStyle, itemStyle }) {
@@ -16,11 +16,11 @@ function MenuNavigation({ containerStyle, itemStyle }) {
                 <a href="/payments" >Métodos</a>
             </div>
             <div className='flex flex-col'>
-                <ShoppingCartOutlined style={{ fontSize: '20px' }} />
+                <CarOutlined  style={{ fontSize: '20px' }} />
                 <Link to="/delivery">Delivery</Link>
             </div>
             <div className='flex flex-col'>
-                <ContactsOutlined style={{ fontSize: '20px' }} />
+                <PhoneOutlined style={{ fontSize: '20px' }} />
                 <Link to="/contact">Contacto</Link>
             </div>
         </nav>
