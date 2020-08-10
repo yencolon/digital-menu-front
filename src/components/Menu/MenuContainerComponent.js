@@ -5,7 +5,7 @@ function MenuTiles({ columns = 2, categories }) {
 
 }
 
-function MenuContainer({ categories, renderAs = 'text', containerStyle, headingStyle }) {
+function MenuContainer({ categories, renderAs = 'text', containerStyle, cardStyle, headingStyle }) {
     const categoriesSize = categories.length / 2;
     const categoriesColTwo = categories.splice(0, categoriesSize);
     const categoriesColOne = categories;
@@ -25,6 +25,7 @@ function MenuContainer({ categories, renderAs = 'text', containerStyle, headingS
                                     items={category.items}
                                     renderAs={renderAs}
                                     containerStyle={containerStyle}
+                                    cardStyle={cardStyle}
                                     headingStyle={headingStyle}
                                 />
                             </div>)
@@ -42,6 +43,7 @@ function MenuContainer({ categories, renderAs = 'text', containerStyle, headingS
                                     items={category.items}
                                     renderAs={renderAs}
                                     containerStyle={containerStyle}
+                                    cardStyle={cardStyle}
                                     headingStyle={headingStyle}
                                 />
                             </div>)

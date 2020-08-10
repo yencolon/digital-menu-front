@@ -399,6 +399,7 @@ class Menu extends Component {
                     menuSelected={menuSelectedId}
                     renderAs={this.props.showDishAs}
                     containerStyle={this.props.categoryContainerStyle}
+                    cardStyle={this.props.categoryCardStyle}
                     headingStyle={{}}
                 />
                 <MenuBottomBrand image={this.props.image} title={this.props.title}/>
