@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Route, Redirect, withRouter, Switch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Route, Redirect, withRouter, Switch } from 'react-router-dom';
 import Menu from 'components/Menu/MenuComponent';
 import MenuHeader from 'components/MenuHeaderComponent';
 import MenuNavigation from 'components/MenuNavigationComponent';
@@ -7,36 +7,20 @@ import ContactUs from 'components/ContactUsComponent';
 import PaymentMethods from 'components/PaymentMethods';
 import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
+import {
+    accentColor, categoryCardStyle, categoryContainerStyle, containerStyle,
+    deliveryCardStyle, imageLogo, mainFontFamily, menuFontFamily, navTitleStyle,
+    categoryButtonBackground, paymentCardStyle, primaryColor, titleFontFamily, categoryButtonStyle, dollarRateStyle,
+    menuStyle, menuContainerStyle, showCategoriesMenuAs, showDishAs, name, navBarContainerStyle, navItemStyle, stickButtonsMenu, categoryButtonSelectedStyle
+} from '../shared/MenuStyle';
 
-//color
-const primaryColor = '#F2AF29';
-const accentColor = '#AD343E';
 
-//assets
-const name = 'el taco.';
-const imageLogo = 'https://images-platform.99static.com/nxHkdscdUjRrDASmZ017Vf88lqc=/90x85:903x898/600x600/99designs-contests-attachments/106/106029/attachment_106029108';
-const dollarRate = '268.000,00';
-//fonts
-const titleFontFamily = 'Oleo Script';
-const mainFontFamily = 'Roboto';
-const menuFontFamily = 'Amatic SC';
-
-//styles
-const navBarContainerStyle = { 'background-color': primaryColor, 'font-family': mainFontFamily }
-const navTitleStyle = { color: 'white', 'font-weight': '700', 'font-family': titleFontFamily }
-const navItemStyle = { color: 'white' }
-const categoryButtonStyle = { 'background-color': '#F2AF29', color: 'white', 'font-family': mainFontFamily }
-const categoryContainerStyle = { 'font-family': menuFontFamily }
-const categoryCardStyle = { border: 'solid 1px ' + accentColor }
-const paymentCardStyle = { border: 'solid 1px ' + accentColor }
-const containerStyle = { border: 'solid 1px ' + accentColor }
-const dollarRateStyle = { 'background-color':  accentColor}
-
-//mockup data
+//mockup data.
 const socialLinks = [
-    { network: 'facebook', identification: 'El taco facebook', url: 'www.taco.com' },
-    { network: 'instagram', identification: '@eltaco', url: 'www.taco.com' },
-    { network: 'whatsapp', identification: '+58 412 499 92 92', url: 'www.taco.com' }
+    { network: 'facebook', identification: 'El taco facebook', url: 'https://www.instagram.com/alvaroomarfoto/' },
+    { network: 'instagram', identification: '@eltaco', url: 'https://www.instagram.com/alvaroomarfoto/' },
+    { network: 'whatsapp', identification: '+58 412 499 92 92', url: 'https://www.instagram.com/alvaroomarfoto/' },
+    { network: 'telegram', identification: '@eltaco', url: 'https://www.instagram.com/alvaroomarfoto/' },
 ]
 
 const workingDays = [
@@ -53,14 +37,46 @@ const paymentMethods = [
     { name: 'Provincial', identification: '01154699797945454', owner: 'Alvaro Martinez', extrainfo: '12454554' }
 ]
 
+const deliveries = [
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' }
+]
+
+
+async function getDollarRate() {
+    try {
+        const response = await (await fetch('https://api.yadio.io/json')).json();
+        return response.USD.VND;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 function Main() {
+    const [dollarRate, setDollarRate] = useState(0);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await getDollarRate();
+            setDollarRate(result)
+        };
+
+        fetchData();
+    })
     return (
         <div className='flex flex-1 flex-col'>
             <GoogleFontLoader
                 fonts={[
                     {
                         font: menuFontFamily,
-                        weights: [400, '700'],
+                        weights: ['400', '800'],
                     },
                     {
 
@@ -70,22 +86,30 @@ function Main() {
                     {
                         font: titleFontFamily,
                         weights: [400, '700']
+                    },
+                    {
+                        font: titleFontFamily,
+                        weights: [400, '700']
                     }
                 ]}
             />
-            <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={null} title={name} />
+            <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={imageLogo} title={name} />
             <Switch>
                 <Route exact path='/menu' component={() =>
                     <Menu
-                        categoryButtonBackground={primaryColor}
+                        categoryButtonBackground={categoryButtonBackground}
                         categoryButtonTextColor='white'
                         categoryButtonStyle={categoryButtonStyle}
+                        categoryButtonSelectedStyle={categoryButtonSelectedStyle}
                         categoryContainerStyle={categoryContainerStyle}
                         categoryCardStyle={categoryCardStyle}
-                        showCategoriesAs='tabs'
-                        showDishAs='card'
+                        menuContainerStyle={menuContainerStyle}
+                        style={menuStyle}
+                        showCategoriesAs={showCategoriesMenuAs}
+                        showDishAs={showDishAs}
                         image={imageLogo}
                         title={name}
+                        stickButtonsMenu={stickButtonsMenu}
                     />}
                 />
                 <Route path='/contact' component={() =>
@@ -105,7 +129,12 @@ function Main() {
                         dollarRateStyle={dollarRateStyle}
                     />}
                 />
-                <Route path='/delivery' component={Delivery} />
+                <Route path='/delivery' component={() =>
+                    <Delivery
+                        deliveryCardStyle={deliveryCardStyle}
+                        deliveries={deliveries}
+                    />}
+                />
                 <Redirect from='/' to='/menu'></Redirect>
             </Switch>
             <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} />

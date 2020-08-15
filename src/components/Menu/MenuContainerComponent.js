@@ -1,11 +1,7 @@
 import React from 'react';
-
 import MenuCategoryContainer from './MenuCategoryContainerComponent';
-function MenuTiles({ columns = 2, categories }) {
 
-}
-
-function MenuContainer({ categories, renderAs = 'text', containerStyle, cardStyle, headingStyle }) {
+function MenuContainer({ categories, renderAs = 'text', style, containerStyle, cardStyle, headingStyle }) {
     const categoriesSize = categories.length / 2;
     const categoriesColTwo = categories.splice(0, categoriesSize);
     const categoriesColOne = categories;
@@ -13,8 +9,8 @@ function MenuContainer({ categories, renderAs = 'text', containerStyle, cardStyl
     //const colSize = categoriesColTwo.length === 0 ? 1 : 2
 
     return (
-        <div className={'mx-2 my-2 md:my-5 md:grid md:grid-cols-2'}>
-            <div>
+        <div className={'mx-2 my-2 md:my-5 md:grid md:grid-cols-2'} >
+            <div style={style}>
                 {
                     categoriesColOne.map(category => {
                         return (
@@ -32,7 +28,7 @@ function MenuContainer({ categories, renderAs = 'text', containerStyle, cardStyl
                     })
                 }
             </div>
-            <div>
+            <div style={style}>
                 {
                     categoriesColTwo.map(category => {
                         return (

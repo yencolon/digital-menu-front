@@ -23,7 +23,7 @@ function RenderAs({ items, renderAs = 'text' , style}) {
 
 function MenuCategoryContainer({ title, description, items, renderAs = 'text', containerStyle, cardStyle, headingStyle }) {
     return (
-        <div className='m-5 flex flex-col content-center justify-center overflow-hidden shadow-lg' style={containerStyle}>
+        <div className='mt-5 mb-20 mx-5 md:mx-5 md:mt-5 md:mb-20 flex flex-col content-center justify-center overflow-hidden shadow-lg' style={containerStyle}>
             <h1 className='font-bold subpixel-antialiased text-2xl text-center' style={headingStyle}>{title}</h1>
             <RenderAs items={items} renderAs={renderAs} style={cardStyle}/>
         </div>

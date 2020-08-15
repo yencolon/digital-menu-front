@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HomeOutlined, DollarOutlined, ShoppingCartOutlined, ContactsOutlined, CarOutlined, PhoneOutlined } from '@ant-design/icons';
+import { HomeOutlined, DollarOutlined, CarOutlined, PhoneOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 function MenuNavigation({ containerStyle, itemStyle }) {

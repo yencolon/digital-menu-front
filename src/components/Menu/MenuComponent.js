@@ -383,7 +383,8 @@ class Menu extends Component {
     render() {
         const { menuSelectedId, categoriesToShow } = this.state;
         return (
-            <div className='flex flex-col'>
+            <div className='flex flex-col' style={this.props.style}>
+                
                 <MenuButtons
                     buttons={menus}
                     selected={menuSelectedId}
@@ -392,6 +393,8 @@ class Menu extends Component {
                     backgroundColor = {this.props.categoryButtonBackground}
                     textColor = {this.props.categoryButtonTextColor}
                     buttonStyle = {this.props.categoryButtonStyle}
+                    buttonSelectedStyle = {this.props.categoryButtonSelectedStyle}
+                    stickButtons={this.props.stickButtonsMenu}
                 />
 
                 <MenuContainer
@@ -401,6 +404,7 @@ class Menu extends Component {
                     containerStyle={this.props.categoryContainerStyle}
                     cardStyle={this.props.categoryCardStyle}
                     headingStyle={{}}
+                    style={this.props.menuContainerStyle}
                 />
                 <MenuBottomBrand image={this.props.image} title={this.props.title}/>
             </div>
