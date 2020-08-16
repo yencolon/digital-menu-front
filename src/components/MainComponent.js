@@ -8,9 +8,9 @@ import PaymentMethods from 'components/PaymentMethods';
 import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
 import {
-    accentColor, categoryCardStyle, categoryContainerStyle, containerStyle,
+    categoryCardStyle, categoryContainerStyle, containerStyle,
     deliveryCardStyle, imageLogo, mainFontFamily, menuFontFamily, navTitleStyle,
-    categoryButtonBackground, paymentCardStyle, primaryColor, titleFontFamily, categoryButtonStyle, dollarRateStyle,
+    categoryButtonBackground, paymentCardStyle, titleFontFamily, categoryButtonStyle, dollarRateStyle,
     menuStyle, menuContainerStyle, showCategoriesMenuAs, showDishAs, name, navBarContainerStyle, navItemStyle, stickButtonsMenu, categoryButtonSelectedStyle
 } from '../shared/MenuStyle';
 
@@ -32,20 +32,16 @@ const workingDays = [
 ]
 
 const paymentMethods = [
-    { name: 'Zelle', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '' },
-    { name: 'Banco Banesco', identification: '013465566656656565', owner: 'Alvaro Martinez', extrainfo: '12454545' },
-    { name: 'Provincial', identification: '01154699797945454', owner: 'Alvaro Martinez', extrainfo: '12454554' }
+    { name: 'Zelle', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://como-funciona.com/wp-content/uploads/2019/02/c%C3%B3mo-funciona-la-aplicaci%C3%B3n-zelle-800x400.jpg' },
+    { name: 'Banco Banesco', identification: '013465566656656565', owner: 'Alvaro Martinez', extrainfo: '12454545', image: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://todobancosvenezuela.com/wp-content/uploads/2020/03/banco-banesco.jpg'},
+    { name: 'Provincial', identification: '01154699797945454', owner: 'Alvaro Martinez', extrainfo: '12454554', image: 'https://elconcreto.com/wp-content/uploads/2017/08/ElConcreto-%C2%A1BBVA-Provincial-lleva-salud-y-bienestar-a-empleados-y-familiares-FOTO.jpg' }
 ]
 
 const deliveries = [
     { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://pbs.twimg.com/profile_images/1260682517876801543/tvRDeiLL_400x400.jpg' }
+    { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/108375457_1370133229845097_7999732126284095069_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=54kDnGRgjkQAX8Fjkuq&oh=5f771124c5c10a8ed21c65ca6702c4f5&oe=5F63FCD7' },
+    { name: 'Beefly', description: 'Una descripcion pava del delivey jeje', image: 'https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/81026982_521323728482028_8295797162642505728_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=Btto98IRtscAX_bUhVl&oh=7e3cbaa9fd62c6ba4f9170e937fa2765&oe=5F62FD70' },
+    { name: 'Detodito', description: 'Una descripcion pava del delivey jeje', image: 'https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s150x150/94893925_235772637686246_7643865588611153920_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dwu4IMILmQsAX_k5oW2&oh=7f024479f5408086f1c180467a72f121&oe=5F607BCBhttps://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s150x150/94893925_235772637686246_7643865588611153920_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dwu4IMILmQsAX_k5oW2&oh=7f024479f5408086f1c180467a72f121&oe=5F607BCB' }
 ]
 
 
