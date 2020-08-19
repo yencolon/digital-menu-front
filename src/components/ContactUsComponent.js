@@ -1,40 +1,38 @@
 import React from 'react';
-import { InstagramOutlined, FacebookOutlined, TwitterOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
 
-import telegram from 'assets/images/telegrama.svg';
+// import telegram from 'assets/images/telegrama.svg';
 import instagram from 'assets/images/instagram.svg';
-import twitter from 'assets/images/twitter.svg';
-import whatsapp from 'assets/images/whatsapp.svg';
-import facebook from 'assets/images/facebook.svg';
+// import twitter from 'assets/images/twitter.svg';
+// import whatsapp from 'assets/images/whatsapp.svg';
+// import facebook from 'assets/images/facebook.svg';
 
 function SocialNetwork({ network }) {
 
-    return <div>HOLA</div>
-    switch (network) {
-        case 'instagram':
-            return (
-                // <InstagramOutlined className='text-4xl mr-5' />
-                <img src={instagram} className="w-10 m-2" alt='instagram' height={20} width={20}/>// <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
-            )
-        case 'twitter':
-            return (
-                <img src={twitter} className="w-10 m-2" alt='twitter'  height={20} width={20}/>//<TwitterOutlined className='text-4xl mr-5' />
-            )
-        case 'facebook':
-            return (
-                <img src={facebook} className="w-10 m-2" alt='facebook'  height={20} width={20} />//<FacebookOutlined className='text-4xl mr-5' />
-            )
-        case 'whatsapp':
-            return (
-                <img src={whatsapp} className="w-10 m-2" alt='whatsapp'  height={20} width={20} />//<WhatsAppOutlined className='text-4xl mr-5' />
-            )
-        case 'telegram':
-            return (
-                <img src={telegram} className="w-10 m-2" alt='telegram'  height={20} width={20} />
-            )
-        default: return <div></div>
-    }
+    return <div><img src={instagram} className="w-10 m-2" alt='instagram' height={20} width={20}/></div>
+    // switch (network) {
+    //     case 'instagram':
+    //         return (
+    //             // <InstagramOutlined className='text-4xl mr-5' />
+    //             <img src={instagram} className="w-10 m-2" alt='instagram' height={20} width={20}/>// <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+    //         )
+    //     case 'twitter':
+    //         return (
+    //             <img src={twitter} className="w-10 m-2" alt='twitter'  height={20} width={20}/>//<TwitterOutlined className='text-4xl mr-5' />
+    //         )
+    //     case 'facebook':
+    //         return (
+    //             <img src={facebook} className="w-10 m-2" alt='facebook'  height={20} width={20} />//<FacebookOutlined className='text-4xl mr-5' />
+    //         )
+    //     case 'whatsapp':
+    //         return (
+    //             <img src={whatsapp} className="w-10 m-2" alt='whatsapp'  height={20} width={20} />//<WhatsAppOutlined className='text-4xl mr-5' />
+    //         )
+    //     case 'telegram':
+    //         return (
+    //             <img src={telegram} className="w-10 m-2" alt='telegram'  height={20} width={20} />
+    //         )
+    //     default: return <div></div>
+    // }
 }
 
 function Section({ title, childComponent, sectionStyle }) {
