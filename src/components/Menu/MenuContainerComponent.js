@@ -17,7 +17,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                         return (
                             <div key={category.id} >
                                 {category.id}
-                                {/* <MenuCategoryContainer
+                                <MenuCategoryContainer
                                     title={category.name}
                                     description={category.description}
                                     items={category.items}
@@ -25,7 +25,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                                     innerContainerStyle={innerContainerStyle}
                                     cardStyle={cardStyle}
                                     headingStyle={headingStyle}
-                                /> */}
+                                />
                             </div>)
                     })
                 }
