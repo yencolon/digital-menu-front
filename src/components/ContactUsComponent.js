@@ -42,7 +42,7 @@ function SocialNetwork({ network }) {
                 // </svg>
                 <div></div>
             )
-        default: return <div></div>
+        default: return <div>Hola</div>
     }
 }
 
@@ -86,9 +86,9 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
                         {
                             socialLinks.map(social => {
                                 return (
-                                    // <div onClick={() => { window.open(social.url, "_blank") }}>
+                                    <div onClick={() => { window.open(social.url, "_blank") }}>
                                         <SocialNetwork network={social.network} />
-                                    // </div>
+                                    </div>
                                 )
                             })
                         }
