@@ -401,7 +401,7 @@ class Menu extends Component {
                     categories={categoriesToShow}
                     menuSelected={menuSelectedId}
                     renderAs={this.props.showDishAs}
-                    containerStyle={this.props.categoryContainerStyle}
+                    innerContainerStyle={this.props.categoryContainerStyle}
                     cardStyle={this.props.categoryCardStyle}
                     headingStyle={{}}
                     style={this.props.menuContainerStyle}

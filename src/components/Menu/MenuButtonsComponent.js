@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import 'assets/styles/menu-button-group.css';
 import { Link } from 'react-router-dom';
@@ -30,7 +30,7 @@ function Buttons({ buttons, onButtonClicked, selected, containerStyle, buttonSty
             {
                 buttons.map(button => {
                     return (
-                        <button id='button' className='bg-blue-500  text-white font-bold py-1 px-4 my-2 mx-2' onClick={() => onButtonClicked(button.id)} style={selected === button.id? buttonSelectedStyle : buttonStyle}>{button.name}</button>
+                        <button id='button' className='text-white font-bold py-1 px-4 my-2 mx-2' onClick={() => onButtonClicked(button.id)} style={selected === button.id? buttonSelectedStyle : buttonStyle}>{button.name}</button>
                     )
                 })
             }

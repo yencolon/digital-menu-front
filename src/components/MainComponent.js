@@ -8,10 +8,10 @@ import PaymentMethods from 'components/PaymentMethods';
 import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
 import {
-    categoryCardStyle, categoryContainerStyle, containerStyle,
+    categoryCardStyle, categoryContainerStyle, contacStyle,
     deliveryCardStyle, imageLogo, mainFontFamily, menuFontFamily, navTitleStyle,
     categoryButtonBackground, paymentCardStyle, titleFontFamily, categoryButtonStyle, dollarRateStyle,
-    menuStyle, menuContainerStyle, showCategoriesMenuAs, showDishAs, name, navBarContainerStyle, navItemStyle, stickButtonsMenu, categoryButtonSelectedStyle
+    menuStyle, menuContainerStyle, showCategoriesMenuAs, showDishAs, name, navBarContainerStyle, navItemStyle, stickButtonsMenu, categoryButtonSelectedStyle, hasDelivery
 } from '../shared/MenuStyle';
 
 
@@ -32,9 +32,12 @@ const workingDays = [
 ]
 
 const paymentMethods = [
-    { name: 'Zelle', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://como-funciona.com/wp-content/uploads/2019/02/c%C3%B3mo-funciona-la-aplicaci%C3%B3n-zelle-800x400.jpg' },
-    { name: 'Banco Banesco', identification: '013465566656656565', owner: 'Alvaro Martinez', extrainfo: '12454545', image: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://todobancosvenezuela.com/wp-content/uploads/2020/03/banco-banesco.jpg'},
-    { name: 'Provincial', identification: '01154699797945454', owner: 'Alvaro Martinez', extrainfo: '12454554', image: 'https://elconcreto.com/wp-content/uploads/2017/08/ElConcreto-%C2%A1BBVA-Provincial-lleva-salud-y-bienestar-a-empleados-y-familiares-FOTO.jpg' }
+    { name: 'Zelle', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: ' ', image: 'https://www.enorthfield.com/media/1820/news_zelle.png?anchor=center&mode=crop&width=836&height=457&rnd=132108719400000000' },
+    { name: 'Banco Banesco', identification: '013465566656656565', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://todobancosvenezuela.com/wp-content/uploads/2020/03/banco-banesco.jpg'},
+    { name: 'Banco Provincial', identification: '01154699797945454', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://elconcreto.com/wp-content/uploads/2017/08/ElConcreto-%C2%A1BBVA-Provincial-lleva-salud-y-bienestar-a-empleados-y-familiares-FOTO.jpg' },
+    { name: 'Uphold', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4sJALNNoRLSmoJiyCVSm4fLdy-qFcHbif0w&usqp=CAU' },
+    { name: 'Paypal', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://programacion.net/files/article/20160811100804_paypal.png' },
+    { name: 'Airtm', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://cambiasaldo.com/gana-dinero-por-internet/wp-content/uploads/2019/05/airtm-logo-1024x456.png' }
 ]
 
 const deliveries = [
@@ -48,7 +51,7 @@ const deliveries = [
 async function getDollarRate() {
     try {
         const response = await (await fetch('https://api.yadio.io/json')).json();
-        return response.USD.VND;
+        return response.USD.rate;
     } catch (error) {
         console.log(error);
     }
@@ -67,7 +70,7 @@ function Main() {
         fetchData();
     })
     return (
-        <div className='flex flex-1 flex-col'>
+        <div className='flex flex-1 flex-col' style={{fontFamily: menuFontFamily}}>
             <GoogleFontLoader
                 fonts={[
                     {
@@ -114,7 +117,7 @@ function Main() {
                         title={name}
                         socialLinks={socialLinks}
                         workingDays={workingDays}
-                        containerStyle={containerStyle}
+                        containerStyle={contacStyle}
                     />}
                 />
                 <Route path='/payments' component={() =>
@@ -133,7 +136,7 @@ function Main() {
                 />
                 <Redirect from='/' to='/menu'></Redirect>
             </Switch>
-            <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} />
+            <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} hasDelivery={hasDelivery} />
         </div>
     );
 }

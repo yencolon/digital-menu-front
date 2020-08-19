@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuCategoryContainer from './MenuCategoryContainerComponent';
 
-function MenuContainer({ categories, renderAs = 'text', style, containerStyle, cardStyle, headingStyle }) {
+function MenuContainer({ categories, renderAs = 'text', style, containerStyle, innerContainerStyle, cardStyle, headingStyle }) {
     const categoriesSize = categories.length / 2;
     const categoriesColTwo = categories.splice(0, categoriesSize);
     const categoriesColOne = categories;
@@ -20,7 +20,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, c
                                     description={category.description}
                                     items={category.items}
                                     renderAs={renderAs}
-                                    containerStyle={containerStyle}
+                                    innerContainerStyle={innerContainerStyle}
                                     cardStyle={cardStyle}
                                     headingStyle={headingStyle}
                                 />
@@ -38,7 +38,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, c
                                     description={category.description}
                                     items={category.items}
                                     renderAs={renderAs}
-                                    containerStyle={containerStyle}
+                                    innerContainerStyle={innerContainerStyle}
                                     cardStyle={cardStyle}
                                     headingStyle={headingStyle}
                                 />

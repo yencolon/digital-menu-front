@@ -12,6 +12,7 @@ function ImageCard({ image, title, description, url, style }) {
 function Delivery({ deliveries, deliveryCardStyle }) {
     return (
         <div>
+            <h1 className='text-xl text-center font-bold'>Delivery</h1>
             <div className='mb-20 grid grid-cols-2 md:grid-cols-4'>
                 {
                     deliveries.map((delivery) => {
