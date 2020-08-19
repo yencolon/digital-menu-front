@@ -56,6 +56,7 @@ function Section({ title, childComponent, sectionStyle }) {
 }
 
 function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
+    console.log(socialLinks)
     return (
         <div className='mb-20'>
             <h1 className='text-xl text-center font-bold'>Contactos</h1>
