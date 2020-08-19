@@ -2,7 +2,7 @@ import React from 'react';
 
 function HorizontalCard({ image, title, description, style }) {
     return (
-        <div className='flex items-center m-5 rounded overflow-hidden shadow-lg py-2' style={style}>
+        <div className='flex items-center m-5 rounded overflow-hidden shadow-lg p-5' style={style}>
             <div className='w-1/4 h-full'>
                 <img className='object-fill w-full' src={image} alt={title} />
             </div>
