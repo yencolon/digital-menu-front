@@ -2,11 +2,11 @@ import React from 'react';
 // import { InstagramOutlined, FacebookOutlined, TwitterOutlined, WhatsAppOutlined } from '@ant-design/icons';
 // import { Link } from 'react-router-dom';
 
-// import telegram from 'assets/images/telegrama.svg';
-// import instagram from 'assets/images/instagram.svg';
-// import twitter from 'assets/images/twitter.svg';
-// import whatsapp from 'assets/images/whatsapp.svg';
-// import facebook from 'assets/images/facebook.svg';
+import telegram from 'assets/images/telegrama.svg';
+import instagram from 'assets/images/instagram.svg';
+import twitter from 'assets/images/twitter.svg';
+import whatsapp from 'assets/images/whatsapp.svg';
+import facebook from 'assets/images/facebook.svg';
 
 // function SocialNetwork({ network }) {
 //     switch (network) {
