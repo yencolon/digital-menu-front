@@ -25,7 +25,6 @@ function PaymentMethods({ paymentsMethods, dollarRate, cardContainerStyle, dolla
             <div className='mb-20 mt-5 md:grid md:grid-cols-2' >
                 {
                     paymentsMethods.map((paymentsMethod) => {
-                        console.log(paymentsMethod)
                         return <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle}/>
                     })
                 }

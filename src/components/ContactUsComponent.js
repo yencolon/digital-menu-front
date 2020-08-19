@@ -47,7 +47,7 @@ function Section({ title, childComponent, sectionStyle }) {
 function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
     return (
         <div className='mb-20'>
-            <h1 className='text-xl text-center font-bold'>Contactos</h1>
+            <h1 className='text-xl text-center font-bold'>{title}</h1>
             <Section
                 title='Horarios'
                 sectionStyle={containerStyle}

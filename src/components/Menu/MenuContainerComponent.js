@@ -11,19 +11,17 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
     return (
         <div className={'mx-2 my-2 md:my-5 md:grid md:grid-cols-2'} >
             <div style={style}>
-                uno
                 {
                     categoriesColOne.map(category => {
                         return (
                             <div key={category.id} >
-                                {category.id}
                                 <MenuCategoryContainer
                                     title={category.name}
                                     description=''
                                     items={category.items}
                                     renderAs={renderAs}
                                     innerContainerStyle={innerContainerStyle}
-                                    containerStyle={{}}
+                                    containerStyle={containerStyle}
                                     cardStyle={cardStyle}
                                     headingStyle={headingStyle}
                                 />
@@ -32,8 +30,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                 }
             </div>
             <div style={style}>
-                dos
-                {/* {
+                {
                     categoriesColTwo.map(category => {
                         return (
                             <div key={category.id}>
@@ -43,12 +40,13 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                                     items={category.items}
                                     renderAs={renderAs}
                                     innerContainerStyle={innerContainerStyle}
+                                    containerStyle={containerStyle}
                                     cardStyle={cardStyle}
                                     headingStyle={headingStyle}
                                 />
                             </div>)
                     })
-                } */}
+                }
             </div>
 
         </div>
