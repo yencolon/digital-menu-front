@@ -396,7 +396,7 @@ class Menu extends Component {
                     buttonSelectedStyle = {this.props.categoryButtonSelectedStyle}
                     stickButtons={this.props.stickButtonsMenu}
                 />
-{/* 
+
                 <MenuContainer
                     categories={categoriesToShow}
                     menuSelected={menuSelectedId}
@@ -405,7 +405,7 @@ class Menu extends Component {
                     cardStyle={this.props.categoryCardStyle}
                     headingStyle={{}}
                     style={this.props.menuContainerStyle}
-                /> */}
+                />
                 <MenuBottomBrand image={this.props.image} title={this.props.title}/>
             </div>
         );
