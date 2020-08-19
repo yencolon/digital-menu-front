@@ -23,6 +23,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                                     items={category.items}
                                     renderAs={renderAs}
                                     innerContainerStyle={innerContainerStyle}
+                                    containerStyle={{}}
                                     cardStyle={cardStyle}
                                     headingStyle={headingStyle}
                                 />
