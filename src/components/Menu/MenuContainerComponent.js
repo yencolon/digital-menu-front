@@ -19,7 +19,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                                 {category.id}
                                 <MenuCategoryContainer
                                     title={category.name}
-                                    description={category.description}
+                                    description=''
                                     items={category.items}
                                     renderAs={renderAs}
                                     innerContainerStyle={innerContainerStyle}
