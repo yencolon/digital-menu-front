@@ -111,7 +111,7 @@ function Main() {
                         stickButtonsMenu={stickButtonsMenu}
                     />}
                 />
-                {/* <Route path='/contact' component={() =>
+                <Route path='/contact' component={() =>
                     <ContactUs
                         image={imageLogo}
                         title={name}
@@ -133,7 +133,7 @@ function Main() {
                         deliveryCardStyle={deliveryCardStyle}
                         deliveries={deliveries}
                     />}
-                /> */}
+                />
                 <Redirect from='/' to='/menu'></Redirect>
             </Switch>
             <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} hasDelivery={hasDelivery} />
