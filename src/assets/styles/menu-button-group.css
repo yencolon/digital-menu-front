@@ -1,0 +1,13 @@
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #832232;
+}
+
+.button-group-container{
+    padding-top: 10px;
+}
+
+.button-group-section{
+    padding-bottom: 0;
+}
