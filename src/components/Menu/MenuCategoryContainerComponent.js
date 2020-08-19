@@ -3,8 +3,6 @@ import React from 'react';
 import ItemText from './MenuItemsTextComponent';
 import ItemCard from './MenuItemCardComponent';
 
-import 'assets/styles/menu-category-container.css';
-
 function RenderAs({ items, renderAs = 'text' , style}) {
     switch (renderAs) {
         case 'text':
