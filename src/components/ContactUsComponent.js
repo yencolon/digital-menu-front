@@ -13,23 +13,23 @@ function SocialNetwork({ network }) {
         case 'instagram':
             return (
                 // <InstagramOutlined className='text-4xl mr-5' />
-                <img src={instagram} className="w-10 m-2" alt='instagram' />// <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+                <img src={instagram} className="w-10 m-2" alt='instagram' height={20} width={20}/>// <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
             )
         case 'twitter':
             return (
-                <img src={twitter} className="w-10 m-2" alt='twitter' />//<TwitterOutlined className='text-4xl mr-5' />
+                <img src={twitter} className="w-10 m-2" alt='twitter'  height={20} width={20}/>//<TwitterOutlined className='text-4xl mr-5' />
             )
         case 'facebook':
             return (
-                <img src={facebook} className="w-10 m-2" alt='facebook' />//<FacebookOutlined className='text-4xl mr-5' />
+                <img src={facebook} className="w-10 m-2" alt='facebook'  height={20} width={20} />//<FacebookOutlined className='text-4xl mr-5' />
             )
         case 'whatsapp':
             return (
-                <img src={whatsapp} className="w-10 m-2" alt='whatsapp' />//<WhatsAppOutlined className='text-4xl mr-5' />
+                <img src={whatsapp} className="w-10 m-2" alt='whatsapp'  height={20} width={20} />//<WhatsAppOutlined className='text-4xl mr-5' />
             )
         case 'telegram':
             return (
-                <img src={telegram} className="w-10 m-2" alt='telegram' />
+                <img src={telegram} className="w-10 m-2" alt='telegram'  height={20} width={20} />
             )
         default: return <div></div>
     }
