@@ -30,7 +30,7 @@ function Buttons({ buttons, onButtonClicked, selected, containerStyle, buttonSty
             {
                 buttons.map(button => {
                     return (
-                        <button id='button' className='text-white font-bold py-1 px-4 my-2 mx-2' onClick={() => onButtonClicked(button.id)} style={selected === button.id? buttonSelectedStyle : buttonStyle}>{button.name}</button>
+                        <button id='button' key={button.id} className='text-white font-bold py-1 px-4 my-2 mx-2' onClick={() => onButtonClicked(button.id)} style={selected === button.id? buttonSelectedStyle : buttonStyle}>{button.name}</button>
                     )
                 })
             }

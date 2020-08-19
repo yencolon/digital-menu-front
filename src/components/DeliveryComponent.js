@@ -18,6 +18,7 @@ function Delivery({ deliveries, deliveryCardStyle }) {
                     deliveries.map((delivery) => {
                         return (
                             <ImageCard
+                                key={delivery.name}
                                 image={delivery.image}
                                 title={delivery.name}
                                 url={delivery.url}

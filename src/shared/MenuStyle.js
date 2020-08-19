@@ -19,22 +19,22 @@ export const menuFontFamily = 'Anaheim';
 export const menuTitleFontFamily = 'Anaheim'
 //styles
 //Navigation bar 
-export const navBarContainerStyle = { 'background-color': primaryColor, 'font-family': mainFontFamily , 'font-size': '1.4em'}
-export const navTitleStyle = { color: 'white', 'font-weight': '700', 'font-family': titleFontFamily }
+export const navBarContainerStyle = { backgroundColor: primaryColor, fontFamily: mainFontFamily, fontSize: '1.4em' }
+export const navTitleStyle = { color: 'white', 'font-weight': '700', fontFamily: titleFontFamily }
 //Navigation bar bottom
 export const navItemStyle = { color: 'white' }
 //Menu
 //Menu -> buttons top
 export const categoryButtonBackground = 'transparent';
-export const categoryButtonSelectedStyle = { 'background-color': 'transparent', color: accentColor, 'border-bottom': '2px dotted ' + accentColor, 'border-top': '2px dotted ' + accentColor, 'font-family': mainFontFamily }
-export const categoryButtonStyle = { 'background-color': 'transparent', color: primaryColor, 'border-bottom': '2px dotted ' + primaryColor,  'border-top': '2px dotted ' + primaryColor, 'font-family': mainFontFamily }
+export const categoryButtonSelectedStyle = { backgroundColor: 'transparent', color: accentColor, borderBottom: '2px dotted ' + accentColor, borderTop: '2px dotted ' + accentColor, fontFamily: mainFontFamily }
+export const categoryButtonStyle = { backgroundColor: 'transparent', color: primaryColor, borderBottom: '2px dotted ' + primaryColor, borderTop: '2px dotted ' + primaryColor, fontFamily: mainFontFamily }
 //Menu category container 
 export const menuStyle = {} //1
-export const menuContainerStyle = {'font-family': menuTitleFontFamily, color: accentColor , 'text-align': 'left'} // 2
-export const categoryContainerStyle = { 'border-left': '2px dotted ' + accentColor , 'box-shadow': '0px 0px 0px 0px'} //3
-export const categoryCardStyle = {'font-family': menuFontFamily, color: 'black' } //4
+export const menuContainerStyle = { fontFamily: menuTitleFontFamily, color: accentColor, textAlign: 'left' } // 2
+export const categoryContainerStyle = { borderLeft: '2px dotted ' + accentColor, boxShadow: '0px 0px 0px 0px' } //3
+export const categoryCardStyle = { fontFamily: menuFontFamily, color: 'black' } //4
 
-export const paymentCardStyle = { 'font-family': menuFontFamily }
-export const contacStyle = { 'font-family': menuFontFamily }
-export const dollarRateStyle = { 'background-color': accentColor }
-export const deliveryCardStyle = { 'font-family': menuFontFamily };
+export const paymentCardStyle = { fontFamily: menuFontFamily }
+export const contacStyle = { fontFamily: menuFontFamily }
+export const dollarRateStyle = { backgroundColor: accentColor }
+export const deliveryCardStyle = { fontFamily: menuFontFamily };

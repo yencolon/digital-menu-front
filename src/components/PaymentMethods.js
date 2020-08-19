@@ -8,7 +8,7 @@ function HorizontalCard({ image, title, description, style }) {
             </div>
             <div className='w-9/12 px-5'>
                 <p className='text-lg font-lg font-bold'>{title}</p>
-                <div className='text-sm' style={{ 'white-space': 'pre-line' }}>{description}</div>
+                <div className='text-sm' style={{ whiteSpace: 'pre-line' }}>{description}</div>
             </div>
         </div>
     )
@@ -25,7 +25,7 @@ function PaymentMethods({ paymentsMethods, dollarRate, cardContainerStyle, dolla
             <div className='mb-20 mt-5 md:grid md:grid-cols-2' >
                 {
                     paymentsMethods.map((paymentsMethod) => {
-                        return <HorizontalCard title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle}/>
+                        return <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle}/>
                     })
                 }
             </div>

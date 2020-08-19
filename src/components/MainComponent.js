@@ -134,7 +134,7 @@ function Main() {
                         deliveries={deliveries}
                     />}
                 />
-                <Redirect from='/' to='/contacts'></Redirect>
+                <Redirect from='/' to='/menu'></Redirect>
             </Switch>
             <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} hasDelivery={hasDelivery} />
         </div>
