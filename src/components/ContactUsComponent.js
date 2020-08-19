@@ -6,7 +6,7 @@ import twitter from 'assets/images/twitter.svg';
 import whatsapp from 'assets/images/whatsapp.svg';
 import facebook from 'assets/images/facebook.svg';
 
-function SocialNetwork({ network }) {
+function SocialNetwork({ network = 'instagram' }) {
 
 
     switch (network) {
@@ -20,7 +20,7 @@ function SocialNetwork({ network }) {
         case 'twitter':
             return (
                 <div>
-                    <img src={twitter} className="w-10 m-2" alt='twitter' height={20} width={20} />
+                    {/* <img src={twitter} className="w-10 m-2" alt='twitter' height={20} width={20} /> */}
                 </div>//<TwitterOutlined className='text-4xl mr-5' />
             )
         case 'facebook':
