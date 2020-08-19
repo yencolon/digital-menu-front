@@ -18,6 +18,7 @@ import {
 //mockup data.
 const socialLinks = [
     { network: 'facebook', identification: 'El taco facebook', url: 'https://www.instagram.com/alvaroomarfoto/' },
+    { network: 'twitter', identification: 'eltaco', url: 'https://www.instagram.com/alvaroomarfoto/' },
     { network: 'instagram', identification: '@eltaco', url: 'https://www.instagram.com/alvaroomarfoto/' },
     { network: 'whatsapp', identification: '+58 412 499 92 92', url: 'https://www.instagram.com/alvaroomarfoto/' },
     { network: 'telegram', identification: '@eltaco', url: 'https://www.instagram.com/alvaroomarfoto/' },
