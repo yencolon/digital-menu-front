@@ -2,9 +2,9 @@ import React from 'react';
 
 function ImageCard({ image, title, description, url, style }) {
     return (
-        <div onClick={() => { window.open(url, "_blank") }} className='flex flex-col justify-center items-center m-5 pt-5 rounded overflow-hidden shadow-lg' style={style}>
+        <div onClick={() => { window.open(url, "_blank") }} className='flex flex-col justify-center items-center m-5 rounded overflow-hidden shadow-2xl' style={style}>
             <img className='object-cover w-full' src={image} alt={title} />
-            <p className='text-lg md:text-xl text-center font-medium'>{title}</p>
+            {/* <p className='text-lg md:text-xl text-center font-medium'>{title}</p> */}
         </div>
     )
 }

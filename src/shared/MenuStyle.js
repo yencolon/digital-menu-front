@@ -3,7 +3,7 @@ import logo from '../assets/images/logo.png'
 //color
 export const primaryColor = '#F2AF29';
 export const secondaryColor = '#DB3A34';
-export const accentColor = '#AD343E';
+export const accentColor = '#CF3B03';
 
 //assets
 export const showCategoriesMenuAs = 'buttons';
@@ -15,8 +15,11 @@ export const hasDelivery = true;
 //fonts
 export const titleFontFamily = 'Oleo Script';
 export const mainFontFamily = 'Anaheim';
-export const menuFontFamily = 'Anaheim';
-export const menuTitleFontFamily = 'Anaheim'
+
+
+export const menuCategoryFont = 'Artesania display'
+export const menuCardTitleFontFamily = 'Oleo Script'
+export const menuFontFamily = 'Arvo';
 //styles
 //Navigation bar 
 export const navBarContainerStyle = { backgroundColor: primaryColor, fontFamily: mainFontFamily, fontSize: '1.4em' }
@@ -26,15 +29,21 @@ export const navItemStyle = { color: 'white' }
 //Menu
 //Menu -> buttons top
 export const categoryButtonBackground = 'transparent';
-export const categoryButtonSelectedStyle = { backgroundColor: 'transparent', color: accentColor, borderBottom: '2px dotted ' + accentColor, borderTop: '2px dotted ' + accentColor, fontFamily: mainFontFamily }
-export const categoryButtonStyle = { backgroundColor: 'transparent', color: primaryColor, borderBottom: '2px dotted ' + primaryColor, borderTop: '2px dotted ' + primaryColor, fontFamily: mainFontFamily }
+export const categoryButtonSelectedStyle = { borderRadius: '4px', backgroundColor: 'transparent', color: accentColor, border: '2px solid ' + accentColor,  fontFamily: menuFontFamily, fontSize: '15px' }
+export const categoryButtonStyle = {  borderRadius: '4px', backgroundColor: 'transparent', color: primaryColor, border: '2px solid ' + primaryColor, fontFamily: mainFontFamily, fontSize: '15px'}
 //Menu category container 
 export const menuStyle = {} //1
-export const menuContainerStyle = { fontFamily: menuTitleFontFamily, color: accentColor, textAlign: 'left' } // 2
-export const categoryContainerStyle = { borderLeft: '2px dotted ' + accentColor, boxShadow: '0px 0px 0px 0px' } //3
-export const categoryCardStyle = { fontFamily: menuFontFamily, color: 'black' } //4
+export const menuContainerStyle = { fontFamily: menuCategoryFont,  color: accentColor, textAlign: 'center' } // 2 FONT
+
+export const categoryContainerStyle = {  } //3
+export const categoryHeadingStyle = {}
+export const categoryInnerContainer = { borderTop: '1.5px solid ' + accentColor, boxShadow: '0px 0px 0px 0px' }
+
+export const categoryCardStyle = { fontFamily: menuFontFamily, lineHeight: 1.3, color: 'rgba(0,0,0,1)' } //4  FONT
+export const categoryCardProdutcTitleStyle = { fontFamily: menuFontFamily}  // FONT
+export const categoryCardProdutcDescriptionStyle = { fontFamily: menuFontFamily }
 
 export const paymentCardStyle = { fontFamily: menuFontFamily }
 export const contactStyle = { fontFamily: menuFontFamily }
 export const dollarRateStyle = { backgroundColor: accentColor }
-export const deliveryCardStyle = { fontFamily: menuFontFamily };
+export const deliveryCardStyle = { fontFamily: menuFontFamily, border: '0px solid black' };

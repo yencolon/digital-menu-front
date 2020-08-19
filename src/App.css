@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,10 @@
   to {
     transform: rotate(360deg);
   }
+} */
+@font-face {
+  font-family: 'Artesania display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/ARTESANIA\ display.otf'); /* IE9 Compat Modes */
 }

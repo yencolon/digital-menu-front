@@ -8,38 +8,55 @@ const categories = [
     {
         "id": 1,
         "menuId": 1,
-        "name": "Aperitivos",
+        "name": "Platos Principales",
+        "description":  "Todos los platos son servidos con tortillas de maiz hechos en casa, arroz y frijoles",
         "items": [
             {
                 "id": 1,
                 "categoryId": 1,
-                "name": "Sopa de cebolla a la francesa",
-                "description": "Crutón tostado, quesos gruyer y provolone",
-                "price": 10,
+                "name": "Costillas en Salsa de Chile",
+                "description": "Carne de res braseada servido sobre puré de papas y chimichurri de cilantro ",
+                "price": 34,
                 "image": "https://placeralplato.com/files/2015/10/Sopa-de-cebolla.jpg"
             },
             {
                 "id": 2,
                 "categoryId": 1,
-                "name": "Surtido de carnes y selección de quesos artesanales",
-                "description": "Paté de hígado de pollo, jamón serrano en fetas, chorizo, queso cheddar Pleasant Ridge, queso Truffle Tremor y queso Stilton Blue con guarniciones de temporada",
-                "price": 10,
+                "name": "Pollo al Pastor",
+                "description": "Pechuga de pollo marinada en adobo con glasiado de chile de arbol, salsa de piña y vegetales a la parrilla",
+                "price": 28,
                 "image": "https://i.blogs.es/17e31c/tabla-quesos10/450_1000.jpg"
             },
             {
                 "id": 3,
                 "categoryId": 1,
-                "name": "Hierbas mixtas (opción vegana)",
-                "description": "Crocante de avellanas y frutas de temporada con vinagreta de frutas con carozo",
-                "price": 10,
+                "name": "Alambre de Res",
+                "description": "Filete de flanco, tocino, chile poblano, pimenton morrón con queso Monterey Jack, limón y salsa verde, servido con tortillas de harina",
+                "price": 29,
                 "image": "https://st2.depositphotos.com/9489778/12463/i/950/depositphotos_124639592-stock-photo-spicy-and-sour-mixed-herb.jpg"
             },
             {
                 "id": 4,
                 "categoryId": 1,
-                "name": "Sopa crema de langosta de Maine",
-                "description": "Adornado con crème fraîche y langosta escalfada",
-                "price": 10,
+                "name": "Tacos de Camarón",
+                "description": "Camarones frescos, aioli de chile chipotle-limón, repollo blanco y salsa verde en tortillas de harina",
+                "price": 22,
+                "image": "https://i.pinimg.com/originals/e6/ba/9e/e6ba9eeea6db3627961148ab1a1ea5b6.jpg"
+            },
+            {
+                "id": 5,
+                "categoryId": 1,
+                "name": "Enchiladas de Vegetales",
+                "description": "Tortillas de maiz rellenas con vegetales salteados, cubiertos con queso derretido y salsa ranchera",
+                "price": 22,
+                "image": "https://i.pinimg.com/originals/e6/ba/9e/e6ba9eeea6db3627961148ab1a1ea5b6.jpg"
+            },
+            {
+                "id": 5,
+                "categoryId": 1,
+                "name": "Baja Tacos de Pescado",
+                "description": "Bacalao frito empanizado en cerveza, tiras de repollo, alioli de chile chipole-limón, salsa de piña en tortillas de harina",
+                "price": 29,
                 "image": "https://i.pinimg.com/originals/e6/ba/9e/e6ba9eeea6db3627961148ab1a1ea5b6.jpg"
             }
         ]
@@ -47,86 +64,72 @@ const categories = [
     {
         "id": 2,
         "menuId": 1,
-        "name": "Platos principales",
+        "name": "Aperitivos",
         "items": [
             {
                 "id": 5,
                 "categoryId": 2,
-                "name": "Lomo de cerdo salteado con hierbas",
-                "description": "Panceta de cerdo crujiente, vegetales de temporada preparados de dos maneras, caldo de cerdo y pecanas confitadas",
-                "price": 10,
+                "name": "Guacamole",
+                "description": "Con mango",
+                "price": 13,
                 "image": "https://i.pinimg.com/originals/35/8a/1d/358a1def4746b363c957d19fb45f263b.jpg"
             },
             {
                 "id": 6,
                 "categoryId": 2,
-                "name": "Filete miñón (corte central)",
-                "description": "Papas Yukon de Robuchon, vegetales de temporada y mermelada de cebollas cipollini con glaseado de vino tinto",
-                "price": 10,
+                "name": "Queso Fundido",
+                "description": "Queso derretido con chorizo mexicano, chiles y cebollas, servidos con tortillas",
+                "price": 14,
                 "image": "https://cdn.kiwilimon.com/recetaimagen/146/th5-640x640-14779.jpg"
             },
             {
                 "id": 7,
                 "categoryId": 2,
-                "name": "Pollo Poulet Rouge",
-                "description": "Budín de pan salado y vegetales de temporada con glaseado de pollo",
-                "price": 10,
+                "name": "Ensalada de la Hacienda",
+                "description": "Mezcla de hortalizas frescas, queso, remolachas, pistachos con una vinagreta de chile seco y chiles guajillo",
+                "price": 12.5,
                 "image": ""
             },
             {
                 "id": 8,
                 "categoryId": 2,
-                "name": "Maíz asado y tortellini de espinaca (opción vegana)",
-                "description": "Maíz asado y condimento de pimientos Peppadew, coliflor arcoíris y espárragos, nage de maíz",
-                "price": 10,
+                "name": 'Tlayua "Tostada Gigante"',
+                "description": "Tostada oxaqueña, carne de res a la barbacoa, frijoles negros, chorizo, crema agria mexicana y cebollas encurtidas",
+                "price": 14,
                 "image": "https://img-global.cpcdn.com/recipes/4ac083691a5693a4/751x532cq70/tortelloni-con-salsa-blanca-de-queso-setas-nueces-y-espinacas-foto-principal.jpg"
-            },
-            {
-                "id": 9,
-                "categoryId": 2,
-                "name": "Vieiras salteadas",
-                "description": "Risotto de temporada con hongos silvestres y salsa de mantequilla",
-                "price": 10,
-                "image": "https://www.leplana.fr/medias/album/poelee-de-saint-jacques.jpg"
             }
+           
         ]
     },
     {
         "id": 3,
         "menuId": 2,
-        "name": "Trio de postres",
+        "name": "Postres",
+        "description": "",
         "items": [
             {
                 "id": 10,
                 "categoryId": 3,
-                "name": "Macarrones con mermelada de limón amarillo",
-                "description": "",
-                "price": 10,
+                "name": "Empanada de Manzana",
+                "description": "Hojaldre relleno con salteado de manzanas caramelizadas, servido con helado de dulce de leche y cajeta (salsa de caramelo)",
+                "price": 9,
                 "image": "https://dam.cocinafacil.com.mx/wp-content/uploads/2018/09/mermelada-de-limon-amarillo-con-naranja.jpg"
             },
             {
                 "id": 11,
                 "categoryId": 3,
-                "name": "Trufa de chocolate amargo",
-                "description": "rellena con ganache de Grand Marnier y chocolate amargo",
+                "name": "Volcán de Chocolate",
+                "description": "Torta de lava de chocolate deretido con salsa de frambuesa",
                 "price": 10,
                 "image": "https://i.ytimg.com/vi/F6nzCBgOqIM/maxresdefault.jpg"
             },
             {
                 "id": 12,
                 "categoryId": 3,
-                "name": "Taza de “Chip” de chocolate blanco",
-                "description": "con “Materia Gris” y perlas crujientes",
-                "price": 10,
+                "name": "Helado de Dulce de Leche",
+                "description": "Helado caramelizdo",
+                "price": 9,
                 "image": "https://i.ytimg.com/vi/F6nzCBgOqIM/maxresdefault.jpg"
-            },
-            {
-                "id": 13,
-                "categoryId": 3,
-                "name": "Pastel de vainilla con crema de limón amarillo (opción vegana)",
-                "description": "con merengue de fresas y bayas frescas",
-                "price": 10,
-                "image": "https://www.dominicancooking.com/wp-content/uploads/2015/02/how-to-make-lemon-cake-recipe-DSC_1175.jpg"
             }
         ]
     },
@@ -308,7 +311,7 @@ const menus = [
     {
         "id": 1,
         "name": "Comida",
-        "description": "Platos principales",
+        "description": "Platos Principales",
         "categories": [
             {
                 "id": 1,
@@ -401,9 +404,15 @@ class Menu extends Component {
                     categories={categoriesToShow}
                     menuSelected={menuSelectedId}
                     renderAs={this.props.showDishAs}
-                    innerContainerStyle={this.props.categoryContainerStyle}
+
+                    containerStyle={this.props.containerStyle}
+                    headingStyle={this.props.containerHeadingStyle}
+                   
+                    innerContainerStyle={this.props.innerContainerStyle}
+                    
                     cardStyle={this.props.categoryCardStyle}
-                    headingStyle={{}}
+                    titleCardStyle={this.props.cardTitleStyle}
+                    descriptionCardStyle={this.props.cardDescriptionStyle}
                     style={this.props.menuContainerStyle}
                 />
                 <MenuBottomBrand image={this.props.image} title={this.props.title}/>

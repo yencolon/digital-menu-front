@@ -11,7 +11,8 @@ import {
     categoryCardStyle, categoryContainerStyle, contactStyle,
     deliveryCardStyle, imageLogo, mainFontFamily, menuFontFamily, navTitleStyle,
     categoryButtonBackground, paymentCardStyle, titleFontFamily, categoryButtonStyle, dollarRateStyle,
-    menuStyle, menuContainerStyle, showCategoriesMenuAs, showDishAs, name, navBarContainerStyle, navItemStyle, stickButtonsMenu, categoryButtonSelectedStyle, hasDelivery
+    menuStyle, menuContainerStyle, showCategoriesMenuAs, showDishAs, name, navBarContainerStyle, navItemStyle, stickButtonsMenu, categoryButtonSelectedStyle, hasDelivery, categoryHeadingStyle, categoryInnerContainer, categoryCardProdutcDescriptionStyle,
+    categoryCardProdutcTitleStyle
 } from '../shared/MenuStyle';
 
 
@@ -76,7 +77,7 @@ function Main() {
                 fonts={[
                     {
                         font: menuFontFamily,
-                        weights: ['400', '800'],
+                        weights: ['100', '400', '800'],
                     },
                     {
 
@@ -90,7 +91,11 @@ function Main() {
                     {
                         font: titleFontFamily,
                         weights: [400, '700']
-                    }
+                    },
+                    {
+                        font: menuFontFamily,
+                        weights: ['100', '400', '800'],
+                    },
                 ]}
             />
             <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={imageLogo} title={name} />
@@ -101,10 +106,18 @@ function Main() {
                         categoryButtonTextColor='white'
                         categoryButtonStyle={categoryButtonStyle}
                         categoryButtonSelectedStyle={categoryButtonSelectedStyle}
-                        categoryContainerStyle={categoryContainerStyle}
-                        categoryCardStyle={categoryCardStyle}
+
                         menuContainerStyle={menuContainerStyle}
+                        containerHeadingStyle={categoryHeadingStyle}
+                        innerContainerStyle={categoryInnerContainer}
+                        categoryContainerStyle={categoryContainerStyle}
+                    
+                        categoryCardStyle={categoryCardStyle}
+                        cardTitleStyle={categoryCardProdutcTitleStyle}
+                        cardDescriptionStyle={categoryCardProdutcDescriptionStyle}
+
                         style={menuStyle}
+                        
                         showCategoriesAs={showCategoriesMenuAs}
                         showDishAs={showDishAs}
                         image={imageLogo}

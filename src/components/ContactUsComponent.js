@@ -8,13 +8,12 @@ import facebook from 'assets/images/facebook.svg';
 
 function SocialNetwork({ network = 'instagram' }) {
 
-
     switch (network) {
         case 'instagram':
             return (
                 // <InstagramOutlined className='text-4xl mr-5' />
                 <div>
-                    <img src={instagram} className="w-10 m-2" alt='instagram' height={20} width={20} />
+                    {/* <img src={instagram} className="w-10 m-2" alt='instagram' height={20} width={20} /> */}
                 </div>// <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
             )
         case 'twitter':
@@ -83,7 +82,7 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
                             socialLinks.map(social => {
                                 return (
                                     <div key={social.network} onClick={() => { window.open(social.url, "_blank") }} >
-                                        <SocialNetwork network={social.network} />
+                                        <img src={telegram} className="w-10 m-2" alt='telegram' height={20} width={20} />
                                     </div>
                                 )
                             })

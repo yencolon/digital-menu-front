@@ -1,7 +1,8 @@
 import React from 'react';
 import MenuCategoryContainer from './MenuCategoryContainerComponent';
 
-function MenuContainer({ categories, renderAs = 'text', style, containerStyle, innerContainerStyle, cardStyle, headingStyle }) {
+function MenuContainer({ categories, renderAs = 'text', style = {}, 
+    containerStyle = {}, innerContainerStyle = {}, cardStyle = {}, headingStyle= {}, titleCardStyle = {}, descriptionCardStyle ={} }) {
     const categoriesSize = categories.length / 2;
     const categoriesColTwo = categories.splice(0, categoriesSize);
     const categoriesColOne = categories;
@@ -9,7 +10,7 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
     //const colSize = categoriesColTwo.length === 0 ? 1 : 2
 
     return (
-        <div className={'mx-2 my-2 md:my-5 md:grid md:grid-cols-2'} >
+        <div className={'mx-2 md:grid md:grid-cols-2'} >
             <div style={style}>
                 {
                     categoriesColOne.map(category => {
@@ -17,13 +18,15 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                             <div key={category.id} >
                                 <MenuCategoryContainer
                                     title={category.name}
-                                    description=''
+                                    description={category.description}
                                     items={category.items}
                                     renderAs={renderAs}
-                                    innerContainerStyle={innerContainerStyle}
-                                    containerStyle={containerStyle}
-                                    cardStyle={cardStyle}
                                     headingStyle={headingStyle}
+                                    containerStyle={containerStyle}
+                                    innerContainerStyle={innerContainerStyle}
+                                    cardStyle={cardStyle}
+                                    titleCardStyle={titleCardStyle}
+                                    descriptionCardStyle={descriptionCardStyle}
                                 />
                             </div>)
                     })
@@ -39,10 +42,12 @@ function MenuContainer({ categories, renderAs = 'text', style, containerStyle, i
                                     description={category.description}
                                     items={category.items}
                                     renderAs={renderAs}
-                                    innerContainerStyle={innerContainerStyle}
-                                    containerStyle={containerStyle}
-                                    cardStyle={cardStyle}
                                     headingStyle={headingStyle}
+                                    containerStyle={containerStyle}
+                                    innerContainerStyle={innerContainerStyle}
+                                    cardStyle={cardStyle}
+                                    titleCardStyle={titleCardStyle}
+                                    descriptionCardStyle={descriptionCardStyle}
                                 />
                             </div>)
                     })
