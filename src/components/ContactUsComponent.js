@@ -9,6 +9,8 @@ import whatsapp from 'assets/images/whatsapp.svg';
 import facebook from 'assets/images/facebook.svg';
 
 function SocialNetwork({ network }) {
+
+    return <div>HOLA</div>
     switch (network) {
         case 'instagram':
             return (
