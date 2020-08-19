@@ -8,7 +8,7 @@ import PaymentMethods from 'components/PaymentMethods';
 import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
 import {
-    categoryCardStyle, categoryContainerStyle, contacStyle,
+    categoryCardStyle, categoryContainerStyle, contactStyle,
     deliveryCardStyle, imageLogo, mainFontFamily, menuFontFamily, navTitleStyle,
     categoryButtonBackground, paymentCardStyle, titleFontFamily, categoryButtonStyle, dollarRateStyle,
     menuStyle, menuContainerStyle, showCategoriesMenuAs, showDishAs, name, navBarContainerStyle, navItemStyle, stickButtonsMenu, categoryButtonSelectedStyle, hasDelivery
@@ -117,7 +117,7 @@ function Main() {
                         title={name}
                         socialLinks={socialLinks}
                         workingDays={workingDays}
-                        containerStyle={contacStyle}
+                        containerStyle={contactStyle}
                     />}
                 />
                 <Route path='/payments' component={() =>

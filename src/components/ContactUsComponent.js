@@ -65,14 +65,14 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
                     </ul>
                 } />
             <Section
-                title=''
+                title='title'
                 sectionStyle={containerStyle}
                 childComponent={
                     <div className='flex justify-center'>
                         {
                             socialLinks.map(social => {
                                 return (
-                                    <div onClick={() => { window.open(social.url, "_blank") }} key={social.network}>
+                                    <div key={social.network} onClick={() => { window.open(social.url, "_blank") }} >
                                         <SocialNetwork network={social.network} />
                                     </div>
                                 )

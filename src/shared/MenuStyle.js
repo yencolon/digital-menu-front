@@ -35,6 +35,6 @@ export const categoryContainerStyle = { borderLeft: '2px dotted ' + accentColor,
 export const categoryCardStyle = { fontFamily: menuFontFamily, color: 'black' } //4
 
 export const paymentCardStyle = { fontFamily: menuFontFamily }
-export const contacStyle = { fontFamily: menuFontFamily }
+export const contactStyle = { fontFamily: menuFontFamily }
 export const dollarRateStyle = { backgroundColor: accentColor }
 export const deliveryCardStyle = { fontFamily: menuFontFamily };
