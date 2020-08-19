@@ -26,19 +26,19 @@ function SocialNetwork({ network }) {
         case 'facebook':
             return (
                 <div>
-                    <img src={facebook} className="w-10 m-2" alt='facebook' height={20} width={20} />
+                    {/* <img src={facebook} className="w-10 m-2" alt='facebook' height={20} width={20} /> */}
                 </div>//<FacebookOutlined className='text-4xl mr-5' />
             )
         case 'whatsapp':
             return (
                 <div>
-                    <img src={whatsapp} className="w-10 m-2" alt='whatsapp' height={20} width={20} />
+                    {/* <img src={whatsapp} className="w-10 m-2" alt='whatsapp' height={20} width={20} /> */}
                 </div>//<WhatsAppOutlined className='text-4xl mr-5' />
             )
         case 'telegram':
             return (
                 <div>
-                    <img src={telegram} className="w-10 m-2" alt='telegram' height={20} width={20} />
+                    {/* <img src={telegram} className="w-10 m-2" alt='telegram' height={20} width={20} /> */}
                 </div>
             )
         default: return <div></div>
@@ -57,7 +57,7 @@ function Section({ title, childComponent, sectionStyle }) {
 function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
     return (
         <div className='mb-20'>
-            <h1 className='text-xl text-center font-bold'>{title}</h1>
+            <h1 className='text-xl text-center font-bold'>Contactos</h1>
             <Section
                 title='Horarios'
                 sectionStyle={containerStyle}
