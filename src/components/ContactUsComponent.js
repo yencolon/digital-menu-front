@@ -61,7 +61,7 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
                 title='Horarios'
                 sectionStyle={containerStyle}
                 childComponent={
-                    <ul className='flex'>
+                    <ul>
                         {
                             workingDays.map((day) => {
                                 return (
