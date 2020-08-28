@@ -8,6 +8,7 @@ import PaymentMethods from 'components/PaymentMethods';
 import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
 import { API_URL } from 'shared/apiUrl';
+import MenuBottomBrand from './MenuBottomBrandComponent';
 
 //mockup data.
 const socialLinks = [
@@ -171,6 +172,7 @@ function Main() {
                 </Route>
                 <Redirect from='*' to={url}></Redirect>
             </Switch>
+            <MenuBottomBrand image={imageLogo} title={name} style={{}} />
             <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} hasDelivery={hasDelivery} />
         </div>
     );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import MenuButtons from './MenuButtonsComponent';
 import MenuContainer from './MenuContainerComponent';
-import MenuBottomBrand from './MenuBottomBrandComponent';
+import MenuBottomBrand from '../MenuBottomBrandComponent';
 import { API_URL } from 'shared/apiUrl';
 
 //VER LA POSIBILIDAD DE UTILIZAR CONTEXTO PARA PASAR PASAR LOS PROPS
@@ -81,7 +81,6 @@ function Menu({
                 descriptionCardStyle={cardDescriptionStyle}
                 style={menuContainerStyle}
             />
-            <MenuBottomBrand image={image} title={title} style={footerStyle} />
         </div>
     );
 
