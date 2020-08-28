@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function HorizontalCard({ image, title, description, style }) {
     return (
@@ -7,15 +7,37 @@ function HorizontalCard({ image, title, description, style }) {
                 <img className='object-fill w-full' src={image} alt={title} />
             </div>
             <div className='w-9/12 px-5'>
-                <p className='text-lg font-lg font-bold'>{title}</p>
+                {/* <p className='text-lg font-lg font-bold'>{title}</p> */}
                 <div className='text-sm' style={{ whiteSpace: 'pre-line' }}>{description}</div>
             </div>
         </div>
     )
 }
 
-function PaymentMethods({ paymentsMethods, dollarRate, cardContainerStyle, dollarRateStyle }) {
+function PaymentMethods({ paymentsMethods, cardContainerStyle, dollarRateStyle }) {
 
+    const [dollarRate, setDollarRate] = useState(0);
+
+    useEffect(() => {
+        const getDollarRate = async () => {
+            try {
+                const response = await(await fetch('https://api.yadio.io/json')).json();
+                return response.USD.rate;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        const fetchData = async () => {
+            const result = await getDollarRate();
+            setDollarRate(result)
+        };
+
+        fetchData()
+
+        return () => {
+
+        }
+    }, [])
     return (
         <div>
             <div id='price-tag' className="text-right text-md pr-5 fixed w-full" style={dollarRateStyle}>
@@ -25,7 +47,7 @@ function PaymentMethods({ paymentsMethods, dollarRate, cardContainerStyle, dolla
             <div className='mb-20 mt-5 md:grid md:grid-cols-2' >
                 {
                     paymentsMethods.map((paymentsMethod) => {
-                        return <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle}/>
+                        return <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
                     })
                 }
             </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import MenuCategoryContainer from './MenuCategoryContainerComponent';
 
-function MenuContainer({ categories, renderAs = 'text', style = {}, 
-    containerStyle = {}, innerContainerStyle = {}, cardStyle = {}, headingStyle= {}, titleCardStyle = {}, descriptionCardStyle ={} }) {
+function MenuContainer({ categories, renderAs = 'text', style = {},
+    containerStyle = {}, innerContainerStyle = {}, cardStyle = {}, headingStyle = {}, titleCardStyle = {}, descriptionCardStyle = {} }) {
     const categoriesSize = categories.length / 2;
     const categoriesColTwo = categories.splice(0, categoriesSize);
     const categoriesColOne = categories;

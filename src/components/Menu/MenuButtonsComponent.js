@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import 'assets/styles/menu-button-group.css';
 import { Link } from 'react-router-dom';
+import { stickButtonsMenu } from 'shared/MenuStyle';
 
 function Tabs({ buttons, selected, onButtonClicked, containerStyle, tabStyle }) {
     return (
@@ -38,7 +39,7 @@ function Buttons({ buttons, onButtonClicked, selected, containerStyle, buttonSty
     );
 }
 
-function MenuButtons({ buttons, stickButtons = true, renderAs = 'buttons', selected, onButtonClicked, backgroundColor = 'black', textColor = 'white', buttonStyle = {}, buttonSelectedStyle = {} }) {
+function MenuButtons({ buttons, stickButtons = false, renderAs = 'buttons', selected, onButtonClicked, backgroundColor = 'black', textColor = 'white', buttonStyle = {}, buttonSelectedStyle = {} }) {
 
     useEffect(() => {
         if (stickButtons) {

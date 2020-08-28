@@ -5,7 +5,7 @@ function MenuBottomBrand({ title, image, style }) {
     return (
         <div className='flex flex-col items-center justify-center full-w mb-20' style={style}>
             <div className='rounded-full h-120 w-120 flex items-center justify-center'>
-                <img src={image} alt='logo' height={150} width={150} />
+                <img src={process.env.PUBLIC_URL + '/images/' + image} alt='logo' height={150} width={150} />
             </div>
         </div>
     );

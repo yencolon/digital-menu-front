@@ -1,9 +1,10 @@
 import React from 'react';
 
 function ImageCard({ image, title, description, url, style }) {
+    console.log(image)
     return (
         <div onClick={() => { window.open(url, "_blank") }} className='flex flex-col justify-center items-center m-5 rounded overflow-hidden shadow-2xl' style={style}>
-            <img className='object-cover w-full' src={image} alt={title} />
+            <img className='object-cover w-full' src={process.env.PUBLIC_URL + '/images/' + image} alt={title} />
             {/* <p className='text-lg md:text-xl text-center font-medium'>{title}</p> */}
         </div>
     )

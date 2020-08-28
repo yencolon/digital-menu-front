@@ -66,8 +66,10 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
                             workingDays.map((day) => {
                                 return (
                                     <li className='my-2 text-justify' key={day.day}>
-                                        <b>{day.day}</b>
-                                        <p className='text-sm'>{day.startTime} - {day.endTime}</p>
+                                        <div style={{backgroundColor: '#F2AF29' }}>
+                                            <b >{day.day}</b>
+                                        </div>
+                                        <p className='text-sm text-right'>{day.startTime} - {day.endTime}</p>
                                     </li>)
                             })
                         }
@@ -82,7 +84,7 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
                             socialLinks.map(social => {
                                 return (
                                     <div key={social.network} onClick={() => { window.open(social.url, "_blank") }} >
-                                       {socialNetwork(social.network)}
+                                        {socialNetwork(social.network)}
                                     </div>
                                 )
                             })
