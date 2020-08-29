@@ -12,36 +12,37 @@ import MenuBottomBrand from './MenuBottomBrandComponent';
 
 //mockup data.
 const socialLinks = [
-    { network: 'facebook', identification: 'El taco facebook', url: 'https://www.instagram.com/alvaroomarfoto/' },
-    { network: 'twitter', identification: 'eltaco', url: 'https://www.instagram.com/alvaroomarfoto/' },
-    { network: 'instagram', identification: '@eltaco', url: 'https://www.instagram.com/alvaroomarfoto/' },
+    { network: 'facebook', identification: 'El taco facebook', url: '' },
+    { network: 'twitter', identification: 'eltaco', url: '' },
+    { network: 'instagram', identification: '@eltaco', url: '' },
     { network: 'whatsapp', identification: '+58 412 499 92 92', url: '' },
-    { network: 'telegram', identification: '@eltaco', url: 'https://t.me/alvaroomar' },
+    { network: 'telegram', identification: '@eltaco', url: '' },
 ]
 
 const workingDays = [
-    { day: 'Miercoles', startTime: '7:00 PM', endTime: '3:00 AM' }, { day: 'Jueves', startTime: '7:00 PM', endTime: '3:00 AM' },
+    { day: 'Miercoles', startTime: '7:00 PM', endTime: '3:00 AM' }, 
+    { day: 'Jueves', startTime: '7:00 PM', endTime: '3:00 AM' },
     { day: 'Viernes', startTime: '7:00 PM', endTime: '3:00 AM' },
     { day: 'Sábado', startTime: '7:00 PM', endTime: '3:00 AM' },
     { day: 'Domingo', startTime: '7:00 PM', endTime: '3:00 AM' },
 ]
 
 const paymentMethods = [
-    { name: 'Zelle', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: ' ', image: 'https://www.enorthfield.com/media/1820/news_zelle.png?anchor=center&mode=crop&width=836&height=457&rnd=132108719400000000' },
-    { name: 'Banesco', identification: '013465566656656565', owner: 'Alvaro Martinez', extrainfo: '20192758', image: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://todobancosvenezuela.com/wp-content/uploads/2020/03/banco-banesco.jpg' },
-    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Alvaro Martinez', extrainfo: '20192758', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/BBVAprovinciallogo.svg/1200px-BBVAprovinciallogo.svg.png' },
-    { name: 'Uphold', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4sJALNNoRLSmoJiyCVSm4fLdy-qFcHbif0w&usqp=CAU' },
-    { name: 'Paypal', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://programacion.net/files/article/20160811100804_paypal.png' },
-    { name: 'Airtm', identification: 'alavaroomar@gmail.com', owner: 'Alvaro Martinez', extrainfo: '', image: 'https://cambiasaldo.com/gana-dinero-por-internet/wp-content/uploads/2019/05/airtm-logo-1024x456.png' }
+    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: ' ', image: 'https://www.enorthfield.com/media/1820/news_zelle.png?anchor=center&mode=crop&width=836&height=457&rnd=132108719400000000' },
+    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '20192758', image: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://todobancosvenezuela.com/wp-content/uploads/2020/03/banco-banesco.jpg' },
+    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '20192758', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/BBVAprovinciallogo.svg/1200px-BBVAprovinciallogo.svg.png' },
+    { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4sJALNNoRLSmoJiyCVSm4fLdy-qFcHbif0w&usqp=CAU' },
+    { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://programacion.net/files/article/20160811100804_paypal.png' },
+    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://cambiasaldo.com/gana-dinero-por-internet/wp-content/uploads/2019/05/airtm-logo-1024x456.png' }
 ]
 
 
 const deliveries = [
-    { name: 'Alo', description: 'Una descripcion pava del delivey jeje', image: 'alo.jpg', url: 'https://www.guick.com/' },
+    { name: 'Alo', description: 'Una descripcion pava del delivey jeje', image: 'alo.jpg' },
     { name: 'Beefly', description: 'Una descripcion pava del delivey jeje', image: 'beefly.jpg', url: 'https://beefly.app/' },
     { name: 'Detodito', description: 'Una descripcion pava del delivey jeje', image: 'detodito.jpg', url: 'https://www.detodito.net/' },
     { name: 'Ecobike', description: 'Una descripcion pava del delivey jeje', image: 'ecobike.jpg' },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'guick.jpg' },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'guick.jpg', url: 'https://www.guick.com/' },
     { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'rela.jpg' },
     { name: 'Kepido', description: 'Una descripcion pava del delivey jeje', image: 'kepido.jpg' },
     { name: "Pa'llevar", description: 'Una descripcion pava del delivey jeje', image: 'pallevar.jpg' },

@@ -55,7 +55,7 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle }) {
     }
 
     return (
-        <div className='mb-20'>
+        <div>
             <h1 className='text-xl text-center font-bold'>Contactos</h1>
             <Section
                 title='Horarios'

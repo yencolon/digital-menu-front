@@ -38,13 +38,14 @@ function PaymentMethods({ paymentsMethods, cardContainerStyle, dollarRateStyle }
 
         }
     }, [])
+
     return (
         <div>
             <div id='price-tag' className="text-right text-md pr-5 fixed w-full" style={dollarRateStyle}>
                 <p>La tasa del día es: <b> {dollarRate} Bss </b></p>
             </div>
             <h1 className='text-xl text-center font-bold mt-8'>Métodos de Pago</h1>
-            <div className='mb-20 mt-5 md:grid md:grid-cols-2' >
+            <div className='mt-5 md:grid md:grid-cols-2' >
                 {
                     paymentsMethods.map((paymentsMethod) => {
                         return <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
