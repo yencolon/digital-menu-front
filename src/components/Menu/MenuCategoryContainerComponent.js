@@ -8,7 +8,7 @@ function RenderAs({ items, renderAs = 'text' , itemContainerStyle, itemTitleStyl
         case 'text':
             return items.map(item => {
                 return (
-                    <ItemText key={item.id} title={item.name} description={item.description} price={item.price} containerStyle={itemContainerStyle} titleStyle={itemTitleStyle} descriptionStyle={itemDescriptionStyle}/>
+                    <ItemText key={item.id} title={item.name} description={item.description} price={item.price} image={item.image} containerStyle={itemContainerStyle} titleStyle={itemTitleStyle} descriptionStyle={itemDescriptionStyle}/>
             )})
         case 'card':
             return items.map(item => {
