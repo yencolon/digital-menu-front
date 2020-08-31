@@ -8,7 +8,7 @@ function HorizontalCard({ image, title, description, style }) {
             </div>
             <div className='w-9/12 px-5'>
                 {/* <p className='text-lg font-lg font-bold'>{title}</p> */}
-                <div className='text-sm' style={{ whiteSpace: 'pre-line' }}>{description}</div>
+                <div style={{ whiteSpace: 'pre-line',  fontSize: 17 }}>{description}</div>
             </div>
         </div>
     )
@@ -29,7 +29,8 @@ function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, 
         }
         const fetchData = async () => {
             const result = await getDollarRate();
-            setDollarRate(result)
+            const resultString  = result + '';
+            setDollarRate(resultString.substring(0, 3) + ',' + resultString.substring(3, resultString.indexOf('.')));
         };
 
         fetchData()
@@ -41,16 +42,17 @@ function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, 
 
     return (
         <div>
-            <div id='price-tag' className="text-right text-md pr-5 fixed w-full" style={dollarRateStyle}>
-                <p>La tasa del día es: <b> {dollarRate} Bss </b></p>
-            </div>
-            <h1 className='text-xl text-center font-bold mt-8' style={titleStyle}>Métodos de Pago</h1>
+           
+            <h1 className='text-xl text-center font-bold' style={titleStyle}>Métodos de Pago</h1>
             <div className='mt-5 md:grid md:grid-cols-2' >
                 {
                     paymentsMethods.map((paymentsMethod) => {
                         return <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
                     })
                 }
+            </div>
+            <div id='price-tag' className="text-center text-md w-full" style={dollarRateStyle}>
+                <p>Tasa del día: {dollarRate} BsS. </p>
             </div>
         </div>
     )

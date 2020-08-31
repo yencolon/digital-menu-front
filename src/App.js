@@ -10,10 +10,10 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <BrowserRouter>
         <Switch>
-          <Route path="/menu/:id">
-            <Main />
+          <Route path="/menu/:id" >
+            <Main colorSpin='#F2AF29' />
           </Route>
-          <Route  path="/customers">
+          <Route path="/customers">
             <MenuListComponent />
           </Route>
           <Redirect from="/" to="/menu/1" />
