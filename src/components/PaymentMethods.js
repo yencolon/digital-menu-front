@@ -4,7 +4,7 @@ function HorizontalCard({ image, title, description, style }) {
     return (
         <div className='flex items-center m-5 rounded overflow-hidden shadow-lg p-5' style={style}>
             <div className='w-1/4 h-full'>
-                <img className='object-fill w-full' src={image} alt={title} />
+                <img className='object-fill w-full' src={process.env.PUBLIC_URL + '/images/' +image} alt={title} />
             </div>
             <div className='w-9/12 px-5'>
                 {/* <p className='text-lg font-lg font-bold'>{title}</p> */}
@@ -14,7 +14,7 @@ function HorizontalCard({ image, title, description, style }) {
     )
 }
 
-function PaymentMethods({ paymentsMethods, cardContainerStyle, dollarRateStyle }) {
+function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, dollarRateStyle }) {
 
     const [dollarRate, setDollarRate] = useState(0);
 
@@ -44,7 +44,7 @@ function PaymentMethods({ paymentsMethods, cardContainerStyle, dollarRateStyle }
             <div id='price-tag' className="text-right text-md pr-5 fixed w-full" style={dollarRateStyle}>
                 <p>La tasa del día es: <b> {dollarRate} Bss </b></p>
             </div>
-            <h1 className='text-xl text-center font-bold mt-8'>Métodos de Pago</h1>
+            <h1 className='text-xl text-center font-bold mt-8' style={titleStyle}>Métodos de Pago</h1>
             <div className='mt-5 md:grid md:grid-cols-2' >
                 {
                     paymentsMethods.map((paymentsMethod) => {

@@ -9,6 +9,7 @@ import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
 import { API_URL } from 'shared/apiUrl';
 import MenuBottomBrand from './MenuBottomBrandComponent';
+import { secondaryColor } from 'shared/MenuStyle';
 
 //mockup data.
 const socialLinks = [
@@ -28,12 +29,12 @@ const workingDays = [
 ]
 
 const paymentMethods = [
-    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: ' ', image: 'https://www.enorthfield.com/media/1820/news_zelle.png?anchor=center&mode=crop&width=836&height=457&rnd=132108719400000000' },
-    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '20192758', image: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://todobancosvenezuela.com/wp-content/uploads/2020/03/banco-banesco.jpg' },
-    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '20192758', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/BBVAprovinciallogo.svg/1200px-BBVAprovinciallogo.svg.png' },
-    { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4sJALNNoRLSmoJiyCVSm4fLdy-qFcHbif0w&usqp=CAU' },
-    { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://programacion.net/files/article/20160811100804_paypal.png' },
-    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://cambiasaldo.com/gana-dinero-por-internet/wp-content/uploads/2019/05/airtm-logo-1024x456.png' }
+    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: ' ', image: 'zelle.png' },
+    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '20192758', image: 'banesco.jpg' },
+    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '20192758', image: 'bbva.png' },
+    { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'uphold.png' },
+    { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'paypal.png' },
+    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'airtm.png' }
 ]
 
 
@@ -46,7 +47,10 @@ const deliveries = [
     { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'rela.jpg' },
     { name: 'Kepido', description: 'Una descripcion pava del delivey jeje', image: 'kepido.jpg' },
     { name: "Pa'llevar", description: 'Una descripcion pava del delivey jeje', image: 'pallevar.jpg' },
-    { name: "Ubiigo", description: 'Una descripcion pava del delivey jeje', image: 'ubiigo.jpg' }
+    { name: "Ubiigo", description: 'Una descripcion pava del delivey jeje', image: 'ubiigo.jpg' },
+    { name: "Valencia Delivery", description: 'Una descripcion pava del delivey jeje', image: 'valencia.jpg' },
+    { name: 'Yolopio', description: 'Una descripcion pava del delivey jeje', image: 'yolopido.jpg' },
+    { name: 'Yummy', description: 'Una descripcion pava del delivey jeje', image: 'yummy.jpg' }
 ]
 
 
@@ -118,7 +122,8 @@ function Main() {
         categoryHeadingStyle,
         categoryInnerContainer,
         categoryCardProdutcDescriptionStyle,
-        categoryCardProdutcTitleStyle
+        categoryCardProdutcTitleStyle,
+        sectionHeadingStyle
     } = styles
 
     return (
@@ -151,6 +156,7 @@ function Main() {
                 </Route>
                 <Route path={`${path}/contact`}>
                     <ContactUs
+                        titleStyle={sectionHeadingStyle}
                         image={imageLogo}
                         title={name}
                         socialLinks={socialLinks}
@@ -160,6 +166,7 @@ function Main() {
                 </Route>
                 <Route path={`${path}/payments`}>
                     <PaymentMethods
+                        titleStyle={sectionHeadingStyle}
                         paymentsMethods={paymentMethods}
                         cardContainerStyle={paymentCardStyle}
                         dollarRateStyle={dollarRateStyle}
@@ -167,6 +174,7 @@ function Main() {
                 </Route>
                 <Route path={`${path}/delivery`}>
                     <Delivery
+                        titleStyle={sectionHeadingStyle}
                         deliveryCardStyle={deliveryCardStyle}
                         deliveries={deliveries}
                     />

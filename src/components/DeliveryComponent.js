@@ -10,10 +10,10 @@ function ImageCard({ image, title, description, url, style }) {
     )
 }
 
-function Delivery({ deliveries, deliveryCardStyle ={}}) {
+function Delivery({ deliveries, deliveryCardStyle = {}, titleStyle = {}}) {
     return (
         <div>
-            <h1 className='text-xl text-center font-bold'>Delivery</h1>
+            <h1 className='text-xl text-center font-bold' style={titleStyle}>Delivery</h1>
             <div className='grid grid-cols-2 md:grid-cols-4'>
                 {
                     deliveries.map((delivery) => {
