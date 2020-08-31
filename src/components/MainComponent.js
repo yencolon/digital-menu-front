@@ -10,6 +10,7 @@ import GoogleFontLoader from 'react-google-font-loader';
 import { API_URL } from 'shared/apiUrl';
 import MenuBottomBrand from './MenuBottomBrandComponent';
 import { secondaryColor } from 'shared/MenuStyle';
+import { LoadingOutlined } from '@ant-design/icons';
 
 //mockup data.
 const socialLinks = [
@@ -30,27 +31,28 @@ const workingDays = [
 
 const paymentMethods = [
     { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: ' ', image: 'zelle.png' },
-    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '20192758', image: 'banesco.jpg' },
-    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '20192758', image: 'bbva.png' },
+    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '22111000', image: 'banesco.jpg' },
+    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '22111000', image: 'bbva.png' },
     { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'uphold.png' },
     { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'paypal.png' },
-    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'airtm.png' }
+    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'airtm.png' },
+    { name: "Pago Móvil", identification: '041245454585', owner: 'Pedro Perez', extrainfo: '22111000', image: 'Pago Movil.jpg',  },
 ]
 
 
 const deliveries = [
-    { name: 'Alo', description: 'Una descripcion pava del delivey jeje', image: 'alo.jpg' },
+    { name: 'Alo', description: 'Una descripcion pava del delivey jeje', image: 'alo.jpg', url: 'https://wa.me/message/RAM5DY4A4KTYJ1' },
     { name: 'Beefly', description: 'Una descripcion pava del delivey jeje', image: 'beefly.jpg', url: 'https://beefly.app/' },
-    { name: 'Detodito', description: 'Una descripcion pava del delivey jeje', image: 'detodito.jpg', url: 'https://www.detodito.net/' },
-    { name: 'Ecobike', description: 'Una descripcion pava del delivey jeje', image: 'ecobike.jpg' },
+    { name: 'Detodito', description: 'Una descripcion pava del delivey jeje', image: 'detodito.jpg', url: 'https://uqr.to/gdsm' },
+    { name: 'Ecobike', description: 'Una descripcion pava del delivey jeje', image: 'ecobike.jpg',  url: 'https://wa.me/584248399970'  },
     { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'guick.jpg', url: 'https://www.guick.com/' },
-    { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'rela.jpg' },
-    { name: 'Kepido', description: 'Una descripcion pava del delivey jeje', image: 'kepido.jpg' },
-    { name: "Pa'llevar", description: 'Una descripcion pava del delivey jeje', image: 'pallevar.jpg' },
-    { name: "Ubiigo", description: 'Una descripcion pava del delivey jeje', image: 'ubiigo.jpg' },
-    { name: "Valencia Delivery", description: 'Una descripcion pava del delivey jeje', image: 'valencia.jpg' },
-    { name: 'Yolopio', description: 'Una descripcion pava del delivey jeje', image: 'yolopido.jpg' },
-    { name: 'Yummy', description: 'Una descripcion pava del delivey jeje', image: 'yummy.jpg' }
+    { name: 'Kepido', description: 'Una descripcion pava del delivey jeje', image: 'kepido.jpg', url: 'https://onelink.to/kp9bn7' },
+    { name: "Pa'llevar", description: 'Una descripcion pava del delivey jeje', image: 'pallevar.jpg', url: 'https://comida.pidepallevar.com/es' },
+    { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'rela.jpg', url: 'https://wa.me/584147782469'},
+    { name: "Ubiigo", description: 'Una descripcion pava del delivey jeje', image: 'ubiigo.jpg', url: 'https://ubiigo.co/app/link' },
+    { name: "Valencia Delivery", description: 'Una descripcion pava del delivey jeje', image: 'valencia.jpg', url: 'https://www.deliveryvalencia.com' },
+    { name: 'Yolopio', description: 'Una descripcion pava del delivey jeje', image: 'yolopido.jpg', url: 'https://yolopido.com' },
+    { name: 'Yummy', description: 'Una descripcion pava del delivey jeje', image: 'yummy.jpg', url: 'https://pideyummy.com'}
 ]
 
 
@@ -62,7 +64,7 @@ function LoadFonts({ fonts }) {
     const fontsToLoad = filterFonts.map(font => {
         return {
             font: font,
-            weights: [400, '700'],
+            weights: [400, '500', '600', '700'],
         }
     })
 
@@ -73,8 +75,18 @@ function LoadFonts({ fonts }) {
     )
 }
 
-function Main() {
+const LoadingMenu = ({color}) => {
+
+    return(
+        <div className='flex flex-1 w-full bg-white justify-center items-center'>
+            <LoadingOutlined style={{ fontSize: '80px', color:color }} />
+        </div>
+    )
+}
+
+function Main({colorSpin = '#097392'}) {
     const [styles, setStyles] = useState({});
+    const [loading, setLoading] = useState(true);
     const { path, url } = useRouteMatch();
     const { id } = useParams();
 
@@ -84,6 +96,7 @@ function Main() {
         }
         const loadStyles = async () => {
             const styles = await fetchStyles();
+            setLoading(false)
             setStyles(styles[0])
         }
 
@@ -127,6 +140,7 @@ function Main() {
     } = styles
 
     return (
+        loading? <LoadingMenu color={colorSpin} /> :
         <div className='flex flex-1 flex-col' style={{ fontFamily: menuFontFamily }}>
             <LoadFonts fonts={[mainFontFamily, titleFontFamily, menuFontFamily]} />
             <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={imageLogo} title={name} />
