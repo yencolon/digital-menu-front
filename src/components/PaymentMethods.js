@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import LoadingMenu from './LoadingComponent';
 
 function HorizontalCard({ image, title, description, style }) {
     return (
@@ -14,7 +15,7 @@ function HorizontalCard({ image, title, description, style }) {
     )
 }
 
-function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, dollarRateStyle }) {
+function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, dollarRateStyle, loading, loadingComponent }) {
 
     const [dollarRate, setDollarRate] = useState(0);
 
@@ -41,8 +42,8 @@ function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, 
     }, [])
 
     return (
+        loading ? loadingComponent :
         <div>
-           
             <h1 className='text-xl text-center font-bold' style={titleStyle}>Métodos de Pago</h1>
             <div className='mt-5 md:grid md:grid-cols-2' >
                 {

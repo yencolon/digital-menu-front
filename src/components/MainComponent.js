@@ -9,8 +9,7 @@ import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
 import { API_URL } from 'shared/apiUrl';
 import MenuBottomBrand from './MenuBottomBrandComponent';
-import { secondaryColor } from 'shared/MenuStyle';
-import { LoadingOutlined } from '@ant-design/icons';
+import LoadingMenu from './LoadingComponent';
 
 //mockup data.
 const socialLinks = [
@@ -75,16 +74,9 @@ function LoadFonts({ fonts }) {
     )
 }
 
-const LoadingMenu = ({color}) => {
-
-    return(
-        <div className='flex flex-1 w-full bg-white justify-center items-center'>
-            <LoadingOutlined style={{ fontSize: '80px', color:color }} />
-        </div>
-    )
-}
 
 function Main({colorSpin = '#097392'}) {
+    const LoadingComponent = <LoadingMenu color={colorSpin} />;
     const [styles, setStyles] = useState({});
     const [loading, setLoading] = useState(true);
     const { path, url } = useRouteMatch();
@@ -138,9 +130,9 @@ function Main({colorSpin = '#097392'}) {
         categoryCardProdutcTitleStyle,
         sectionHeadingStyle
     } = styles
-
+    // background: `url(${process.env.PUBLIC_URL}/images/bg.jpg)` }
     return (
-        loading? <LoadingMenu color={colorSpin} /> :
+        loading? LoadingComponent :
         <div className='flex flex-1 flex-col' style={{ fontFamily: menuFontFamily }}>
             <LoadFonts fonts={[mainFontFamily, titleFontFamily, menuFontFamily]} />
             <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={imageLogo} title={name} />
@@ -166,6 +158,8 @@ function Main({colorSpin = '#097392'}) {
                         image={imageLogo}
                         title={name}
                         stickButtonsMenu={stickButtonsMenu}
+                        loading={loading}
+                        loadingComponent={LoadingComponent}
                     />
                 </Route>
                 <Route path={`${path}/contact`}>
@@ -176,6 +170,8 @@ function Main({colorSpin = '#097392'}) {
                         socialLinks={socialLinks}
                         workingDays={workingDays}
                         containerStyle={contactStyle}
+                        loading={loading}
+                        loadingComponent={LoadingComponent}
                     />
                 </Route>
                 <Route path={`${path}/payments`}>
@@ -184,6 +180,8 @@ function Main({colorSpin = '#097392'}) {
                         paymentsMethods={paymentMethods}
                         cardContainerStyle={paymentCardStyle}
                         dollarRateStyle={dollarRateStyle}
+                        loading={loading}
+                        loadingComponent={LoadingComponent}
                     />
                 </Route>
                 <Route path={`${path}/delivery`}>
@@ -191,6 +189,8 @@ function Main({colorSpin = '#097392'}) {
                         titleStyle={sectionHeadingStyle}
                         deliveryCardStyle={deliveryCardStyle}
                         deliveries={deliveries}
+                        loading={loading}
+                        loadingComponent={LoadingComponent}
                     />
                 </Route>
                 <Redirect from='*' to={url}></Redirect>

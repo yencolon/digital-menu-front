@@ -10,8 +10,9 @@ function ImageCard({ image, title, description, url, style }) {
     )
 }
 
-function Delivery({ deliveries, deliveryCardStyle = {}, titleStyle = {}}) {
+function Delivery({ deliveries, deliveryCardStyle = {}, titleStyle = {}, loading, loadingComponent}) {
     return (
+        loading ? loadingComponent:
         <div>
             <h1 className='text-xl text-center font-bold' style={titleStyle}>Delivery</h1>
             <div className='grid grid-cols-2 md:grid-cols-4'>

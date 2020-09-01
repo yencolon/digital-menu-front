@@ -16,7 +16,7 @@ function Section({ title, childComponent, sectionStyle }) {
     )
 }
 
-function ContactUs({ title, image, socialLinks, workingDays, containerStyle, titleStyle = {} }) {
+function ContactUs({ title, image, socialLinks, workingDays, containerStyle, titleStyle = {}, loading, loadingComponent }) {
 
     const socialNetwork = (network) => {
         switch (network) {
@@ -55,6 +55,7 @@ function ContactUs({ title, image, socialLinks, workingDays, containerStyle, tit
     }
 
     return (
+        loading ? loadingComponent :
         <div>
             <h1 className='text-xl text-center font-bold' style={titleStyle}>Contactos</h1>
             <Section

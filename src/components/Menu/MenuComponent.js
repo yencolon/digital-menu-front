@@ -24,7 +24,10 @@ function Menu({
     categoryButtonTextColor,
     containerHeadingStyle,
     stickButtonsMenu,
-    showDishAs }) {
+    showDishAs,
+    loadingComponent, 
+    loading
+    }) {
 
     const [menuSelectedId, setMenuSelected] = useState(1);
     const [categoriesToShow, setCategoriesToShow] = useState([]);
@@ -57,6 +60,7 @@ function Menu({
     }, [])
 
     return (
+        loading ? loadingComponent :
         <div className='flex flex-col justify-between' style={style}>
             <MenuButtons
                 buttons={menu}
