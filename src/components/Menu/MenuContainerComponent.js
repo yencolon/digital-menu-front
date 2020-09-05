@@ -3,9 +3,12 @@ import MenuCategoryContainer from './MenuCategoryContainerComponent';
 
 function MenuContainer({ categories, renderAs = 'text', style = {},
     containerStyle = {}, innerContainerStyle = {}, cardStyle = {}, headingStyle = {}, titleCardStyle = {}, descriptionCardStyle = {} }) {
+
+    if (categories.length === 0) return <div></div>
+
     const categoriesSize = categories.length / 2;
-    const categoriesColTwo = categories.splice(0, categoriesSize);
-    const categoriesColOne = categories;
+    const categoriesColOne = categories.splice(0, categoriesSize);
+    const categoriesColTwo = categories;
 
     //const colSize = categoriesColTwo.length === 0 ? 1 : 2
 
@@ -17,9 +20,9 @@ function MenuContainer({ categories, renderAs = 'text', style = {},
                         return (
                             <div key={category.id} >
                                 <MenuCategoryContainer
-                                    title={category.name}
+                                    title={category.title}
                                     description={category.description}
-                                    items={category.items}
+                                    items={category.products}
                                     renderAs={renderAs}
                                     headingStyle={headingStyle}
                                     containerStyle={containerStyle}
@@ -38,9 +41,9 @@ function MenuContainer({ categories, renderAs = 'text', style = {},
                         return (
                             <div key={category.id}>
                                 <MenuCategoryContainer
-                                    title={category.name}
+                                    title={category.title}
                                     description={category.description}
-                                    items={category.items}
+                                    items={category.products}
                                     renderAs={renderAs}
                                     headingStyle={headingStyle}
                                     containerStyle={containerStyle}

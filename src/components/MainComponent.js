@@ -29,29 +29,29 @@ const workingDays = [
 ]
 
 const paymentMethods = [
-    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: ' ', image: 'zelle.png' },
-    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '22111000', image: 'banesco.jpg' },
-    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '22111000', image: 'bbva.png' },
-    { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'uphold.png' },
-    { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'paypal.png' },
-    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'airtm.png' },
-    { name: "Pago Móvil", identification: '041245454585', owner: 'Pedro Perez', extrainfo: '22111000', image: 'Pago Movil.jpg',  },
+    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: ' ', image: 'https://haptico-back.herokuapp.com/images/zelle.png' },
+    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/banesco.jpg' },
+    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/bbva.png' },
+    { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/uphold.png' },
+    { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/paypal.png' },
+    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/airtm.png' },
+    { name: "Pago Móvil", identification: '041245454585', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/Pago Movil.jpg',  },
 ]
 
 
 const deliveries = [
-    { name: 'Alo', description: 'Una descripcion pava del delivey jeje', image: 'alo.jpg', url: 'https://wa.me/message/RAM5DY4A4KTYJ1' },
-    { name: 'Beefly', description: 'Una descripcion pava del delivey jeje', image: 'beefly.jpg', url: 'https://beefly.app/' },
-    { name: 'Detodito', description: 'Una descripcion pava del delivey jeje', image: 'detodito.jpg', url: 'https://uqr.to/gdsm' },
-    { name: 'Ecobike', description: 'Una descripcion pava del delivey jeje', image: 'ecobike.jpg',  url: 'https://wa.me/584248399970'  },
-    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'guick.jpg', url: 'https://www.guick.com/' },
-    { name: 'Kepido', description: 'Una descripcion pava del delivey jeje', image: 'kepido.jpg', url: 'https://onelink.to/kp9bn7' },
-    { name: "Pa'llevar", description: 'Una descripcion pava del delivey jeje', image: 'pallevar.jpg', url: 'https://comida.pidepallevar.com/es' },
-    { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'rela.jpg', url: 'https://wa.me/584147782469'},
-    { name: "Ubiigo", description: 'Una descripcion pava del delivey jeje', image: 'ubiigo.jpg', url: 'https://ubiigo.co/app/link' },
-    { name: "Valencia Delivery", description: 'Una descripcion pava del delivey jeje', image: 'valencia.jpg', url: 'https://www.deliveryvalencia.com' },
-    { name: 'Yolopio', description: 'Una descripcion pava del delivey jeje', image: 'yolopido.jpg', url: 'https://yolopido.com' },
-    { name: 'Yummy', description: 'Una descripcion pava del delivey jeje', image: 'yummy.jpg', url: 'https://pideyummy.com'}
+    { name: 'Alo', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/alo.jpg', url: 'https://wa.me/message/RAM5DY4A4KTYJ1' },
+    { name: 'Beefly', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/beefly.jpg', url: 'https://beefly.app/' },
+    { name: 'Detodito', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/detodito.jpg', url: 'https://uqr.to/gdsm' },
+    { name: 'Ecobike', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/ecobike.jpg',  url: 'https://wa.me/584248399970'  },
+    { name: 'Guick', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/guick.jpg', url: 'https://www.guick.com/' },
+    { name: 'Kepido', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/kepido.jpg', url: 'https://onelink.to/kp9bn7' },
+    { name: "Pa'llevar", description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/pallevar.jpg', url: 'https://comida.pidepallevar.com/es' },
+    { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/rela.jpg', url: 'https://wa.me/584147782469'},
+    { name: "Ubiigo", description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/ubiigo.jpg', url: 'https://ubiigo.co/app/link' },
+    { name: "Valencia Delivery", description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/valencia.jpg', url: 'https://www.deliveryvalencia.com' },
+    { name: 'Yolopio', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/yolopido.jpg', url: 'https://yolopido.com' },
+    { name: 'Yummy', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/yummy.jpg', url: 'https://pideyummy.com'}
 ]
 
 
@@ -84,12 +84,12 @@ function Main({colorSpin = '#097392'}) {
 
     useEffect(() => {
         const fetchStyles = async () => {
-            return await (await fetch(API_URL + 'styles?storeId=' + id)).json();
+            return await (await fetch(API_URL + `menu/${id}/styles`)).json();
         }
         const loadStyles = async () => {
-            const styles = await fetchStyles();
+            const response = await fetchStyles();
             setLoading(false)
-            setStyles(styles[0])
+            setStyles(response.styles)
         }
 
         loadStyles()
@@ -166,11 +166,9 @@ function Main({colorSpin = '#097392'}) {
                     <ContactUs
                         titleStyle={sectionHeadingStyle}
                         image={imageLogo}
-                        title={name}
                         socialLinks={socialLinks}
                         workingDays={workingDays}
                         containerStyle={contactStyle}
-                        loading={loading}
                         loadingComponent={LoadingComponent}
                     />
                 </Route>
@@ -180,7 +178,6 @@ function Main({colorSpin = '#097392'}) {
                         paymentsMethods={paymentMethods}
                         cardContainerStyle={paymentCardStyle}
                         dollarRateStyle={dollarRateStyle}
-                        loading={loading}
                         loadingComponent={LoadingComponent}
                     />
                 </Route>
@@ -189,7 +186,6 @@ function Main({colorSpin = '#097392'}) {
                         titleStyle={sectionHeadingStyle}
                         deliveryCardStyle={deliveryCardStyle}
                         deliveries={deliveries}
-                        loading={loading}
                         loadingComponent={LoadingComponent}
                     />
                 </Route>

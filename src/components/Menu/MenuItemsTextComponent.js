@@ -6,7 +6,7 @@ function ModalImage({ image, show, onClose }) {
     return (
         <div className='fixed right-0 left-0 top-0 bottom-0 bg-black-100 z-40' onClick={onClose}>
             <div className='shadow-lg bg-white z-50 right-0 left-0 top-0 mx-auto mt-24 w-4/5 md:w-1/4 m-5' style={{ height: 450 }}>
-                <img className='object-cover h-full' src={process.env.PUBLIC_URL + '/images/' + image} alt='imagen'></img>
+                <img className='object-cover h-full' src={image} alt='imagen'></img>
                 <button className='bg-white w-full ' onClick={onClose}>
                     Cerrar
                     <CloseCircleOutlined />

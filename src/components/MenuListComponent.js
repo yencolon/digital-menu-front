@@ -6,7 +6,7 @@ function Card({ store }) {
     return (
         <div>
             <div className='max-w-sm rounded overflow-hidden shadow-lg'>
-                <img src={process.env.PUBLIC_URL + '/images/' + imageLogo} alt={store.name} />
+                <img src={imageLogo} alt={store.name} />
             </div>
             <p className='text-2xl font-bold '>{store.name}</p>
         </div>
