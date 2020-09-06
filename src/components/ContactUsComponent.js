@@ -11,7 +11,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 //     )
 // }
 
-function ContactUs({ title, imagesToShow, socialLinks, workingDays, containerStyle, titleStyle = {}, loadingComponent }) {
+function ContactUs({ title, imagesToShow, addresLine, addresCoordinate, socialLinks, workingDays, containerStyle, titleStyle = {}, loadingComponent }) {
 
     const [loading, setLoading] = useState(false);
 
@@ -32,10 +32,11 @@ function ContactUs({ title, imagesToShow, socialLinks, workingDays, containerSty
                         }
                     </Carousel>
                 </div>
-                <div className='text-center flex-col text-sm my-10'>
-                    <p>Jueves a Viernes {'\n'}
-                    07:00 PM - 12:00 AM</p>
-                    <a className='block' href='https://www.google.com/maps/place/Av.+Anzo%C3%A1tegui,+Lecher%C3%ADa+6016,+Anzo%C3%A1tegui/@10.1936303,-64.6957979,17z/data=!3m1!4b1!4m5!3m4!1s0x8c2d735e2cc7cd0f:0xd8da82b57b3a6955!8m2!3d10.193625!4d-64.6936092?hl=es' target="_blank" rel="noopener noreferrer">Av. Anzoategui, Lechería, Venezuela</a>
+                <div className='text-center flex-col text-sm my-10 justify-around'>
+                    <p>Jueves a Sábado 
+                     11:00 AM - 6:00 PM <br></br>
+                     Domingo
+                     11:00 AM - 3:00 PM</p>
                     <a href="tel: 04121234567"> 0412 123 45 67</a>
                 </div>
             </div >

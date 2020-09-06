@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HomeOutlined, DollarOutlined, CarOutlined, PhoneOutlined } from '@ant-design/icons';
+import { HomeOutlined, DollarOutlined, CarOutlined, PhoneOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import { NavLink, useRouteMatch } from 'react-router-dom';
 
 function MenuNavigation({ match, containerStyle, itemStyle, hasDelivery = true }) {
@@ -25,8 +25,8 @@ function MenuNavigation({ match, containerStyle, itemStyle, hasDelivery = true }
                 </NavLink> : null
             }
             <NavLink to={`${url}/contact`} className='flex flex-col text-sm'>
-                <PhoneOutlined style={{ fontSize: '20px' }} />
-                Contacto
+                <ClockCircleOutlined style={{ fontSize: '20px' }} />
+                Horarios
             </NavLink>
         </nav>
     )

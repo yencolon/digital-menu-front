@@ -39,9 +39,9 @@ function MenuHeader({ title, containerStyle, titleStyle, image, navItemStyle, na
                 <NavLink to={`${url}/contact`} className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-5 font-normal" activeStyle={navItemActiveStyle}>Contactos</NavLink>
             </div>
             <div className='lg:hidden flex justify-end flex-grow' > 
-                <Link to={`${url}/contact`} className='mr-8'>
+                <a href='https://goo.gl/maps/u57TnknURpbaNg7y8' target="_blank" rel="noopener noreferrer" className='mr-8'>
                     <Pin fill='white' width={28} />
-                </Link>
+                </a>
                 <Link to={`${url}/contact`} className='mr-8'>
                     <InstagramIcon fill='white' width={26} />
                 </Link>

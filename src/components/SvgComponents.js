@@ -131,7 +131,7 @@ export const InstagramIcon = (props) => {
 
 export const Search = (props) => {
     return (
-        <svg viewBox="0 0 100 125" {...props}>
+        <svg viewBox="0 0 100 100" {...props}>
             <path
                 d="M44 14.5c-15.8 0-28.7 12.9-28.7 28.7S28.2 71.9 44 71.9 72.7 59 72.7 43.2 59.8 14.5 44 14.5z"
                 fill="none"
