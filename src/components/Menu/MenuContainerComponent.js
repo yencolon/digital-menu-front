@@ -3,12 +3,12 @@ import MenuCategoryContainer from './MenuCategoryContainerComponent';
 
 function MenuContainer({ categories, renderAs = 'text', style = {},
     containerStyle = {}, innerContainerStyle = {}, cardStyle = {}, headingStyle = {}, titleCardStyle = {}, descriptionCardStyle = {} }) {
-
+    
     if (categories.length === 0) return <div></div>
 
     const categoriesSize = categories.length / 2;
-    const categoriesColOne = categories.splice(0, categoriesSize);
-    const categoriesColTwo = categories;
+    const categoriesColOne = categories.slice(0, categoriesSize);
+    const categoriesColTwo = categories.slice(categoriesSize, categories.length);
 
     //const colSize = categoriesColTwo.length === 0 ? 1 : 2
 

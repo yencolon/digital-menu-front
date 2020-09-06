@@ -18,9 +18,9 @@ function ContactUs({ title, imagesToShow, addresLine, addresCoordinate, socialLi
     return (
         loading ? loadingComponent :
             <div>
-                <h1 className='text-xl text-center font-bold' style={titleStyle}>Contactos</h1>
+                <h1 className='text-xl text-center font-bold' style={titleStyle}>Horarios</h1>
                 <div className='mt-10'>
-                    <Carousel autoPlay infiniteLoop={true} showIndicators={false} showArrows={true} showThumbs={false} centerMode={true} showStatus={false} centerSlidePercentage={40}>
+                    <Carousel autoPlay infiniteLoop={true} showIndicators={false} showArrows={true} showThumbs={false} centerMode={true} showStatus={false} centerSlidePercentage={42}>
                         {
                             imagesToShow.map(image => {
                                 return (
