@@ -6,6 +6,8 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
+      portrait: { 'raw': '(orientation: portrait)' },
+      landscape: { 'raw': '(orientation: landscape)' },
       sm: '640px',
       md: '768px',
       lg: '1024px',

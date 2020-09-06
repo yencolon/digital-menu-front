@@ -12,6 +12,7 @@ function MenuBottomBrand({ title, image, style, addressLine = 'Av. Anzoátegui',
                     <h6>{addressLine}</h6>
                     <h6>{addresCity}</h6>
                 </a>
+                <a href="tel:04144395260"> 0414 439 52 60</a>
             </div>
         </div>
     );
