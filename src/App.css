@@ -42,3 +42,11 @@
   font-weight: 400;
   src: url('./assets/fonts/ARTESANIA\ display.otf'); /* IE9 Compat Modes */
 }
+
+@font-face {
+  font-family: 'Avenir next';
+  font-style: normal;
+  src: url('./assets/fonts/AvenirNextLTPro-Regular.otf'); /* IE9 Compat Modes */
+}
+
+.carousel .slide{ background: none; }

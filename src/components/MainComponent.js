@@ -12,6 +12,17 @@ import MenuBottomBrand from './MenuBottomBrandComponent';
 import LoadingMenu from './LoadingComponent';
 
 //mockup data.
+const images = [
+    'https://haptico-back.herokuapp.com/images/1.jpg',
+    'https://haptico-back.herokuapp.com/images/2.jpg',
+    'https://haptico-back.herokuapp.com/images/3.jpg',
+    'https://haptico-back.herokuapp.com/images/4.jpg',
+    'https://haptico-back.herokuapp.com/images/5.jpg',
+    'https://haptico-back.herokuapp.com/images/6.jpg',
+    'https://haptico-back.herokuapp.com/images/7.jpg',
+    'https://haptico-back.herokuapp.com/images/8.jpg', 
+]
+
 const socialLinks = [
     { network: 'facebook', identification: 'El taco facebook', url: '' },
     { network: 'twitter', identification: 'eltaco', url: '' },
@@ -165,7 +176,7 @@ function Main({colorSpin = '#097392'}) {
                 <Route path={`${path}/contact`}>
                     <ContactUs
                         titleStyle={sectionHeadingStyle}
-                        image={imageLogo}
+                        imagesToShow={images}
                         socialLinks={socialLinks}
                         workingDays={workingDays}
                         containerStyle={contactStyle}

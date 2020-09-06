@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import { CloseCircleOutlined } from '@ant-design/icons';
+import { Search } from 'components/SvgComponents';
 
 function ModalImage({ image, show, onClose }) {
     if (!show) return <div></div>
@@ -23,7 +24,12 @@ function ItemText({ title, image, description, price, containerStyle, titleStyle
         <Fragment>
             <ModalImage image={image} show={showModalImage} onClose={() => setShowModalImage(false)} />
             <div className="px-2 py-2 w-full" style={containerStyle}>
-                <h1 className="font-bold text-lg" style={titleStyle} onClick={() => setShowModalImage(true)}>{title}</h1>
+                <div className='flex flex-row justify-center'>
+                    <h1 className="font-bold text-lg" style={titleStyle} >{title}</h1>
+                    <button className='ml-2' onClick={() => setShowModalImage(true)}>
+                        <Search width={12} />
+                    </button>
+                </div>
                 <p className="text-sm" style={descriptionStyle} >{description}</p>
                 <p className="text-xs" style={descriptionStyle}>{price}</p>
             </div>
