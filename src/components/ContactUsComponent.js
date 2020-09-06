@@ -37,7 +37,7 @@ function ContactUs({ title, imagesToShow, addresLine, addresCoordinate, socialLi
                      11:00 AM - 6:00 PM <br></br>
                      Domingo
                      11:00 AM - 3:00 PM</p>
-                    <a href="tel: 04121234567"> 0412 123 45 67</a>
+                    <a href="tel:04144395260"> 0414 439 52 60</a>
                 </div>
             </div >
     )
