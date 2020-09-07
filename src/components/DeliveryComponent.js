@@ -5,7 +5,7 @@ function ImageCard({ image, title, description, url, loadingComponent, onloadCou
     const [loading, setLoading] = useState(true);
     return (
 
-        <div onClick={() => { window.open(url, "_blank") }} className={`flex flex-col justify-center items-center m-2 landscape:m-5 bg-gray-400 ${loading? `animate-pulse`: ``}`} style={style}>
+        <div onClick={() => { window.open(url, "_blank") }} className={`flex flex-col justify-center items-center m-2 landscape:m-5 ${loading? `animate-pulse bg-gray-400`: ``}`} style={style}>
             <img className= { `object-cover rounded overflow-hidden shadow-2xl ${loading ? `h-24 w-24 md:h-48 md:w-48` : ''}`}  src={image} alt={title} onLoad={() => setLoading(false)} loading='lazy' />
         </div>
     )
