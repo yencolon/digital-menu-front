@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { CloseCircleOutlined } from '@ant-design/icons';
+import { CloseCircleOutlined, CameraOutlined } from '@ant-design/icons';
 import { Search } from 'components/SvgComponents';
 
 function ModalImage({ image, show, onClose }) {
@@ -21,17 +21,18 @@ function ModalImage({ image, show, onClose }) {
 function ItemText({ title, image, description, price, containerStyle, titleStyle, descriptionStyle }) {
     const [showModalImage, setShowModalImage] = useState(false);
     return (
-        <Fragment>
+        <div>
             <ModalImage image={image} show={showModalImage} onClose={() => setShowModalImage(false)} />
             <div className="px-2 py-2 w-full" style={containerStyle}>
                 <div className='flex flex-row justify-center align-center' onClick={() => setShowModalImage(true)}>
                     <h1 className="font-bold text-lg" style={titleStyle} >{title}</h1>
-                    <Search width={12} style={{ paddingTop: '4.2px', marginLeft: '2.5px' }} />
+                    <CameraOutlined className='font-bold text-xs ml-1 self-center' />
+                    {/* <Search width={12} style={{ paddingTop: '4.2px', marginLeft: '2.5px' }} /> */}
                 </div>
                 <p className="text-sm" style={descriptionStyle} >{description}</p>
                 <p className="text-xs" style={descriptionStyle}>{price}</p>
             </div>
-        </Fragment>
+        </div>
 
     );
 }
