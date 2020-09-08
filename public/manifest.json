@@ -1,6 +1,6 @@
 {
-  "short_name": "El Patron",
-  "name": "Haptico",
+  "short_name": "El Patrón",
+  "name": "El Patrón",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
