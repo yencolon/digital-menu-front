@@ -1,11 +1,11 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { CloseCircleOutlined, CameraOutlined } from '@ant-design/icons';
-import { Search } from 'components/SvgComponents';
+import { Slide } from "react-awesome-reveal";
 
 function ModalImage({ image, show, onClose }) {
     if (!show) return <div></div>
     return (
-        <div className='fixed right-0 left-0 top-0 bottom-0 bg-black-400 flex justify-center' onClick={onClose}>
+        <div className='fixed right-0 left-0 top-0 bottom-0 flex justify-center bg-black bg-opacity-25 z-30' onClick={onClose}>
             <div className='shadow-lg bg-transparent h-64 landscape:h-56 flex flex-col justify-center items-center self-center m-10'>
                 <img className='object-cover h-full' src={image} alt='imagen'></img>
                 <button className='w-full bg-white ' onClick={onClose}>
@@ -23,17 +23,18 @@ function ItemText({ title, image, description, price, containerStyle, titleStyle
     return (
         <div>
             <ModalImage image={image} show={showModalImage} onClose={() => setShowModalImage(false)} />
-            <div className="px-2 py-2 w-full" style={containerStyle}>
-                <div className='flex flex-row justify-center align-center' onClick={() => setShowModalImage(true)}>
-                    <h1 className="font-bold text-lg" style={titleStyle} >{title}</h1>
-                    <CameraOutlined className='font-bold text-xs ml-1 self-center' />
-                    {/* <Search width={12} style={{ paddingTop: '4.2px', marginLeft: '2.5px' }} /> */}
+            <Slide className="px-2 py-2 w-full" direction='up' cascade triggerOnce >
+                <div style={containerStyle}>
+                    <div className='flex flex-row justify-center align-center' onClick={() => setShowModalImage(true)}>
+                        <h1 className="font-bold text-lg" style={titleStyle} >{title}</h1>
+                        <CameraOutlined className='font-bold text-sm ml-1 self-center' />
+                        {/* <Search width={12} style={{ paddingTop: '4.2px', marginLeft: '2.5px' }} /> */}
+                    </div>
+                    <p className="text-sm" style={descriptionStyle} >{description}</p>
+                    <p className="text-xs" style={descriptionStyle}>{price}</p>
                 </div>
-                <p className="text-sm" style={descriptionStyle} >{description}</p>
-                <p className="text-xs" style={descriptionStyle}>{price}</p>
-            </div>
+            </Slide>
         </div>
-
     );
 }
 

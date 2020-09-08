@@ -74,7 +74,7 @@ function LoadFonts({ fonts }) {
     const fontsToLoad = filterFonts.map(font => {
         return {
             font: font,
-            weights: [400, '500', '600', '700'],
+            weights: [400, '500', '600', '700', '800', 900],
         }
     })
 

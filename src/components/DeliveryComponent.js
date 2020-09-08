@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Slide, AttentionSeeker } from "react-awesome-reveal";
 
 function ImageCard({ image, title, description, url, loadingComponent, onloadCount, style }) {
     const [loading, setLoading] = useState(true);
     return (
 
-        <div onClick={() => { window.open(url, "_blank") }} className={`flex flex-col justify-center items-center m-2 landscape:m-5 ${loading? `animate-pulse bg-gray-400`: ``}`} style={style}>
-            <img className= { `object-cover rounded overflow-hidden shadow-2xl ${loading ? `h-24 w-24 md:h-48 md:w-48` : ''}`}  src={image} alt={title} onLoad={() => setLoading(false)} loading='lazy' />
+        <div onClick={() => { window.open(url, "_blank") }} className={`flex flex-col justify-center items-center m-2 landscape:m-5 ${loading ? `animate-pulse bg-gray-400` : ``}`} style={style}>
+            <img className={`object-cover rounded overflow-hidden shadow-2xl ${loading ? `h-24 w-24 md:h-48 md:w-48` : ''}`} src={image} alt={title} onLoad={() => setLoading(false)} loading='lazy' />
         </div>
     )
+}
+
+ImageCard.propTypes = {
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    url: PropTypes.string,
+    loadingComponent: PropTypes.element,
+    onloadCount: PropTypes.func,
+    style: PropTypes.object
 }
 
 function Delivery({ deliveries, deliveryCardStyle = {}, titleStyle = {}, loadingComponent }) {
@@ -36,6 +47,13 @@ function Delivery({ deliveries, deliveryCardStyle = {}, titleStyle = {}, loading
             </div>
         </div>
     )
+}
+
+Delivery.propTypes = {
+    deliveries: PropTypes.array.isRequired,
+    deliveryCardStyle: PropTypes.object,
+    titleStyle: PropTypes.object,
+    loadingComponent: PropTypes.element
 }
 
 export default Delivery;
