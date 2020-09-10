@@ -40,7 +40,7 @@ const workingDays = [
 ]
 
 const paymentMethods = [
-    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: ' ', image: 'https://haptico-back.herokuapp.com/images/zelle.png' },
+    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: '', extrainfo: 'Bank of America', image: 'https://haptico-back.herokuapp.com/images/zelle.png' },
     { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/banesco.jpg' },
     { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/bbva.png' },
     { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/uphold.png' },
