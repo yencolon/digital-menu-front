@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoadingMenu from './LoadingComponent';
+import { Slide } from 'react-awesome-reveal';
 
 function HorizontalCard({ image, title, description, style }) {
     return (
@@ -9,7 +10,7 @@ function HorizontalCard({ image, title, description, style }) {
             </div>
             <div className='w-9/12 px-5'>
                 {/* <p className='text-lg font-lg font-bold'>{title}</p> */}
-                <div style={{ whiteSpace: 'pre-line',  fontSize: 17 }}>{description}</div>
+                <div style={{ whiteSpace: 'pre-line', fontSize: 17 }}>{description}</div>
             </div>
         </div>
     )
@@ -22,7 +23,7 @@ function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, 
     useEffect(() => {
         const getDollarRate = async () => {
             try {
-                const response = await(await fetch('https://api.yadio.io/json')).json();
+                const response = await (await fetch('https://api.yadio.io/json')).json();
                 return response.USD.rate;
             } catch (error) {
                 console.log(error);
@@ -30,7 +31,7 @@ function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, 
         }
         const fetchData = async () => {
             const result = await getDollarRate();
-            const resultString  = result + '';
+            const resultString = result + '';
             setDollarRate(resultString.substring(0, 3) + ',' + resultString.substring(3, resultString.indexOf('.')));
             setLoading(false)
         };
@@ -44,19 +45,21 @@ function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, 
 
     return (
         loading ? loadingComponent :
-        <div>
-            <h1 className='text-xl text-center font-bold' style={titleStyle}>Métodos de Pago</h1>
-            <div className='mt-5 md:grid md:grid-cols-2' >
-                {
-                    paymentsMethods.map((paymentsMethod) => {
-                        return <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
-                    })
-                }
+            <div>
+                <h1 className='text-xl text-center font-bold' style={titleStyle}>Métodos de Pago</h1>
+                <div className='mt-5 md:grid md:grid-cols-2' >
+                    {
+                        paymentsMethods.map((paymentsMethod) => {
+                            return( <Slide direction='up' cascade triggerOnce>
+                                <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
+                            </Slide>)
+                        })
+                    }
+                </div>
+                <div id='price-tag' className="text-center text-md w-full" style={dollarRateStyle}>
+                    <p>Tasa del día: {dollarRate} BsS. </p>
+                </div>
             </div>
-            <div id='price-tag' className="text-center text-md w-full" style={dollarRateStyle}>
-                <p>Tasa del día: {dollarRate} BsS. </p>
-            </div>
-        </div>
     )
 }
 

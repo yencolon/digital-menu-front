@@ -32,12 +32,17 @@ function ContactUs({ title, imagesToShow, addresLine, addresCoordinate, socialLi
                         }
                     </Carousel>
                 </div>
-                <div className='text-center flex-col text-sm my-10 justify-around'>
-                    <p>Jueves a Sábado 
-                     11:00 AM - 6:00 PM <br></br>
+                <div className='text-center flex-col text-md my-10 justify-around'>
+                    <p>Jueves a Sábado
+                     11:00 AM - 6:00 PM 
+                     <br></br>
                      Domingo
-                     11:00 AM - 3:00 PM</p>
-                    <a href="tel:04144395260"> 0414 439 52 60</a>
+                     11:00 AM - 3:00 PM</p>  
+                    <br></br>
+                    <a href="mailto:elpatron.sugerencias@gmail.com"><b>Buzón de Sugerencias:</b> elpatron.sugerencias@gmail.com</a>
+                    <br></br>
+                    <br></br>
+                    <a href='https://wa.me/584144395260'><b>Quejas y Reclamos</b></a>
                 </div>
             </div >
     )

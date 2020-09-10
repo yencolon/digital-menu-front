@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import MenuButtons from './MenuButtonsComponent';
 import MenuContainer from './MenuContainerComponent';
-import MenuBottomBrand from '../MenuBottomBrandComponent';
+import MenuBanner from './MenuBannerComponent';
 import { API_URL } from 'shared/apiUrl';
 import { useParams } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ function Menu({
     footerStyle,
     containerStyle,
     categoryCardStyle,
+    categoryCardHighLightStyle,
     cardTitleStyle,
     cardDescriptionStyle,
     innerContainerStyle,
@@ -28,7 +29,6 @@ function Menu({
     showDishAs,
     loadingComponent,
 }) {
-
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
     const [categorySelectedId, setCategorySelected] = useState(1);
@@ -42,7 +42,7 @@ function Menu({
     }
 
     const fetchMenu = async () => {
-        return await (await fetch(API_URL + `menu/${id}`)).json();
+        return await (await fetch(API_URL + `api/menu/${id}`)).json();
     }
 
     useEffect(() => {
@@ -61,6 +61,7 @@ function Menu({
     return (
         loading ? loadingComponent :
             <div className='flex flex-col justify-between' style={style}>
+                <MenuBanner />
                 <MenuButtons
                     buttons={categories}
                     selected={categorySelectedId}
@@ -79,6 +80,7 @@ function Menu({
                     headingStyle={containerHeadingStyle}
                     innerContainerStyle={innerContainerStyle}
                     cardStyle={categoryCardStyle}
+                    cardHighLightStyle={categoryCardHighLightStyle}
                     titleCardStyle={cardTitleStyle}
                     descriptionCardStyle={cardDescriptionStyle}
                     style={menuContainerStyle}

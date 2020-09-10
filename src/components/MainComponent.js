@@ -86,8 +86,9 @@ function LoadFonts({ fonts }) {
 }
 
 
-function Main({ colorSpin = '#097392' }) {
-    const LoadingComponent = <LoadingMenu color={colorSpin} />;
+function Main({ colorSpin = '#097392', logo }) {
+    const LoadingComponent = <LoadingMenu color={colorSpin} image={logo} showImage={true} />;
+    const TabsLoadingComponent = <LoadingMenu color={colorSpin} image={logo} />;
     const [styles, setStyles] = useState({});
     const [loading, setLoading] = useState(true);
     const { path, url } = useRouteMatch();
@@ -95,12 +96,12 @@ function Main({ colorSpin = '#097392' }) {
 
     useEffect(() => {
         const fetchStyles = async () => {
-            return await (await fetch(API_URL + `menu/${id}/styles`)).json();
+            return await (await fetch(API_URL + `api/menu/${id}/styles`)).json();
         }
         const loadStyles = async () => {
             const response = await fetchStyles();
-            setLoading(false)
-            setStyles(response.styles)
+            setTimeout(setLoading(false), 5000);
+            setStyles(response.styles);
         }
 
         loadStyles()
@@ -113,6 +114,7 @@ function Main({ colorSpin = '#097392' }) {
 
     const {
         categoryCardStyle,
+        categoryCardHighLightStyle,
         categoryContainerStyle,
         contactStyle,
         deliveryCardStyle,
@@ -162,6 +164,7 @@ function Main({ colorSpin = '#097392' }) {
                             categoryContainerStyle={categoryContainerStyle}
 
                             categoryCardStyle={categoryCardStyle}
+                            categoryCardHighLightStyle={categoryCardHighLightStyle}
                             cardTitleStyle={categoryCardProdutcTitleStyle}
                             cardDescriptionStyle={categoryCardProdutcDescriptionStyle}
                             style={menuStyle}
@@ -171,7 +174,7 @@ function Main({ colorSpin = '#097392' }) {
                             title={name}
                             stickButtonsMenu={stickButtonsMenu}
                             loading={loading}
-                            loadingComponent={LoadingComponent}
+                            loadingComponent={TabsLoadingComponent}
                         />
                     </Route>
                     <Route path={`${path}/contact`}>
@@ -181,7 +184,7 @@ function Main({ colorSpin = '#097392' }) {
                             socialLinks={socialLinks}
                             workingDays={workingDays}
                             containerStyle={contactStyle}
-                            loadingComponent={LoadingComponent}
+                            loadingComponent={TabsLoadingComponent}
                         />
                     </Route>
                     <Route path={`${path}/payments`}>
@@ -190,7 +193,7 @@ function Main({ colorSpin = '#097392' }) {
                             paymentsMethods={paymentMethods}
                             cardContainerStyle={paymentCardStyle}
                             dollarRateStyle={dollarRateStyle}
-                            loadingComponent={LoadingComponent}
+                            loadingComponent={TabsLoadingComponent}
                         />
                     </Route>
                     <Route path={`${path}/delivery`}>
@@ -198,7 +201,7 @@ function Main({ colorSpin = '#097392' }) {
                             titleStyle={sectionHeadingStyle}
                             deliveryCardStyle={deliveryCardStyle}
                             deliveries={deliveries}
-                            loadingComponent={LoadingComponent}
+                            loadingComponent={TabsLoadingComponent}
                         />
                     </Route>
                     <Redirect from='*' to={url}></Redirect>

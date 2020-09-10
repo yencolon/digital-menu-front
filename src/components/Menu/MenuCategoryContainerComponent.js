@@ -4,12 +4,13 @@ import ItemText from './MenuItemsTextComponent';
 import ItemCard from './MenuItemCardComponent';
 
 
-function RenderAs({ items, renderAs = 'text', itemContainerStyle, itemTitleStyle, itemDescriptionStyle }) {
+function RenderAs({ items, renderAs = 'text', itemContainerStyle, itemHighLightStyle, itemTitleStyle, itemDescriptionStyle }) {
+    
     switch (renderAs) {
         case 'text':
             return items.map(item => {
                 return (
-                    <ItemText key={item.id} title={item.title} description={item.description} price={item.price} image={item.image} containerStyle={itemContainerStyle} titleStyle={itemTitleStyle} descriptionStyle={itemDescriptionStyle} />
+                    <ItemText key={item.id} title={item.title} description={item.description} price={item.price} highlight={item.highlight} image={item.image} containerStyle={itemContainerStyle} highLightStyle={itemHighLightStyle} titleStyle={itemTitleStyle} descriptionStyle={itemDescriptionStyle} />
                 )
             })
         case 'card':
@@ -22,12 +23,13 @@ function RenderAs({ items, renderAs = 'text', itemContainerStyle, itemTitleStyle
 }
 
 function MenuCategoryContainer({ title, description, items, renderAs = 'text',
-    innerContainerStyle = {}, containerStyle = {}, cardStyle = {}, headingStyle = {}, titleCardStyle = {}, descriptionCardStyle = {} }) {
+    innerContainerStyle = {}, containerStyle = {}, cardStyle = {}, cardHighLightStyle = {}, headingStyle = {}, titleCardStyle = {}, descriptionCardStyle = {} }) {
+
     return (
         <div className='mt-1 mb-10 mx-5 md:mx-5 md:mt-5 md:mb-20 flex flex-col content-center justify-center' style={containerStyle}>
             <h1 className='font-bold subpixel-antialiased text-4xl text-center' style={headingStyle}>{title}</h1>
             <section style={innerContainerStyle}>
-                <RenderAs items={items} renderAs={renderAs} itemTitleStyle={titleCardStyle} itemContainerStyle={cardStyle} itemDescriptionStyle={descriptionCardStyle} />
+                <RenderAs items={items} renderAs={renderAs} itemTitleStyle={titleCardStyle} itemContainerStyle={cardStyle} itemHighLightStyle={cardHighLightStyle} itemDescriptionStyle={descriptionCardStyle} />
             </section>
         </div>
     );

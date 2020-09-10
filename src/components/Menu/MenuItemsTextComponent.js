@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CloseCircleOutlined, CameraOutlined } from '@ant-design/icons';
-import { Slide } from "react-awesome-reveal";
+import { Slide } from 'react-awesome-reveal';
 
 function ModalImage({ image, show, onClose }) {
     if (!show) return <div></div>
@@ -18,20 +18,22 @@ function ModalImage({ image, show, onClose }) {
 }
 
 
-function ItemText({ title, image, description, price, containerStyle, titleStyle, descriptionStyle }) {
+function ItemText({ title, image, description, price, highlight = false, containerStyle, highLightStyle, titleStyle, descriptionStyle }) {
     const [showModalImage, setShowModalImage] = useState(false);
+    
     return (
         <div>
             <ModalImage image={image} show={showModalImage} onClose={() => setShowModalImage(false)} />
-            <Slide className="px-2 py-2 w-full" direction='up' cascade triggerOnce >
-                <div style={containerStyle}>
+            <Slide className='px-2 py-2 w-full' style={(highlight? highLightStyle: {} )} direction='up' cascade triggerOnce >
+                <div style={[containerStyle]}>
                     <div className='flex flex-row justify-center align-center' onClick={() => setShowModalImage(true)}>
-                        <h1 className="font-bold text-lg" style={titleStyle} >{title}</h1>
-                        <CameraOutlined className='font-bold text-sm ml-1 self-center' />
-                        {/* <Search width={12} style={{ paddingTop: '4.2px', marginLeft: '2.5px' }} /> */}
+                        <h1 className='font-bold text-lg' style={titleStyle} >{title}</h1>
+                        <div className='rounded-full h-6 w-6 flex items-center justify-center border-black border border-solid ml-2'>
+                            <CameraOutlined className='font-normal text-sm' />
+                        </div>
                     </div>
-                    <p className="text-sm" style={descriptionStyle} >{description}</p>
-                    <p className="text-xs" style={descriptionStyle}>{price}</p>
+                    <p className='text-sm' style={descriptionStyle} >{description}</p>
+                    <p className='text-xs' style={descriptionStyle}>{price}</p>
                 </div>
             </Slide>
         </div>
