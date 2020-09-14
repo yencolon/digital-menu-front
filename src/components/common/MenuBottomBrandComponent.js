@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import 'assets/styles/menu-bottom-brand.css'
-function MenuBottomBrand({ title, image, style, addressLine = 'Av. Anzoátegui', addresCity = 'Lechería, Venezuela' }) {
+import 'assets/styles/menu-bottom-brand.css';
+function MenuBottomBrand ({ title, image, style, addressLine = 'Av. Anzoátegui', addresCity = 'Lechería, Venezuela' }) {
     return (
-        <div className='flex flex-col items-center justify-center full-w pb-20 mt-2' style={style}>
+        <footer className='flex flex-col items-center justify-center full-w pb-20 mt-2' style={style}>
             <div className='rounded-full h-120 w-120 flex items-center justify-center'>
                 <img src={image} alt='logo' height={160} width={160} />
             </div>
@@ -14,8 +15,16 @@ function MenuBottomBrand({ title, image, style, addressLine = 'Av. Anzoátegui',
                 </a>
                 <a href="tel:04144395260"> 0414 439 52 60</a>
             </div>
-        </div>
+        </footer>
     );
 }
+
+MenuBottomBrand.propTypes = {
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    style: PropTypes.object,
+    addressLine: PropTypes.string,
+    addresCity: PropTypes.string.isRequired
+};
 
 export default MenuBottomBrand;

@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Route, Redirect, withRouter, Switch, useRouteMatch, useParams } from 'react-router-dom';
 import Menu from 'components/Menu/MenuComponent';
-import MenuHeader from 'components/MenuHeaderComponent';
-import MenuNavigation from 'components/MenuNavigationComponent';
+import MenuHeader from 'components/common/MenuHeaderComponent';
+import MenuNavigation from 'components/common/MenuNavigationComponent';
 import ContactUs from 'components/ContactUsComponent';
 import PaymentMethods from 'components/PaymentMethods';
 import Delivery from 'components/DeliveryComponent';
 import GoogleFontLoader from 'react-google-font-loader';
 import { API_URL } from 'shared/apiUrl';
-import MenuBottomBrand from './MenuBottomBrandComponent';
-import LoadingMenu from './LoadingComponent';
+import MenuBottomBrand from './common/MenuBottomBrandComponent';
+import LoadingMenu from './common/LoadingComponent';
 
-//mockup data.
+// mockup data.
 const images = [
     'https://haptico-back.herokuapp.com/images/1.jpg',
     'https://haptico-back.herokuapp.com/images/2.jpg',
@@ -20,24 +21,24 @@ const images = [
     'https://haptico-back.herokuapp.com/images/5.jpg',
     'https://haptico-back.herokuapp.com/images/6.jpg',
     'https://haptico-back.herokuapp.com/images/7.jpg',
-    'https://haptico-back.herokuapp.com/images/8.jpg',
-]
+    'https://haptico-back.herokuapp.com/images/8.jpg'
+];
 
 const socialLinks = [
     { network: 'facebook', identification: 'El taco facebook', url: '' },
     { network: 'twitter', identification: 'eltaco', url: '' },
     { network: 'instagram', identification: '@eltaco', url: '' },
     { network: 'whatsapp', identification: '+58 412 499 92 92', url: '' },
-    { network: 'telegram', identification: '@eltaco', url: '' },
-]
+    { network: 'telegram', identification: '@eltaco', url: '' }
+];
 
 const workingDays = [
     { day: 'Miercoles', startTime: '7:00 PM', endTime: '3:00 AM' },
     { day: 'Jueves', startTime: '7:00 PM', endTime: '3:00 AM' },
     { day: 'Viernes', startTime: '7:00 PM', endTime: '3:00 AM' },
     { day: 'Sábado', startTime: '7:00 PM', endTime: '3:00 AM' },
-    { day: 'Domingo', startTime: '7:00 PM', endTime: '3:00 AM' },
-]
+    { day: 'Domingo', startTime: '7:00 PM', endTime: '3:00 AM' }
+];
 
 const paymentMethods = [
     { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: '', extrainfo: 'Bank of America', image: 'https://haptico-back.herokuapp.com/images/zelle.png' },
@@ -46,9 +47,8 @@ const paymentMethods = [
     { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/uphold.png' },
     { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/paypal.png' },
     { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/airtm.png' },
-    { name: "Pago Móvil", identification: '041245454585', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/Pago Movil.jpg', },
-]
-
+    { name: 'Pago Móvil', identification: '041245454585', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/Pago Movil.jpg' }
+];
 
 const deliveries = [
     { name: 'Alo', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/alo.jpg', url: 'https://wa.me/message/RAM5DY4A4KTYJ1' },
@@ -59,34 +59,35 @@ const deliveries = [
     { name: 'Kepido', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/kepido.jpg', url: 'https://onelink.to/kp9bn7' },
     { name: "Pa'llevar", description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/pallevar.jpg', url: 'https://comida.pidepallevar.com/es' },
     { name: 'Rela', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/rela.jpg', url: 'https://wa.me/584147782469' },
-    { name: "Ubiigo", description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/ubiigo.jpg', url: 'https://ubiigo.co/app/link' },
-    { name: "Valencia Delivery", description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/valencia.jpg', url: 'https://www.deliveryvalencia.com' },
+    { name: 'Ubiigo', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/ubiigo.jpg', url: 'https://ubiigo.co/app/link' },
+    { name: 'Valencia Delivery', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/valencia.jpg', url: 'https://www.deliveryvalencia.com' },
     { name: 'Yolopio', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/yolopido.jpg', url: 'https://yolopido.com' },
     { name: 'Yummy', description: 'Una descripcion pava del delivey jeje', image: 'https://haptico-back.herokuapp.com/images/yummy.jpg', url: 'https://pideyummy.com' }
-]
+];
 
-
-function LoadFonts({ fonts }) {
-
+function LoadFonts ({ fonts }) {
     const filterFonts = fonts.filter(font => font !== undefined);
-    if (filterFonts.length === 0) return <div></div>
+    if (filterFonts.length === 0) return <div></div>;
 
     const fontsToLoad = filterFonts.map(font => {
         return {
             font: font,
-            weights: [400, '500', '600', '700', '800', 900],
-        }
-    })
+            weights: [400, '500', '600', '700', '800', 900]
+        };
+    });
 
     return (
         <GoogleFontLoader
             fonts={fontsToLoad}
         />
-    )
+    );
 }
 
+LoadFonts.propTypes = {
+    fonts: PropTypes.arrayOf
+};
 
-function Main({ colorSpin = '#097392', logo }) {
+function Main ({ colorSpin = '#097392', logo }) {
     const LoadingComponent = <LoadingMenu color={colorSpin} image={logo} showImage={true} />;
     const TabsLoadingComponent = <LoadingMenu color={colorSpin} image={logo} />;
     const [styles, setStyles] = useState({});
@@ -97,20 +98,19 @@ function Main({ colorSpin = '#097392', logo }) {
     useEffect(() => {
         const fetchStyles = async () => {
             return await (await fetch(API_URL + `api/menu/${id}/styles`)).json();
-        }
+        };
         const loadStyles = async () => {
             const response = await fetchStyles();
             setTimeout(setLoading(false), 5000);
             setStyles(response.styles);
-        }
+        };
 
-        loadStyles()
+        loadStyles();
 
         return () => {
 
-        }
-    }, [id])
-
+        };
+    }, [id]);
 
     const {
         categoryCardStyle,
@@ -142,14 +142,14 @@ function Main({ colorSpin = '#097392', logo }) {
         categoryCardProdutcDescriptionStyle,
         categoryCardProdutcTitleStyle,
         sectionHeadingStyle
-    } = styles
+    } = styles;
+
     // background: `url(${process.env.PUBLIC_URL}/images/bg.jpg)` }
     return (
-        loading ? LoadingComponent :
-            <div className='flex flex-1 flex-col' style={{ fontFamily: menuFontFamily }}>
+        loading ? LoadingComponent
+            : <Fragment>
                 <LoadFonts fonts={[mainFontFamily, titleFontFamily, menuFontFamily]} />
                 <MenuHeader containerStyle={navBarContainerStyle} titleStyle={navTitleStyle} image={imageLogo} title={name} />
-
                 <Switch>
                     <Route exact path={path}>
                         <Menu
@@ -208,8 +208,13 @@ function Main({ colorSpin = '#097392', logo }) {
                 </Switch>
                 <MenuBottomBrand image={imageLogo} title={name} style={{}} />
                 <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} hasDelivery={hasDelivery} />
-            </div>
+            </Fragment>
     );
 }
+
+Main.propTypes = {
+    colorSpin: PropTypes.string,
+    logo: PropTypes.string
+};
 
 export default withRouter(Main);

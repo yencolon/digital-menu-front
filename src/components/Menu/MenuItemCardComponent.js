@@ -1,8 +1,8 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import ItemText from './MenuItemsTextComponent';
 
-function ItemCard({ title, description, price, image, style }) {
+function ItemCard ({ title, description, price, image, style }) {
     return (
         <div>
             <div className="flex flex-col-reverse md:flex-row my-5 mx-5 px-5 py-5" style={style}>
@@ -13,5 +13,13 @@ function ItemCard({ title, description, price, image, style }) {
 
     );
 }
+
+ItemCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    style: PropTypes.object
+};
 
 export default ItemCard;

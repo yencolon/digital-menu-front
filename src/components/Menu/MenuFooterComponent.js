@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MenuFooter() {
+function MenuFooter () {
     return (
         <div>
             {/* <Hero color='primary' className='is-hidden-mobile'>
@@ -14,14 +14,13 @@ function MenuFooter() {
                     <Footer color='primary'>
                         <Container color='primary'>
                             <Content color='primary'>
-                                
                             </Content>
                         </Container>
                     </Footer>
                 </Hero.Footer>
             </Hero> */}
         </div>
-    )
+    );
 };
 
 export default MenuFooter;

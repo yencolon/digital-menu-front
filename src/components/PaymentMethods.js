@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import LoadingMenu from './LoadingComponent';
+import PropTypes from 'prop-types';
 import { Slide } from 'react-awesome-reveal';
 
-function HorizontalCard({ image, title, description, style }) {
+function HorizontalCard ({ image, title, description, style }) {
     return (
         <div className='flex items-center m-5 rounded overflow-hidden shadow-lg p-5' style={style}>
-            <div className='w-1/4 h-full'>
+            <figure className='w-1/4 h-full'>
                 <img className='object-fill w-full' src={image} alt={title} />
-            </div>
+            </figure>
             <div className='w-9/12 px-5'>
                 {/* <p className='text-lg font-lg font-bold'>{title}</p> */}
                 <div style={{ whiteSpace: 'pre-line', fontSize: 17 }}>{description}</div>
             </div>
         </div>
-    )
+    );
 }
 
-function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, dollarRateStyle, loadingComponent }) {
+HorizontalCard.propTypes = {
+    image: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    style: PropTypes.object
+};
 
+function PaymentMethods ({ paymentsMethods, titleStyle = {}, cardContainerStyle, dollarRateStyle, loadingComponent }) {
     const [dollarRate, setDollarRate] = useState(0);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -28,39 +34,48 @@ function PaymentMethods({ paymentsMethods, titleStyle = {}, cardContainerStyle, 
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
         const fetchData = async () => {
             const result = await getDollarRate();
             const resultString = result + '';
             setDollarRate(resultString.substring(0, 3) + ',' + resultString.substring(3, resultString.indexOf('.')));
-            setLoading(false)
+            setLoading(false);
         };
 
-        fetchData()
+        fetchData();
 
         return () => {
 
-        }
-    }, [])
+        };
+    }, []);
 
     return (
-        loading ? loadingComponent :
-            <div>
+        loading ? loadingComponent
+            : <section>
                 <h1 className='text-xl text-center font-bold' style={titleStyle}>Métodos de Pago</h1>
-                <div className='mt-5 md:grid md:grid-cols-2' >
+                <article className='mt-5 md:grid md:grid-cols-2' >
                     {
                         paymentsMethods.map((paymentsMethod) => {
-                            return( <Slide direction='up' cascade triggerOnce>
-                                <HorizontalCard key={paymentsMethod.name} title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
-                            </Slide>)
+                            return (
+                                <Slide key={paymentsMethod.name} direction='up' cascade triggerOnce>
+                                    <HorizontalCard title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
+                                </Slide>);
                         })
                     }
-                </div>
-                <div id='price-tag' className="text-center text-md w-full" style={dollarRateStyle}>
+                </article>
+                <aside id='price-tag' className="text-center text-md w-full" style={dollarRateStyle}>
                     <p>Tasa del día: {dollarRate} BsS. </p>
-                </div>
-            </div>
-    )
+                </aside>
+            </section>
+    );
 }
+
+PaymentMethods.propTypes = {
+    paymentsMethods: PropTypes.array,
+    titleStyle: PropTypes.object,
+    cardContainerStyle: PropTypes.object,
+    dollarRateStyle: PropTypes.object,
+    loadingComponent: PropTypes.element
+};
 
 export default PaymentMethods;
