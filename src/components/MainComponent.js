@@ -13,14 +13,14 @@ import LoadingMenu from './common/LoadingComponent';
 
 // mockup data.
 const images = [
-    'https://haptico-back.herokuapp.com/images/1.jpg',
-    'https://haptico-back.herokuapp.com/images/2.jpg',
-    'https://haptico-back.herokuapp.com/images/3.jpg',
-    'https://haptico-back.herokuapp.com/images/4.jpg',
-    'https://haptico-back.herokuapp.com/images/5.jpg',
-    'https://haptico-back.herokuapp.com/images/6.jpg',
-    'https://haptico-back.herokuapp.com/images/7.jpg',
-    'https://haptico-back.herokuapp.com/images/8.jpg'
+    'https://hapticoback.herokuapp.com/images/1.jpg',
+    'https://hapticoback.herokuapp.com/images/2.jpg',
+    'https://hapticoback.herokuapp.com/images/3.jpg',
+    'https://hapticoback.herokuapp.com/images/4.jpg',
+    'https://hapticoback.herokuapp.com/images/5.jpg',
+    'https://hapticoback.herokuapp.com/images/6.jpg',
+    'https://hapticoback.herokuapp.com/images/7.jpg',
+    'https://hapticoback.herokuapp.com/images/8.jpg'
 ];
 
 const socialLinks = [
@@ -40,13 +40,13 @@ const workingDays = [
 ];
 
 const paymentMethods = [
-    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: '', extrainfo: 'Bank of America', image: 'https://haptico-back.herokuapp.com/images/zelle.png' },
-    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/banesco.jpg' },
-    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/bbva.png' },
-    { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/uphold.png' },
-    { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/paypal.png' },
-    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://haptico-back.herokuapp.com/images/airtm.png' },
-    { name: 'Pago Móvil', identification: '041245454585', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://haptico-back.herokuapp.com/images/Pago Movil.jpg' }
+    { name: 'Zelle', identification: 'pedroperez@gmail.com', owner: '', extrainfo: 'Bank of America', image: 'https://hapticoback.herokuapp.com/images/zelle.png' },
+    { name: 'Banesco', identification: '013465566656656565', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://hapticoback.herokuapp.com/images/banesco.jpg' },
+    { name: 'BBVA Provincial', identification: '01154699797945454', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://hapticoback.herokuapp.com/images/bbva.png' },
+    { name: 'Uphold', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://hapticoback.herokuapp.com/images/uphold.png' },
+    { name: 'Paypal', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://hapticoback.herokuapp.com/images/paypal.png' },
+    { name: 'Airtm', identification: 'pedroperez@gmail.com', owner: 'Pedro Perez', extrainfo: '', image: 'https://hapticoback.herokuapp.com/images/airtm.png' },
+    { name: 'Pago Móvil', identification: '041245454585', owner: 'Pedro Perez', extrainfo: '22111000', image: 'https://hapticoback.herokuapp.com/images/Pago Movil.jpg' }
 ];
 
 function LoadFonts ({ fonts }) {
