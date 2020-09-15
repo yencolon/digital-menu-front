@@ -36,7 +36,7 @@ function MenuHeader ({ title = '', containerStyle, titleStyle, image, navItemSty
             <div className="hidden lg:block lg:justify-end" >
                 <NavLink to={`${url}/`} className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-5 font-normal" activeStyle={navItemActiveStyle}>Menú</NavLink>
                 <NavLink to={`${url}/payments`} className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-5 font-normal" activeStyle={navItemActiveStyle}>Métodos de Pago</NavLink>
-                <NavLink to={`${url}/delivery`} className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-5 font-normal" activeStyle={navItemActiveStyle}>Delivery</NavLink>
+                {/* <NavLink to={`${url}/delivery`} className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-5 font-normal" activeStyle={navItemActiveStyle}>Delivery</NavLink> */}
                 <NavLink to={`${url}/contact`} className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-5 font-normal" activeStyle={navItemActiveStyle}>Contactos</NavLink>
             </div>
             <div className='lg:hidden flex justify-end flex-grow' >
