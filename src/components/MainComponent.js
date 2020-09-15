@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect, withRouter, Switch, useRouteMatch, useParams } from 'react-router-dom';
-import Menu from 'components/menu/MenuComponent';
+import Menu from 'components/menus/MenuComponent';
 import MenuHeader from 'components/common/MenuHeaderComponent';
 import MenuNavigation from 'components/common/MenuNavigationComponent';
 import ContactUs from 'components/ContactUsComponent';
@@ -68,7 +68,7 @@ function LoadFonts ({ fonts }) {
 }
 
 LoadFonts.propTypes = {
-    fonts: PropTypes.arrayOf
+    fonts: PropTypes.array
 };
 
 function Main ({ colorSpin = '#097392', logo }) {
