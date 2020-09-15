@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { CloseCircleOutlined, CameraOutlined } from '@ant-design/icons';
-import { Slide, Zoom } from 'react-awesome-reveal';
+import { Slide } from 'react-awesome-reveal';
 
 function ModalImage ({ image, show, onClose }) {
     if (!show) return <div></div>;
     return (
-        <div className='fixed landscape:hidden right-0 left-0 top-0 bottom-0 flex justify-center bg-black bg-opacity-25 z-30' onClick={onClose}>
+        <div className='fixed right-0 left-0 top-0 bottom-0 flex justify-center bg-black bg-opacity-25 z-30' onClick={onClose}>
             <div className='bg-transparent h-64 landscape:h-56 flex flex-col justify-center items-center self-center m-10'>
-                <Zoom className='object-cover'>
-                    <figure>
-                        <img src={image} alt='imagen' loading='lazy'></img>
-                    </figure>
-                </Zoom>
+                <figure>
+                    <img className='object-cover h-56' src={image} alt='imagen' loading='lazy'></img>
+                </figure>
                 <button className='w-full bg-white ' onClick={onClose}>
                     Cerrar
                     <CloseCircleOutlined />
