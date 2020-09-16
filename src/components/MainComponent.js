@@ -117,7 +117,6 @@ function Main ({ colorSpin = '#097392', logo }) {
         name,
         navBarContainerStyle,
         navItemStyle,
-        stickButtonsMenu,
         categoryButtonSelectedStyle,
         categoryHeadingStyle,
         categoryInnerContainer,
@@ -127,6 +126,7 @@ function Main ({ colorSpin = '#097392', logo }) {
     } = styles;
 
     // background: `url(${process.env.PUBLIC_URL}/images/bg.jpg)` }
+    // stickButtonsMenu
     return (
         loading ? LoadingComponent
             : <Fragment>
@@ -154,7 +154,7 @@ function Main ({ colorSpin = '#097392', logo }) {
                             showDishAs={showDishAs}
                             image={imageLogo}
                             title={name}
-                            stickButtonsMenu={stickButtonsMenu}
+                            stickButtonsMenu={true}
                             loading={loading}
                             loadingComponent={TabsLoadingComponent}
                         />

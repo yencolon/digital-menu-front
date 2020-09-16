@@ -58,10 +58,13 @@ function MenuButtons ({ buttons, stickButtons = false, renderAs = 'buttons', sel
     useEffect(() => {
         if (stickButtons) {
             const header = document.getElementById('buttomGroup');
-            const sticky = header.offsetTop;
+            const sticky = header.offsetTop + 70;
             const scrollCallBack = window.addEventListener('scroll', () => {
                 if (window.pageYOffset > sticky) {
                     header.classList.add('fixed');
+                    header.classList.add('top-0');
+                    header.classList.add('w-full');
+                    header.classList.add('z-30');
                 } else {
                     header.classList.remove('fixed');
                 }
@@ -71,9 +74,10 @@ function MenuButtons ({ buttons, stickButtons = false, renderAs = 'buttons', sel
             };
         }
     });
-
+    console.log(backgroundColor);
+    console.log(textColor);
     return (
-        <div id='buttomGroup' style={{ backgroundColor: backgroundColor, color: textColor }}>
+        <div id='buttomGroup' style={ { background: 'white' } }>
             {
                 renderAs === 'buttons'
                     ? <Buttons buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} containerStyle={{ backgroundColor: backgroundColor }} buttonStyle={{ backgroundColor: backgroundColor, color: textColor, ...buttonStyle }} buttonSelectedStyle={buttonSelectedStyle} />
