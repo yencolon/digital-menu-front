@@ -45,7 +45,7 @@ function Menu ({
     };
 
     const fetchMenu = async () => {
-        return await (await fetch(API_URL + `api/menu/${id}`)).json();
+        return await (await fetch(API_URL + `api/menu/${1}`)).json();
     };
 
     useEffect(() => {

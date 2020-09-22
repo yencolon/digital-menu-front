@@ -9,13 +9,13 @@ function App () {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/menu/:id" >
+                <Route path="/elpatronlecheria" >
                     <Main colorSpin='#F2AF29' logo={API_URL + 'images/logo.png'} />
                 </Route>
-                <Route path="/customers">
+                <Route exact path="/customers">
                     <MenuListComponent />
                 </Route>
-                <Redirect from="/" to="/menu/1" />
+                <Redirect from="*" to="/elpatronlecheria" />
             </Switch>
         </BrowserRouter>
     );

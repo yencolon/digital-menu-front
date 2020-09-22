@@ -36,7 +36,7 @@ function Buttons ({ buttons, onButtonClicked, selected, containerStyle, buttonSt
             {
                 buttons.map(button => {
                     return (
-                        <button id='button' key={button.id} className={`text-white font-bold py-1 px-4 my-2 mx-2`} onClick={() => onButtonClicked(button.id)} style={selected === button.id ? buttonSelectedStyle : buttonStyle}>{button.title}</button>
+                        <button id='button' key={button.id} className={`text-white font-bold py-1 px-4 my-2 mx-2 focus:outline-none`} onClick={() => onButtonClicked(button.id)} style={selected === button.id ? buttonSelectedStyle : buttonStyle}>{button.title}</button>
                     );
                 })
             }
@@ -63,10 +63,15 @@ function MenuButtons ({ buttons, stickButtons = false, renderAs = 'buttons', sel
                 if (window.pageYOffset > sticky) {
                     header.classList.add('fixed');
                     header.classList.add('top-0');
+                    header.classList.add('mt-20');
                     header.classList.add('w-full');
                     header.classList.add('z-30');
                 } else {
                     header.classList.remove('fixed');
+                    header.classList.remove('top-0');
+                    header.classList.remove('mt-20');
+                    header.classList.remove('w-full');
+                    header.classList.remove('z-30');
                 }
             });
             return () => {
@@ -74,10 +79,8 @@ function MenuButtons ({ buttons, stickButtons = false, renderAs = 'buttons', sel
             };
         }
     });
-    console.log(backgroundColor);
-    console.log(textColor);
     return (
-        <div id='buttomGroup' style={ { background: 'white' } }>
+        <div id='buttomGroup' className='bg-white'>
             {
                 renderAs === 'buttons'
                     ? <Buttons buttons={buttons} selected={selected} onButtonClicked={onButtonClicked} containerStyle={{ backgroundColor: backgroundColor }} buttonStyle={{ backgroundColor: backgroundColor, color: textColor, ...buttonStyle }} buttonSelectedStyle={buttonSelectedStyle} />

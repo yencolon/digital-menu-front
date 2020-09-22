@@ -10,18 +10,13 @@ function MenuHeader ({ title = '', containerStyle, titleStyle, image, navItemSty
 
     const [scrollPosition, setSrollPosition] = useState(0);
 
-    // function handleScroll() {
-    //     const position = window.pageYOffset;
-    //     setSrollPosition(position);
-    // }
-    ///
     useEffect(() => {
         const header = document.getElementById('nav');
         const scrollCallBack = window.addEventListener('scroll', () => {
-            if (window.pageYOffset < scrollPosition) {
-                header.classList.add('sticky');
+            if (window.pageYOffset > 0) {
+                header.classList.add('fixed');
             } else {
-                header.classList.remove('sticky');
+                header.classList.remove('fixed');
             }
             setSrollPosition(window.pageYOffset);
         });
@@ -31,7 +26,7 @@ function MenuHeader ({ title = '', containerStyle, titleStyle, image, navItemSty
     });
 
     return (
-        <nav id='nav' className="flex items-center justify-between flex-wrap  w-full pl-8 md:px-10 z-50" style={containerStyle}>
+        <nav id='nav' className="flex items-center justify-between flex-wrap w-full pl-8 md:px-10 z-50" style={containerStyle}>
             {image ? <img src={image} alt={title} className='h-150 w-150 py-2 ml-2' height={120} width={120} /> : <a href='/' className='text-3xl font-bold' style={titleStyle}>{title}</a>}
             <div className="hidden lg:block lg:justify-end" >
                 <NavLink to={`${url}/`} className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-5 font-normal" activeStyle={navItemActiveStyle}>Menú</NavLink>

@@ -71,7 +71,7 @@ LoadFonts.propTypes = {
     fonts: PropTypes.array
 };
 
-function Main ({ colorSpin = '#097392', logo }) {
+function Main ({ colorSpin = '#097392', logo, routeName = 'elpatronlecheria' }) {
     const LoadingComponent = <LoadingMenu color={colorSpin} image={logo} showImage={true} />;
     const TabsLoadingComponent = <LoadingMenu color={colorSpin} image={logo} />;
     const [styles, setStyles] = useState({});
@@ -81,7 +81,7 @@ function Main ({ colorSpin = '#097392', logo }) {
 
     useEffect(() => {
         const fetchStyles = async () => {
-            return await (await fetch(API_URL + `api/menu/${id}/styles`)).json();
+            return await (await fetch(API_URL + `api/menu/${1}/styles`)).json();
         };
         const loadStyles = async () => {
             const response = await fetchStyles();
@@ -159,7 +159,7 @@ function Main ({ colorSpin = '#097392', logo }) {
                             loadingComponent={TabsLoadingComponent}
                         />
                     </Route>
-                    <Route path={`${path}/contact`}>
+                    <Route exact path={`${path}/contact`}>
                         <ContactUs
                             titleStyle={sectionHeadingStyle}
                             imagesToShow={images}
@@ -169,7 +169,7 @@ function Main ({ colorSpin = '#097392', logo }) {
                             loadingComponent={TabsLoadingComponent}
                         />
                     </Route>
-                    <Route path={`${path}/payments`}>
+                    <Route exact path={`${path}/payments`}>
                         <PaymentMethods
                             titleStyle={sectionHeadingStyle}
                             paymentsMethods={paymentMethods}
@@ -186,7 +186,7 @@ function Main ({ colorSpin = '#097392', logo }) {
                             loadingComponent={TabsLoadingComponent}
                         />
                     </Route> */}
-                    <Redirect from='*' to={url}></Redirect>
+                    <Redirect from='*' to={`${url}`}></Redirect>
                 </Switch>
                 <MenuBottomBrand image={imageLogo} title={name} style={{}} />
                 <MenuNavigation containerStyle={navBarContainerStyle} itemStyle={navItemStyle} hasDelivery={false} />
@@ -196,7 +196,8 @@ function Main ({ colorSpin = '#097392', logo }) {
 
 Main.propTypes = {
     colorSpin: PropTypes.string,
-    logo: PropTypes.string
+    logo: PropTypes.string,
+    routeName: PropTypes.string
 };
 
 export default withRouter(Main);
