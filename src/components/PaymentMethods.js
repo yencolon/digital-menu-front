@@ -1,18 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Slide } from 'react-awesome-reveal';
+import { useThemeState } from 'context/MenuThemeContext';
+import { useCurrentRestaurantState } from 'context/CurrentRestaurantContext';
+import { useScrollToTop } from 'shared/hooks/useScrollToTop';
 
 function HorizontalCard ({ image, title, description, style }) {
     return (
-        <div className='flex items-center m-5 rounded overflow-hidden shadow-lg p-5' style={style}>
-            <figure className='w-1/4 h-full'>
+        <article className='flex items-center m-2 rounded overflow-hidden shadow-lg p-3' style={style}>
+            <figure className='w-2/6 h-full'>
                 <img className='object-fill w-full' src={image} alt={title} />
             </figure>
-            <div className='w-9/12 px-5'>
+            <ul className='w-full pl-6'>
                 {/* <p className='text-lg font-lg font-bold'>{title}</p> */}
-                <div style={{ whiteSpace: 'pre-line', fontSize: 17 }}>{description}</div>
-            </div>
-        </div>
+                {
+                    description.map((text, index) => {
+                        return <li key={index + ''}>{text}</li>;
+                    })
+                }
+                {/* <div style={{ whiteSpace: 'pre-line' }}>{}</div> */}
+            </ul>
+        </article>
     );
 }
 
@@ -23,7 +31,10 @@ HorizontalCard.propTypes = {
     style: PropTypes.object
 };
 
-function PaymentMethods ({ paymentsMethods, titleStyle = {}, cardContainerStyle, dollarRateStyle, loadingComponent }) {
+function PaymentMethods () {
+    const scrollRef = useScrollToTop();
+    const theme = useThemeState();
+    const info = useCurrentRestaurantState();
     const [dollarRate, setDollarRate] = useState(0);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -38,8 +49,8 @@ function PaymentMethods ({ paymentsMethods, titleStyle = {}, cardContainerStyle,
         const fetchData = async () => {
             const result = await getDollarRate();
             const resultString = result + '';
-            setDollarRate(resultString.substring(0, 3) + ',' + resultString.substring(3, resultString.indexOf('.')));
-            setLoading(false);
+            // setDollarRate(resultString.substring(0, 3) + ',' + resultString.substring(3, resultString.indexOf('.')));
+            // setLoading(false);
         };
 
         fetchData();
@@ -50,32 +61,26 @@ function PaymentMethods ({ paymentsMethods, titleStyle = {}, cardContainerStyle,
     }, []);
 
     return (
-        loading ? loadingComponent
-            : <section>
-                <h1 className='text-xl text-center font-bold' style={titleStyle}>Métodos de Pago</h1>
-                <article className='mt-5 md:grid md:grid-cols-2' >
-                    {
-                        paymentsMethods.map((paymentsMethod) => {
-                            return (
-                                <Slide key={paymentsMethod.name} direction='up' cascade triggerOnce>
-                                    <HorizontalCard title={paymentsMethod.name} image={paymentsMethod.image} description={paymentsMethod.owner + '\n' + paymentsMethod.identification + '\n' + paymentsMethod.extrainfo} style={cardContainerStyle} />
-                                </Slide>);
-                        })
-                    }
-                </article>
-                <aside id='price-tag' className="text-center text-md w-full" style={dollarRateStyle}>
-                    <p>Tasa del día: {dollarRate} BsS. </p>
-                </aside>
-            </section>
+        <section ref={scrollRef} style={{ backgroundColor: theme.colors.backgroundColor }}>
+            <h1 className='text-xl text-center font-bold' style={theme.common.pageHeadingStyle}>Métodos de Pago</h1>
+            <ul className='mt-2 md:grid md:grid-cols-2 justify-center items-center' >
+                {
+                    info.payments.map((paymentsMethod) => {
+                        return (
+                            <li key={paymentsMethod.name}>
+                                <Slide direction='up' cascade triggerOnce>
+                                    <HorizontalCard title={paymentsMethod.name} image={paymentsMethod.image} description={[paymentsMethod.owner, paymentsMethod.identification, paymentsMethod.extrainfo, paymentsMethod.email, paymentsMethod.phone]} style={theme.payments.paymentCardStyle} />
+                                </Slide>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+            {/* <div id='price-tag' className="text-center text-md w-full" style={theme.payments.dollarRateStyle}>
+                <p>Tasa del día: {dollarRate} BsS. </p>
+            </div> */}
+        </section>
     );
 }
-
-PaymentMethods.propTypes = {
-    paymentsMethods: PropTypes.array,
-    titleStyle: PropTypes.object,
-    cardContainerStyle: PropTypes.object,
-    dollarRateStyle: PropTypes.object,
-    loadingComponent: PropTypes.element
-};
 
 export default PaymentMethods;

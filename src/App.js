@@ -1,19 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import Main from 'components/MainComponent';
 import './App.css';
-import MenuListComponent from 'components/MenuListComponent';
-import { API_URL } from 'shared/apiUrl';
+import MenuListComponent from 'components/MenuList';
+import Wrapper from 'components/Wrapper';
+import { ThemeProvider } from 'context/MenuThemeContext';
+import { CurrentRestauratInfoProvider } from 'context/CurrentRestaurantContext';
 
 function App () {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/elpatronlecheria" >
-                    <Main colorSpin='#F2AF29' logo={API_URL + 'images/logo.png'} />
-                </Route>
-                <Route exact path="/customers">
+                <Route exact strict path="/">
                     <MenuListComponent />
+                </Route>
+                <Route path="/:routeName" >
+                    <ThemeProvider>
+                        <CurrentRestauratInfoProvider>
+                            <Wrapper />
+                        </CurrentRestauratInfoProvider>
+                    </ThemeProvider>
                 </Route>
                 <Redirect from="*" to="/elpatronlecheria" />
             </Switch>
