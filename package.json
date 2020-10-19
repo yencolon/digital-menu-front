@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
+    "@ideasio/add-to-homescreen-react": "^1.0.4",
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -14,9 +15,10 @@
     "react-awesome-reveal": "^3.2.1",
     "react-dom": "^16.13.1",
     "react-google-font-loader": "^1.1.0",
+    "react-helmet": "^6.1.0",
     "react-jss": "^10.4.0",
+    "react-multi-carousel": "^2.5.5",
     "react-redux": "^7.2.0",
-    "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3"
   },
