@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 // Component that attaches scroll to top hanler on router change
 // renders nothing, just attaches side effects
-export const useScrollToTop = () => {
+const useScrollToTop = () => {
     // this assumes that current router state is accessed via hook
     // but it does not matter, pathname and search (or that ever) may come from props, context, etc.
     const { pathname, search } = useLocation();
@@ -27,3 +27,5 @@ export const useScrollToTop = () => {
     // renders nothing, since nothing is needed
     return ref;
 };
+
+export default useScrollToTop;
