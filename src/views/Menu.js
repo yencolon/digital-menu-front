@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import MenuButtons from './MenuButtons';
-import MenuCategory from './MenuCategory';
-import MenuBanner from '../common/MenuBanner';
+import MenuButtons from '../components/menus/MenuButtons';
+import MenuCategory from '../components/menus/MenuCategory';
+import MenuBanner from '../components/common/MenuBanner';
 import { useThemeState } from 'context/MenuThemeContext';
-import { useScrollToTop } from 'shared/hooks/useScrollToTop';
 
 const Menu = ({ menu, defaultCategorySelectedId }) => {
     const theme = useThemeState();
-    const scrollRef = useScrollToTop();
     const [categorySelectedId, setCategorySelected] = useState(defaultCategorySelectedId);
     const [subCategoryToShow, setSubCategoriesToShow] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -36,14 +34,14 @@ const Menu = ({ menu, defaultCategorySelectedId }) => {
     }, [defaultCategorySelectedId, menu, menu.categories]);
 
     return (
-        <div className='flex flex-col justify-between' style={theme.menu.menuStyle}>
+        <div className='flex flex-col justify-between h-screen' style={theme.menu.menuStyle}>
             <MenuBanner hasBanner={theme.booleans.bannerOnMenu} images={theme.assets.advertisementImages} />
             <MenuButtons
                 buttons={categories}
                 selected={categorySelectedId || defaultCategorySelectedId}
                 onButtonClicked={(categoryId) => { onCategorySelected(categoryId) }}
                 renderAs={theme.literals.showCategoryButtonsAs}
-                backgroundColor={theme.menu.buttons.categoryButtonBackground}
+                backgroundColor={theme.colors.categoryButtonBackground}
                 backgroundActiveColor={theme.menu.buttons.categoryButtonActiveBackground}
                 buttonStyle={theme.menu.buttons.categoryButtonStyle}
                 buttonSelectedStyle={theme.menu.buttons.categoryButtonSelectedStyle}
