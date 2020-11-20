@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-
+//CREATE A CLASS FIELD THAT HOLDS ALL JSS CLASSES
 const styles = {
     literals: {
         showDishAs: 'text',
@@ -9,7 +9,8 @@ const styles = {
     colors: {
         primaryColor: '#212121',
         secondaryColor: '#D51E19',
-        backgroundColor: '#f5f5f5'
+        backgroundColor: '#f5f5f5',
+        categoryButtonBackground: '#f5f5f5'
     },
     booleans: {
         stickNavBar: false,
@@ -55,7 +56,6 @@ const styles = {
             textAlign: 'center'
         },
         buttons: {
-            categoryButtonBackground: '#f5f5f5',
             categoryButtonSelectedStyle: {
                 backgroundColor: 'transparent',
                 color: '#D51E19',
