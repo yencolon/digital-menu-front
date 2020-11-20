@@ -1,30 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { useAddToHomescreenPrompt } from 'shared/hooks/useAddToHomescreenPrompt';
+import React, { useEffect, useState } from 'react';
 
-export function AddToHomeScreenButton ({ name = '' }) {
-    const [prompt, promptToInstall] = useAddToHomescreenPrompt();
-    const [isVisible, setVisibleState] = useState(false);
+const AddToHomeScreenButton = () => {
+    const [supportsPWA, setSupportsPWA] = useState(false);
+    const [promptInstall, setPromptInstall] = useState(null);
 
-    const hide = () => setVisibleState(false);
+    useEffect(() => {
+        const handler = e => {
+            e.preventDefault();
+            console.log('we are being triggered :D');
+            setSupportsPWA(true);
+            setPromptInstall(e);
+        };
+        window.addEventListener('beforeinstallprompt', handler);
 
-    useEffect(
-        () => {
-            if (prompt) {
-                setVisibleState(true);
-            }
-        },
-        [prompt]
-    );
+        return () => window.removeEventListener('transitionend', handler);
+    }, []);
 
-    if (!isVisible) {
-        return <div />;
+    const onClick = evt => {
+        evt.preventDefault();
+        if (!promptInstall) {
+            return;
+        }
+        promptInstall.prompt();
+    };
+    if (!supportsPWA) {
+        return null;
     }
-
     return (
-        <div onClick={hide}>
-            <button onClick={hide}>No</button>
-             Quieres agrear {name} a tu inicio?
-            <button onClick={promptToInstall}>Sí</button>
-        </div>
+        <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            id="setup_button"
+            aria-label="Install app"
+            title="Install app"
+            onClick={onClick}
+        >
+      Install
+        </button>
     );
-}
+};
+
+export default AddToHomeScreenButton;
