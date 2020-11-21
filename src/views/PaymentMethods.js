@@ -37,7 +37,7 @@ function PaymentMethods () {
     const info = useCurrentRestaurantState();
 
     return (
-        <section ref={scrollRef} className='h-screen' style={{ backgroundColor: theme.colors.backgroundColor }}>
+        <section ref={scrollRef} style={{ backgroundColor: theme.colors.backgroundColor }}>
             <h1 className='text-xl text-center font-bold' style={theme.common.pageHeadingStyle}>Métodos de Pago</h1>
             <ul className='mt-2 md:grid md:grid-cols-2 justify-center items-center' >
                 {

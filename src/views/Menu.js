@@ -34,7 +34,7 @@ const Menu = ({ menu, defaultCategorySelectedId }) => {
     }, [defaultCategorySelectedId, menu, menu.categories]);
 
     return (
-        <div className='flex flex-col justify-between h-screen' style={theme.menu.menuStyle}>
+        <div className='flex flex-col justify-between' style={theme.menu.menuStyle}>
             <MenuBanner hasBanner={theme.booleans.bannerOnMenu} images={theme.assets.advertisementImages} />
             <MenuButtons
                 buttons={categories}
