@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Carousel } from 'react-responsive-carousel';
-// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -14,7 +12,7 @@ const defaultResponsive = {
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
+        items: 5,
         partialVisibilityGutter: 20
     },
     tablet: {

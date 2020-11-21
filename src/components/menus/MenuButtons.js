@@ -91,7 +91,7 @@ function MenuButtons ({ buttons, onButtonClicked, selected }) {
                         buttons={buttons}
                         selected={selected}
                         onButtonClicked={onButtonClicked}
-                        containerStyle={{ backgroundColor: theme.menu.buttons.categoryButtonBackground }}
+                        containerStyle={{ backgroundColor: theme.colors.categoryButtonBackground }}
                         buttonStyle={{ backgroundColor: theme.colors.backgroundColor, color: theme.colors.secondaryColor, ...theme.menu.buttons.categoryButtonStyle }}
                         buttonSelectedStyle={theme.menu.buttons.categoryButtonSelectedStyle} />
                     : <Tabs
@@ -99,7 +99,7 @@ function MenuButtons ({ buttons, onButtonClicked, selected }) {
                         selected={selected}
                         onButtonClicked={onButtonClicked}
                         containerStyle={{ backgroundColor: theme.menu.buttons.categoryButtonStyle['background-color'] }}
-                        tabStyle={{ backgroundColor: theme.menu.buttons.categoryButtonBackground, color: 'white', ...theme.menu.buttons.categoryButtonStyle }} />
+                        tabStyle={{ backgroundColor: theme.colors.categoryButtonBackground, color: 'white', ...theme.menu.buttons.categoryButtonStyle }} />
             }
         </div>
     );

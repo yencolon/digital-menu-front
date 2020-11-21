@@ -2,8 +2,9 @@ import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const info = {
-    name: 'Madero Premium',
+    name: 'Háptico',
     description: '',
+    menu: {},
     location: {
         address: '',
         city: '',
@@ -30,9 +31,10 @@ const info = {
             to: '12:00 AM'
         }
     ],
+    manifestUrl: '',
     manifest: {
-        short_name: 'Madero',
-        name: 'Madero',
+        short_name: 'Haptico',
+        name: 'Haptico',
         icons: [
             {
                 src: 'favicon.ico',
@@ -50,7 +52,7 @@ const info = {
                 sizes: '512x512'
             }
         ],
-        start_url: '/madero',
+        start_url: '/',
         display: 'standalone',
         theme_color: '#000000',
         background_color: '#ffffff'
