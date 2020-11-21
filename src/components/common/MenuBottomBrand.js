@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useThemeState } from 'context/MenuThemeContext';
-import 'assets/styles/menu-bottom-brand.css';
 import { useCurrentRestaurantState } from 'context/CurrentRestaurantContext';
 
 function MenuBottomBrand ({ title, image, style }) {

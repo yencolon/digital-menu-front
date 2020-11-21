@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import { NavLink, useRouteMatch } from 'react-router-dom';
-
-import 'assets/styles/menu-header.css';
 import { Pin, InstagramIcon } from './SvgComponents';
 import { useThemeState } from 'context/MenuThemeContext';
 import { useCurrentRestaurantState } from 'context/CurrentRestaurantContext';
