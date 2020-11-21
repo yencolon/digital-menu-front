@@ -5,9 +5,9 @@ import useScrollToTop from './useScrollToTop';
 import useStyleToClass from './useStyleToClass';
 
 export {
-    useLoadStyles,
-    useAddToHomescreenPrompt,
-    useScollEvent,
-    useScrollToTop,
-    useStyleToClass
+  useLoadStyles,
+  useAddToHomescreenPrompt,
+  useScollEvent,
+  useScrollToTop,
+  useStyleToClass,
 };
