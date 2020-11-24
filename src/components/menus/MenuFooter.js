@@ -1,9 +1,9 @@
 import React from 'react';
 
-function MenuFooter () {
-    return (
-        <div>
-            {/* <Hero color='primary' className='is-hidden-mobile'>
+function MenuFooter() {
+  return (
+    <div>
+      {/* <Hero color='primary' className='is-hidden-mobile'>
                 <Hero.Head renderAs="header" />
                 <Hero.Body>
                     <Container>
@@ -19,8 +19,8 @@ function MenuFooter () {
                     </Footer>
                 </Hero.Footer>
             </Hero> */}
-        </div>
-    );
-};
+    </div>
+  );
+}
 
 export default MenuFooter;

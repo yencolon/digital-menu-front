@@ -9,26 +9,34 @@ import LoadingMenu from 'components/common/LoadingComponent';
 import LoadFonts from '../utils/LoadFontsComponent';
 
 const Wrapper = () => {
-    const loadingStyles = useLoadStyles();
-    const info = useCurrentRestaurantState();
-    const theme = useThemeState();
-    return (
-        <>
-            <Helmet>
-                <link rel="manifest" href={info.manifestUrl} />
-                <link rel="icon" href={theme.assets.homePageLogo} />
-                <title>{info.name}</title>
-            </Helmet>
-            { loadingStyles
-                ? <LoadingMenu color={theme.colors.primaryColor} image={theme.assets.logo} showImage={true} />
-                : <div>
-                    <LoadFonts fonts={theme.fonts} />
-                    <Main colorSpin='#F2AF29' logo={API_URL + 'images/logo.png'} menu={info.menu} />
-                </div>
-            }
-        </>
-
-    );
+  const loadingStyles = useLoadStyles();
+  const info = useCurrentRestaurantState();
+  const theme = useThemeState();
+  return (
+    <>
+      <Helmet>
+        <link rel="manifest" href={info.manifestUrl} />
+        <link rel="icon" href={theme.assets.homePageLogo} />
+        <title>{info.name}</title>
+      </Helmet>
+      {loadingStyles ? (
+        <LoadingMenu
+          color={theme.colors.primaryColor}
+          image={theme.assets.logo}
+          showImage={true}
+        />
+      ) : (
+        <div>
+          <LoadFonts fonts={theme.fonts} />
+          <Main
+            colorSpin="#F2AF29"
+            logo={API_URL + 'images/logo.png'}
+            menu={info.menu}
+          />
+        </div>
+      )}
+    </>
+  );
 };
 
 export default Wrapper;
