@@ -25,3 +25,4 @@ yarn-error.log*
 #taildwindcss 
 /src/assets/styles/main.css
 
+debug.log
