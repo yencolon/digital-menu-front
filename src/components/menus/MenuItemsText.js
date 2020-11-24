@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CloseCircleOutlined, CameraOutlined } from '@ant-design/icons';
 import { Slide, Zoom } from 'react-awesome-reveal';
 import { useThemeState } from 'context/MenuThemeContext';
-import { useStyleToClass } from '../../utils/hooks';
+import { createUseStyles } from 'react-jss';
 
 function ModalImage({ image, show, onClose }) {
   if (!show) return null;
@@ -41,7 +41,7 @@ ModalImage.propTypes = {
 
 function ItemText({ title, image, description, price, highlight = false }) {
   const theme = useThemeState();
-  const classes = useStyleToClass(theme.product);
+  const classes = createUseStyles(theme.product)();
 
   const [showModalImage, setShowModalImage] = useState(false);
   return (

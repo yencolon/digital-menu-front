@@ -6,7 +6,7 @@ import CarouselComponent from 'components/common/Carousel';
 import MenuLayout from 'layouts/MenuLayout';
 import MenuRoutes from 'routes/MenuRoutes';
 import AddToHomeScreenButton from 'components/common/AddToHomeScreenButton';
-import { useStyleToClass } from 'utils/hooks';
+import { createUseStyles } from 'react-jss';
 
 const PickCategory = ({ categories, style, onClick }) => {
   if (categories.length < 2) return <Redirect to="/" />;
@@ -27,7 +27,7 @@ const PickCategory = ({ categories, style, onClick }) => {
 
 const Main = ({ menu }) => {
   const theme = useThemeState();
-  const classes = useStyleToClass(theme.picker);
+  const classes = createUseStyles(theme.picker);
   const history = useHistory();
   const { path, url } = useRouteMatch();
   const [showPicker, setShowPicker] = useState(
