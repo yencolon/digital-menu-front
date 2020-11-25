@@ -27,7 +27,7 @@ const PickCategory = ({ categories, style, onClick }) => {
 
 const Main = ({ menu }) => {
   const theme = useThemeState();
-  const classes = createUseStyles(theme.picker);
+  const classes = createUseStyles(theme.picker)();
   const history = useHistory();
   const { path, url } = useRouteMatch();
   const [showPicker, setShowPicker] = useState(

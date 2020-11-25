@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes, { object } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useThemeState } from 'context/MenuThemeContext';
+import { createUseStyles } from 'react-jss';
 
 function Tabs({
   buttons,
@@ -10,15 +11,18 @@ function Tabs({
   containerStyle,
   tabStyle,
 }) {
+  const classes = createUseStyles({
+    containerStyle: containerStyle,
+    tabStyle: tabStyle,
+  })();
   return (
-    <ul className="flex justify-center flex-wrap" style={containerStyle}>
+    <ul className={`flex justify-center flex-wrap ${classes.containerStyle}`}>
       {buttons.map((button) => {
         return (
           <li
-            className="border-b border-solid border-black"
+            className={`border-b border-solid border-black ${classes.tabStyle}`}
             active={button.id === selected}
             key={button.id}
-            style={tabStyle}
           >
             <Link
               className="mx-6 font-bold"
@@ -52,21 +56,26 @@ function Buttons({
   buttonStyle,
   buttonSelectedStyle,
 }) {
+  const classes = createUseStyles({
+    containerStyle: containerStyle,
+    buttonStyle: buttonStyle,
+    buttonSelectedStyle: buttonSelectedStyle,
+  })();
   return (
     <div
-      className={'flex flex-row justify-center flex-wrap px-5'}
-      style={containerStyle}
+      className={`flex flex-row justify-center flex-wrap px-5 ${classes.containerStyle}`}
     >
       {buttons.map((button) => {
         return (
           <button
             id="button"
             key={button.id}
-            className={
-              'text-white font-bold py-1 px-4 my-2 mx-2 focus:outline-none'
-            }
+            className={`text-white font-bold py-1 px-4 my-2 mx-2 focus:outline-none ${
+              selected === button.id
+                ? classes.buttonSelectedStyle
+                : classes.buttonStyle
+            }`}
             onClick={() => onButtonClicked(button.id)}
-            style={selected === button.id ? buttonSelectedStyle : buttonStyle}
           >
             {button.title}
           </button>

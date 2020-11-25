@@ -5,11 +5,13 @@ import { useCurrentRestaurantState } from 'context/CurrentRestaurantContext';
 import CarouselComponent from '../components/common/Carousel';
 import { InstagramOutlined } from '@ant-design/icons';
 import { useScrollToTop } from 'utils/hooks';
+import { createUseStyles } from 'react-jss';
 
 const ContactUs = ({ title }) => {
   const scrollRef = useScrollToTop();
   const theme = useThemeState();
   const info = useCurrentRestaurantState();
+  const classes = createUseStyles({...theme.common, ...theme.contacts})();
   return (
     <section
       ref={scrollRef}
@@ -17,15 +19,13 @@ const ContactUs = ({ title }) => {
       style={{ backgroundColor: theme.colors.backgroundColor }}
     >
       <h1
-        className="text-xl text-center font-bold mb-5"
-        style={theme.common.pageHeadingStyle}
+        className={`text-xl text-center font-bold mb-5 ${classes.pageHeadingStyle}`}
       >
         Contactos
       </h1>
       <CarouselComponent images={theme.assets.carouselImages} />
       <section
-        className="text-center flex-col text-md my-10 justify-around"
-        style={theme.contacts.contactStyle}
+        className={`text-center flex-col text-md my-10 justify-around ${classes.contactStyle}`}
       >
         {info.workingDays.map((day) => {
           return (

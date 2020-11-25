@@ -3,10 +3,12 @@ import { NavLink, useRouteMatch } from 'react-router-dom';
 import { Pin, InstagramIcon } from './SvgComponents';
 import { useThemeState } from 'context/MenuThemeContext';
 import { useCurrentRestaurantState } from 'context/CurrentRestaurantContext';
+import { createUseStyles } from 'react-jss';
 
 function MenuHeader() {
   const theme = useThemeState();
   const info = useCurrentRestaurantState();
+  const classes = createUseStyles(theme.navTop)();
   const { url } = useRouteMatch();
 
   useEffect(() => {
@@ -24,15 +26,10 @@ function MenuHeader() {
     };
   }, [theme.booleans.stickNavBar]);
 
-  /**
-   * containerStyle={theme.navTop.navBarContainerStyle} titleStyle={theme.navTop.navTitleStyle} hasDelivery={theme.booleans.hasDelivery} image={theme.assets.logo} title={theme.API_URLname}
-   */
-
   return (
     <nav
       id="nav"
-      className="flex items-center justify-start lg:justify-between flex-wrap w-full md:px-5 z-50 abolute"
-      style={theme.navTop.navBarContainerStyle}
+      className={`flex items-center justify-start lg:justify-between flex-wrap w-full md:px-5 z-50 abolute ${classes.navBarContainerStyle}` }
     >
       {theme.assets.logo ? (
         <img
@@ -49,8 +46,7 @@ function MenuHeader() {
       ) : (
         <a
           href="/"
-          className="text-3xl font-bold"
-          style={theme.navTop.navTitleStyle}
+          className={`text-3xl font-bold ${classes.navTitleStyle}`}
         >
           {info.name}
         </a>

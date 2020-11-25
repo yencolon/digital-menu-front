@@ -3,6 +3,7 @@ import PropTypes, { object } from 'prop-types';
 import ItemText from './MenuItemsText';
 import ItemCard from './MenuItemCard';
 import { useThemeState } from 'context/MenuThemeContext';
+import { createUseStyles } from 'react-jss';
 
 function RenderAs({ items, renderAs = 'text' }) {
   switch (renderAs) {
@@ -47,22 +48,21 @@ RenderAs.propTypes = {
 
 function MenuSubCategory({ title, description, items, image }) {
   const theme = useThemeState();
+  const classes = createUseStyles(theme.category)();
   return (
     <>
       <div className="md:hidden inline-flex items-center justify-center pb-5 ">
         <img src={image} className="object-cover w-3/5 object-cover rounded" />
       </div>
       <section
-        className="mt-1 mb-5 mx-5 md:mx-5 md:mt-5 md:mb-10 flex flex-col content-center justify-center"
-        style={theme.category.subCategoryContainerStyle}
+        className={`mt-1 mb-5 mx-5 md:mx-5 md:mt-5 md:mb-10 flex flex-col content-center justify-center ${classes.subCategoryContainerStyle}`}
       >
         <h1
-          className="font-bold subpixel-antialiased text-4xl text-center"
-          style={theme.category.subCategoryHeadingStyle}
+          className={`font-bold subpixel-antialiased text-4xl text-center ${classes.subCategoryHeadingStyle}`}
         >
           {title}
         </h1>
-        <div style={theme.category.subCategoryInnerContainer}>
+        <div className={`${classes.subCategoryInnerContainer}`}>
           <RenderAs items={items} renderAs={theme.literals.showDishAs} />
         </div>
       </section>

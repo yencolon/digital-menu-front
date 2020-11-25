@@ -5,7 +5,6 @@ import GoogleFontLoader from 'react-google-font-loader';
 const LoadFonts = ({ fonts }) => {
   const filterFonts = fonts.filter((font) => font !== undefined);
   if (filterFonts.length === 0) return <div></div>;
-
   const fontsToLoad = filterFonts.map((font) => {
     return {
       font: font,

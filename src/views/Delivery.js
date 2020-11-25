@@ -47,7 +47,9 @@ function Delivery() {
   const theme = useThemeState();
   const info = useCurrentRestaurantState();
   const gridSize = info.deliveries.length < 3 ? 2 : 3;
-  const largeGridSize = gridSize === 2 ? 2 : 4;
+  const grid = gridSize < 3 ? `grid-cols-2` :  `grid-cols-3`;
+  const landscape = gridSize === 2 ?  `landscape:grid-cols-2` : `landscape:grid-cols-4`;
+  const mdlandscape =  gridSize === 2 ? `md:grid-cols-2`: `md:grid-cols-4`;
   return (
     <section
       ref={scrollRef}
@@ -65,7 +67,7 @@ function Delivery() {
         images={theme.assets.advertisementImages}
       />
       <ul
-        className={`grid grid-cols-${gridSize} landscape:grid-cols-${largeGridSize} md:grid-cols-${largeGridSize} py-1`}
+        className={`grid ${grid} ${landscape} ${mdlandscape} py-1`}
       >
         {info.deliveries.map((delivery) => {
           return (

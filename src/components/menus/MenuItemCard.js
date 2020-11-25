@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ItemText from './MenuItemsText';
 import { useThemeState } from 'context/MenuThemeContext';
+import { createUseStyles } from 'react-jss';
 
 function ItemCard({ title, description, price, image }) {
   const theme = useThemeState();
+  const classes = createUseStyles(theme.product)();
   return (
     <div
-      className="flex flex-col-reverse md:flex-row my-5 mx-5 px-5 py-5"
-      style={theme.product.productContainerStyle}
+      className={`flex flex-col-reverse md:flex-row my-5 mx-5 px-5 py-5 ${classes.productContainerStyle}`}
+      
     >
       <ItemText title={title} description={description} price={price} />
       <img
