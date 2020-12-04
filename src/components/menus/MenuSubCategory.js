@@ -51,8 +51,8 @@ function MenuSubCategory({ title, description, items, image }) {
   const classes = createUseStyles(theme.category)();
   return (
     <>
-      <div className="md:hidden inline-flex items-center justify-center pb-5 ">
-        <img src={image} className="object-cover w-3/5 object-cover rounded" />
+      <div className="flex items-center justify-center pb-5">
+        <img src={image} className="w-3/5 md:w-5/12 rounded" />
       </div>
       <section
         className={`mt-1 mb-5 mx-5 md:mx-5 md:mt-5 md:mb-10 flex flex-col content-center justify-center ${classes.subCategoryContainerStyle}`}

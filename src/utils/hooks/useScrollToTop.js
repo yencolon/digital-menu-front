@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 // Component that attaches scroll to top hanler on router change

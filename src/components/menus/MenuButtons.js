@@ -42,7 +42,7 @@ function Tabs({
 
 Tabs.propTypes = {
   buttons: PropTypes.arrayOf(object).isRequired,
-  selected: PropTypes.bool,
+  selected: PropTypes.number,
   onButtonClicked: PropTypes.func,
   containerStyle: PropTypes.object,
   tabStyle: PropTypes.object,
@@ -87,7 +87,7 @@ function Buttons({
 
 Buttons.propTypes = {
   buttons: PropTypes.arrayOf(object).isRequired,
-  selected: PropTypes.bool,
+  selected: PropTypes.number,
   onButtonClicked: PropTypes.func,
   containerStyle: PropTypes.object,
   tabStyle: PropTypes.object,
@@ -168,7 +168,7 @@ MenuButtons.propTypes = {
   buttons: PropTypes.arrayOf(object),
   stickButtons: PropTypes.bool,
   renderAs: PropTypes.oneOf(['buttons', 'tabs']),
-  selected: PropTypes.bool,
+  selected: PropTypes.number,
   onButtonClicked: PropTypes.func,
   backgroundColor: PropTypes.string,
   textColor: PropTypes.string,

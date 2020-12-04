@@ -39,7 +39,7 @@ const CarouselComponent = ({
     <Carousel
       additionalTransfrom={0}
       centerMode={centerMode}
-      //partialVisible={true}
+      // partialVisible={true}
       arrows={false}
       responsive={responsive || defaultResponsive}
       ssr={true}
@@ -47,7 +47,7 @@ const CarouselComponent = ({
       autoPlay={true}
       autoPlaySpeed={autoPlaySpeed}
       transitionDuration={1000}
-      className="w-full md:justify-center"
+      className="w-full"
     >
       {images.map((image, index) => {
         return (

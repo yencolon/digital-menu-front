@@ -28,7 +28,7 @@ function HorizontalCard({ image, title, description, style }) {
 HorizontalCard.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.arrayOf(PropTypes.string),
   style: PropTypes.object,
 };
 

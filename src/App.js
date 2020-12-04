@@ -4,14 +4,15 @@ import './App.css';
 import Wrapper from 'views/Wrapper';
 import { ThemeProvider } from 'context/MenuThemeContext';
 import { CurrentRestauratInfoProvider } from 'context/CurrentRestaurantContext';
-import Landing from 'views/Landing';
+import MenuListComponent from 'views/MenuList';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact strict path="/">
-          <Landing />
+          
+          <MenuListComponent />
         </Route>
         <Route path="/:routeName">
           <ThemeProvider>
