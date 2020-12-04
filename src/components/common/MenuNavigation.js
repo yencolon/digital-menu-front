@@ -39,7 +39,7 @@ function MenuNavigation({
           className="flex flex-col text-sm w-3/12 text-center items-center justify-center font-bold"
         >
           {/* <CarOutlined style={{ fontSize: '20px' }}  */}
-          <Van width="20px" height="20px" fill="white" y />
+          <Van width="20px" height="20px" fill="white"/>
           {/* <Icon component={MotoBike} style={{ fontSize: '20px' }}/> */}
           Delivery
         </NavLink>

@@ -8,11 +8,11 @@ function MenuBottomBrand({ title, image, style }) {
   const info = useCurrentRestaurantState();
   const FormattedAddress = () => {
     const addressLine = info.location.address.split(',');
-    return addressLine.map((address) => {
+    return addressLine.map((address, index) => {
       return (
-        <>
-          <h6 className="block">{address}</h6>
-        </>
+        <h6 className="block" key={index.toString()}>
+          {address}
+        </h6>
       );
     });
   };
@@ -44,11 +44,11 @@ function MenuBottomBrand({ title, image, style }) {
 }
 
 MenuBottomBrand.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   image: PropTypes.string,
   style: PropTypes.object,
   addressLine: PropTypes.string,
-  addresCity: PropTypes.string.isRequired,
+  addresCity: PropTypes.string,
 };
 
 export default MenuBottomBrand;

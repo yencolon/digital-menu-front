@@ -29,13 +29,11 @@ const ContactUs = ({ title }) => {
       >
         {info.workingDays.map((day) => {
           return (
-            <>
-              <p>
-                {day.label}
-                <br></br>
-                {day.from} - {day.to}
-              </p>
-            </>
+            <p key={day}>
+              {day.label}
+              <br></br>
+              {day.from} - {day.to}
+            </p>
           );
         })}
         <br></br>
@@ -73,7 +71,7 @@ const ContactUs = ({ title }) => {
 };
 
 ContactUs.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default ContactUs;

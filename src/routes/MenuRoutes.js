@@ -32,7 +32,7 @@ const MenuRoutes = ({ path, url, menuToShow, defaultCategorySelectedId }) => {
 MenuRoutes.propTypes = {
   path: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  menuToShow: PropTypes.array,
+  menuToShow: PropTypes.object,
   defaultCategorySelectedId: PropTypes.number,
 };
 

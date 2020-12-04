@@ -93,10 +93,10 @@ function ItemText({ title, image, description, price, highlight = false }) {
 }
 
 ItemText.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  price: PropTypes.array.isRequired,
-  image: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.array,
+  image: PropTypes.string,
   highlight: PropTypes.bool,
 };
 
