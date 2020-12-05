@@ -1,35 +1,33 @@
 {
-    "env": {
-        "browser": false,
-        "node": true,
-        "es2020": true
-        //"es2021": true
+  "env": {
+    "browser": false,
+    "node": true,
+    "es2020": true
+    //"es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "standard",
-        "plugin:react-hooks/recommended"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "react-hooks"
-    ],
-    "rules": {
-        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-        "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
-        "indent": ["error", 4],
-        "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
-        "no-use-before-define": "warn",
-        "no-unused-vars": "warn",
-        "react/prop-types": ["warn"]
-
-    },
-    "globals": { "fetch": false, "Blob": false }
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
+    "indent": ["error", 4],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+    "no-use-before-define": "warn",
+    "no-unused-vars": "warn",
+    "react/prop-types": ["warn"]
+  },
+  "globals": { "fetch": false, "Blob": false }
 }
