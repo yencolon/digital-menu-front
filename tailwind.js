@@ -1,9 +1,14 @@
 module.exports = {
-  // future: {
-  //     removeDeprecatedGapUtilities: true,
-  //     purgeLayersByDefault: true
-  // },
-  purge: [],
+  purge: {
+    enabled: false,
+    content: [
+      './src/views/*.js',
+      './src/layouts/*.js',
+      './src/components/menus/*.js',
+      './src/components/common/*.js',
+      './src/components/landing/*.js',
+    ],
+  },
   prefix: '',
   presets: [],
   darkMode: false, // or 'media' or 'class'
