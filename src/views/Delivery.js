@@ -21,7 +21,7 @@ function ImageCard({ image, title, description, url, onloadCount, style }) {
       <img
         className={`${
           loading
-            ? 'h-40 w-40 md:h-48 md:w-48'
+            ? 'h-40== w-40 md:h-40 md:w-40'
             : 'object-cover rounded overflow-hidden shadow-2xl'
         }`}
         src={image}
@@ -53,7 +53,7 @@ function Delivery() {
   return (
     <section
       ref={scrollRef}
-      className="flex flex-col justify-start h-screen"
+    
       style={{ backgroundColor: theme.colors.backgroundColor }}
     >
       <h1

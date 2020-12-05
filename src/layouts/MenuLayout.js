@@ -8,10 +8,7 @@ import { useThemeState } from 'context/MenuThemeContext';
 const MenuLayout = ({ children }) => {
   const theme = useThemeState();
   return (
-    <div
-      className="flex flex-col justify-between h-full"
-      style={{ backgroundColor: theme.colors.backgroundColor }}
-    >
+    <div style={{ backgroundColor: theme.colors.backgroundColor }}>
       <MenuHeader />
       <main>{children}</main>
       <MenuBottomBrand />

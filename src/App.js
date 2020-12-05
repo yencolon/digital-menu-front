@@ -11,7 +11,6 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact strict path="/">
-          
           <MenuListComponent />
         </Route>
         <Route path="/:routeName">

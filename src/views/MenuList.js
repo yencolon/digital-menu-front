@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { API_URL } from 'shared/apiUrl';
 import LandingLayout from 'layouts/LandLayout';
-import { Section } from 'components/landing/Section';
+import { Section } from 'components/landing/section';
 
 function Card({ store }) {
   const imageLogo =
@@ -51,14 +51,18 @@ function MenuListComponent() {
 
   // console.log(storeList)
   return (
-    <LandingLayout>
-      <Section />
-      <section>
-        {storeList.map((rest) => {
-          return <article>{rest.name}</article>;
-        })}
-      </section>
-    </LandingLayout>
+    <div className='h-screen flex flex-col justify-center items-center'>
+      <h1 className='text-5xl font-bold' style={{ fontFamily: 'Avenir next'}}>Háptico</h1>
+      <h3>Soluciones Digitales</h3>
+    </div>
+    // <LandingLayout>
+    //   <Section />
+    //   <section>
+    //     {storeList.map((rest) => {
+    //       return <article>{rest.name}</article>;
+    //     })}
+    //   </section>
+    // </LandingLayout>
   );
 }
 

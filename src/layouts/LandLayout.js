@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Nav } from 'components/landing/Nav';
-import { Footer } from 'components/landing/Footer';
+import { Nav } from 'components/landing/nav';
+import { Footer } from 'components/landing/footer';
 
 const LandingLayout = ({ children }) => {
   return (

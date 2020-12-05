@@ -15,7 +15,7 @@ const ContactUs = ({ title }) => {
   return (
     <section
       ref={scrollRef}
-      className="flex flex-col justify-start h-screen"
+      className="flex flex-col justify-start"
       style={{ backgroundColor: theme.colors.backgroundColor }}
     >
       <h1
