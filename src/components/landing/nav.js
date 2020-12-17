@@ -1,22 +1,14 @@
 import React from 'react';
-import { useScrollEvent } from 'utils/hooks';
 
 export const Nav = () => {
-  const stick = useScrollEvent();
   return (
     <nav id="header" className="fixed w-full z-30 top-0 text-black bg-balck">
       <div
-        className={`w-full  flex flex-wrap items-center justify-between mt-0 py-2 px-16 ${
-          !stick
-            ? 'bg-gradient-to-r from-purple-400 via-pink-500 to-red-500'
-            : 'bg-white'
-        }`}
+        className={`w-full  flex flex-wrap items-center justify-between mt-0 py-2 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600`}
       >
-        <div className="pl-4 flex items-center">
+        <div className="flex items-center">
           <a
-            className={`no-underline hover:no-underline font-bold text-2xl lg:text-4xl ${
-              !stick ? 'text-white' : 'text-black'
-            }`}
+            className={`no-underline hover:no-underline font-bold text-2xl lg:text-4xl pl-4 text-white`}
             href="#"
           >
             {/* Icon from: http://www.potlabicons.com/ */}
@@ -26,7 +18,7 @@ export const Nav = () => {
         <div className="block lg:hidden pr-4">
           <button
             id="nav-toggle"
-            className="flex items-center p-1 text-orange-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            className="flex items-center p-1 text-white hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
           >
             <svg
               className="fill-current h-6 w-6"
@@ -39,13 +31,13 @@ export const Nav = () => {
           </button>
         </div>
         <div
-          className="flex-grow flex-end lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+          className="flex-grow flex-end lg:flex lg:items-center lg:w-auto hidden mt-2 mr-4 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
           id="nav-content"
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center">
             <li className="mr-3">
               <a
-                className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#"
               >
                 About
@@ -53,7 +45,7 @@ export const Nav = () => {
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#"
               >
                 Use Cases
@@ -62,7 +54,7 @@ export const Nav = () => {
           </ul>
           <button
             id="navAction"
-            className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            className="mx-auto lg:mx-0 hover:underline rounded-full bg-yellow-500 text-white font-bold mt-4 lg:mt-0 py-2 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
           >
             Login
           </button>

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { API_URL } from 'shared/apiUrl';
 import LandingLayout from 'layouts/LandLayout';
-import { Section } from 'components/landing/section';
-
 function Card({ store }) {
   const imageLogo =
     store.styles.length > 0 ? store.styles[0].imageLogo : 'logo.png';
@@ -51,18 +49,31 @@ function MenuListComponent() {
 
   // console.log(storeList)
   return (
-    <div className='h-screen flex flex-col justify-center items-center'>
-      <h1 className='text-5xl font-bold' style={{ fontFamily: 'Avenir next'}}>Háptico</h1>
-      <h3>Soluciones Digitales</h3>
-    </div>
-    // <LandingLayout>
-    //   <Section />
-    //   <section>
-    //     {storeList.map((rest) => {
-    //       return <article>{rest.name}</article>;
-    //     })}
-    //   </section>
-    // </LandingLayout>
+    // <div className='h-screen flex flex-col justify-center items-center'>
+    //   <h1 className='text-5xl font-bold' style={{ fontFamily: 'Avenir next'}}>Háptico</h1>
+    //   <h3>Soluciones Digitales</h3>
+    // </div>
+    <LandingLayout>
+      <div className='flex flex-col items-start pt-20 mx-24'>
+        <h2 className='text-6xl font-bold font-sans'>Casos de Uso</h2>
+        <p>Haptico esta creciendo, ya muchos locales en el pais confian en nuestros servicios</p>
+      </div>
+      <section className="flex flex-row flex-wrap pb-48 pt-12 mx-14">
+        {storeList.map((rest) => {
+          return (
+            <article className="mx-10 overflow-hidden rounded-lg shadow-lg bg-gray-100 transform transition hover:scale-105 duration-300 ease-in-out">
+              <img
+                className="object-cover w-80 h-56 "
+                src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"
+              />
+              <div className="px-2">
+                <p className="font-semibold text-lg">{rest.name}</p>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+    </LandingLayout>
   );
 }
 
